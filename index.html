@@ -9,21 +9,21 @@
   <meta name="description" content="Calcule le coût réel de tes mauvaises habitudes en argent ET en temps : cigarettes, café, alcool, réseaux sociaux... Résultat instantané et chiffres chocs.">
   <meta name="keywords" content="calculateur mauvaises habitudes, coût cigarette, arrêter fumer économies, mauvaises habitudes argent, combien coûte habitude">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://acwebcreation.github.io/mauvaiseshabitudes/">
+  <link rel="canonical" href="https://acwebcreation.github.io/">
 
   <!-- Open Graph (partage Facebook / WhatsApp) -->
   <meta property="og:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
   <meta property="og:description" content="Un calculateur gratuit qui te montre le vrai coût de tes habitudes : en argent, en temps, et en opportunités perdues.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://acwebcreation.github.io/mauvaiseshabitudes/">
-  <meta property="og:image" content="https://acwebcreation.github.io/mauvaiseshabitudes/preview.png">
+  <meta property="og:url" content="https://acwebcreation.github.io/">
+  <meta property="og:image" content="https://acwebcreation.github.io/preview.png">
   <meta property="og:locale" content="fr_FR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
   <meta name="twitter:description" content="Calcule le coût réel de tes mauvaises habitudes en argent et en temps. Résultat choc garanti.">
-  <meta name="twitter:image" content="https://acwebcreation.github.io/mauvaiseshabitudes/preview.png">
+  <meta name="twitter:image" content="https://acwebcreation.github.io/preview.png">
 
   <!-- Google AdSense — remplace ca-pub-XXXXXXXXXXXXXXXX par ton vrai ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
@@ -92,7 +92,13 @@
     .header-tag { font-size: 11px; color: var(--text3); background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; }
 
     /* ===== LAYOUT ===== */
-    .container { max-width: 700px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+    .page-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 0; max-width: 1280px; margin: 0 auto; }
+    .sidebar { width: 160px; flex-shrink: 0; position: sticky; top: 80px; padding-top: 2rem; display: none; }
+    .sidebar-ad { width: 160px; min-height: 600px; background: var(--bg2); border: 1px dashed var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
+    .sidebar-ad ins { width: 160px; }
+    .container { max-width: 700px; width: 100%; padding: 0 1.25rem 4rem; }
+    @media (min-width: 1080px) { .sidebar { display: block; } .page-wrapper { gap: 24px; } }
+    @media (min-width: 1280px) { .sidebar { width: 200px; } .sidebar-ad { width: 200px; } }
 
     /* ===== HERO ===== */
     .hero { text-align: center; padding: 3rem 0 2.5rem; }
@@ -226,6 +232,21 @@
   <span class="header-tag">Calculateur gratuit</span>
 </header>
 
+<div class="page-wrapper">
+
+<!-- SIDEBAR GAUCHE -->
+<div class="sidebar">
+  <div class="sidebar-ad">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="vertical"
+      data-full-width-responsive="false"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
 <div class="container">
 
   <!-- HERO -->
@@ -334,42 +355,84 @@
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
 
+    <!-- Card preview générée -->
+    <div id="cardPreviewWrap" style="display:none;margin-bottom:1.5rem;">
+      <p class="section-label" style="margin-top:0;">Ta carte personnalisée</p>
+      <canvas id="resultCard" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block;"></canvas>
+      <div style="display:flex;gap:10px;margin-top:10px;">
+        <button onclick="downloadCard()" style="flex:1;padding:11px;background:var(--text);color:var(--bg);border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:500;cursor:pointer;">⬇️ Télécharger l'image</button>
+        <button onclick="document.getElementById('cardPreviewWrap').style.display='none'" style="padding:11px 16px;background:transparent;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;color:var(--text2);cursor:pointer;">✕</button>
+      </div>
+      <p style="font-size:11px;color:var(--text3);margin-top:8px;text-align:center;">Télécharge et poste cette image sur Instagram, TikTok ou Facebook</p>
+    </div>
+
     <!-- Actions -->
     <div class="action-row">
-      <button class="share-btn" onclick="shareResult()">📤 Partager mon résultat</button>
+      <button class="share-btn" onclick="shareResult()">📤 Partager</button>
+      <button class="share-btn" style="background:var(--red);" onclick="generateCard()">🖼️ Créer mon image</button>
+    </div>
+    <div style="text-align:center;margin-bottom:2rem;">
+      <button class="reset-btn" style="width:100%;margin-top:6px;" onclick="resetAll()">Recommencer</button>
+    </div>
 
-<!-- Modal partage -->
-<div id="shareModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:999;align-items:center;justify-content:center;" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:var(--bg);border-radius:var(--radius);padding:1.5rem;width:90%;max-width:360px;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;">
-      <span style="font-weight:600;font-size:15px;">Partager mon résultat</span>
-      <span onclick="document.getElementById('shareModal').style.display='none'" style="cursor:pointer;font-size:20px;color:var(--text3);">✕</span>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:10px;">
-      <a id="shareFB" href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px;background:#1877F2;color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:14px;font-weight:500;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        Partager sur Facebook
-      </a>
-      <a id="shareWA" href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px;background:#25D366;color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:14px;font-weight:500;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Partager sur WhatsApp
-      </a>
-      <a id="shareX" href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px;background:#000;color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:14px;font-weight:500;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        Partager sur X / Twitter
-      </a>
-      <a id="sharePIN" href="#" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:12px;background:#E60023;color:#fff;border-radius:var(--radius-sm);text-decoration:none;font-size:14px;font-weight:500;">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-        Partager sur Pinterest
-      </a>
-      <button id="shareCopy" style="display:flex;align-items:center;gap:12px;padding:12px;background:var(--bg2);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-weight:500;cursor:pointer;width:100;">
-        📋 Copier le lien
+    <!-- Carte résultat générée -->
+    <div id="cardPreview" style="display:none;margin-bottom:2rem;">
+      <p class="section-label">Ton image à partager</p>
+      <div id="resultCard" style="background:#161614;border-radius:20px;padding:2rem;position:relative;overflow:hidden;font-family:'DM Sans',sans-serif;">
+        <!-- Barre rouge top -->
+        <div style="position:absolute;top:0;left:0;right:0;height:5px;background:#E24B4A;border-radius:20px 20px 0 0;"></div>
+        <!-- Grille déco -->
+        <div style="position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px);pointer-events:none;"></div>
+
+        <div style="position:relative;z-index:1;">
+          <!-- Badge -->
+          <div style="display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#E24B4A;background:rgba(226,75,74,0.15);border-radius:20px;padding:4px 12px;margin-bottom:1.25rem;font-weight:600;">Calculateur de mauvaises habitudes</div>
+
+          <!-- Montant choc -->
+          <div style="background:#E24B4A;border-radius:14px;padding:1.5rem;margin-bottom:1rem;text-align:center;">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:6px;">Je dépense chaque année</div>
+            <div id="cardAmount" style="font-size:52px;font-weight:700;color:#fff;line-height:1;">—</div>
+            <div id="cardSub" style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;"></div>
+          </div>
+
+          <!-- 3 métriques -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;">
+            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Par mois</div>
+              <div id="cardMonth" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
+            </div>
+            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Sur 5 ans</div>
+              <div id="card5y" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
+            </div>
+            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Sur 10 ans</div>
+              <div id="card10y" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
+            </div>
+          </div>
+
+          <!-- Invest -->
+          <div style="background:#1a2e08;border:1px solid rgba(99,153,34,0.25);border-radius:10px;padding:12px 16px;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:12px;color:#639922;">Si investi à 7%/an pendant 10 ans</div>
+            <div id="cardInvest" style="font-size:18px;font-weight:700;color:#639922;">—</div>
+          </div>
+
+          <!-- Habits list -->
+          <div id="cardHabits" style="margin-bottom:1.25rem;"></div>
+
+          <!-- Footer -->
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2a2a28;padding-top:12px;">
+            <div style="font-size:11px;color:#444441;">acwebcreation.github.io</div>
+            <div style="font-size:11px;color:#444441;">Calcule le tien gratuitement →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton télécharger -->
+      <button onclick="downloadCard()" style="width:100%;margin-top:12px;padding:13px;background:#E24B4A;color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">
+        📥 Télécharger l'image (PNG)
       </button>
-    </div>
-    <p style="font-size:11px;color:var(--text3);margin-top:1rem;text-align:center;">Instagram : copie le lien et colle-le dans ta bio ou story</p>
-  </div>
-</div>
-      <button class="reset-btn" onclick="resetAll()">Recommencer</button>
+      <p style="font-size:11px;color:var(--text3);text-align:center;margin-top:8px;">Parfait pour Instagram, Facebook, WhatsApp</p>
     </div>
 
   </div>
@@ -377,6 +440,22 @@
 
 </div>
 <!-- /container -->
+
+<!-- SIDEBAR DROITE -->
+<div class="sidebar">
+  <div class="sidebar-ad">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="vertical"
+      data-full-width-responsive="false"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+</div>
+<!-- /page-wrapper -->
 
 <footer>
   <p>
@@ -387,6 +466,7 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
 const HABITS = [
   { id:'cig',      icon:'🚬', name:'Cigarettes',       unit:'paquets / semaine', defaultVal:7,  min:1,  max:30,  step:1,   unitCost:11.5, timeMins:120 },
@@ -616,19 +696,15 @@ function calculate() {
 
 function shareResult() {
   const year = document.getElementById('shockYear').textContent;
-  const url = 'https://acwebcreation.github.io';
-  const text = `Mes mauvaises habitudes me coûtent ${year} par an 😱 Calcule le tien :`;
-
-  document.getElementById('shareModal').style.display = 'flex';
-  document.getElementById('shareFB').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
-  document.getElementById('shareWA').href = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
-  document.getElementById('sharePIN').href = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&description=${encodeURIComponent(text)}`;
-  document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
-  document.getElementById('shareCopy').onclick = () => {
-    navigator.clipboard.writeText(text + ' ' + url);
-    document.getElementById('shareCopy').textContent = '✅ Copié !';
-    setTimeout(() => document.getElementById('shareCopy').textContent = '📋 Copier le lien', 2000);
-  };
+  const text = `Mes mauvaises habitudes me coûtent ${year} par an 😱 J'ai calculé ça sur ce site gratuit :`;
+  const url = window.location.href;
+  if (navigator.share) {
+    navigator.share({ title: 'Mon coût réel', text, url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text + ' ' + url)
+      .then(() => alert('✅ Texte copié ! Colle-le où tu veux.'))
+      .catch(() => alert('Copie manuelle : ' + text + ' ' + url));
+  }
 }
 
 function resetAll() {
@@ -637,8 +713,61 @@ function resetAll() {
   document.getElementById('configBox').classList.remove('visible');
   document.getElementById('calcBtn').disabled = true;
   document.getElementById('results').classList.remove('visible');
+  document.getElementById('cardPreviewWrap').style.display = 'none';
   if (chartInst) { chartInst.destroy(); chartInst = null; }
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function generateCard() {
+  // Remplir la carte HTML avec les vraies données
+  document.getElementById('cardAmount').textContent  = document.getElementById('shockYear').textContent;
+  document.getElementById('cardSub').textContent     = document.getElementById('shockSub').textContent;
+  document.getElementById('cardMonth').textContent   = document.getElementById('mMonth').textContent;
+  document.getElementById('card5y').textContent      = document.getElementById('m5y').textContent;
+  document.getElementById('card10y').textContent     = document.getElementById('m10y').textContent;
+  document.getElementById('cardInvest').textContent  = document.getElementById('investAmount').textContent;
+
+  // Habitudes sélectionnées
+  const ids = Object.keys(selected);
+  const breakdown = ids.map(id => {
+    const h = HABITS.find(x => x.id === id);
+    return { label: h.icon + ' ' + h.name, cost: getCostYear(h) };
+  }).filter(b => b.cost > 0).sort((a,b) => b.cost - a.cost).slice(0, 4);
+
+  document.getElementById('cardHabits').innerHTML = breakdown.map(b => `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #2a2a28;font-size:13px;">
+      <span style="color:#9a9a92;">${b.label}</span>
+      <span style="color:#E24B4A;font-weight:700;">${fmt(b.cost)}/an</span>
+    </div>`).join('');
+
+  // Afficher la section
+  document.getElementById('cardPreview').style.display = 'block';
+  setTimeout(() => document.getElementById('cardPreview').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function downloadCard() {
+  const btn = event.target;
+  btn.textContent = '⏳ Génération en cours...';
+  btn.disabled = true;
+
+  html2canvas(document.getElementById('resultCard'), {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: '#161614',
+    logging: false
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'mon-cout-mauvaises-habitudes.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    btn.textContent = '✅ Image téléchargée !';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = '📥 Télécharger l\'image (PNG)'; }, 3000);
+  }).catch(() => {
+    btn.textContent = '📥 Télécharger l\'image (PNG)';
+    btn.disabled = false;
+    alert('Erreur lors de la génération. Essaie de faire une capture d\'écran.');
+  });
 }
 </script>
 
