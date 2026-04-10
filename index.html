@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Combien coûtent vraiment tes mauvaises habitudes ? | Calculateur gratuit</title>
+  <meta name="description" content="Calcule le coût réel de tes mauvaises habitudes en argent ET en temps : cigarettes, café, alcool, réseaux sociaux... Résultat instantané et chiffres chocs.">
+  <meta name="keywords" content="calculateur mauvaises habitudes, coût cigarette, arrêter fumer économies, mauvaises habitudes argent, combien coûte habitude">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://acwebcreation.github.io/mauvaiseshabitudes/">
+
+  <!-- Open Graph (partage Facebook / WhatsApp) -->
+  <meta property="og:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
+  <meta property="og:description" content="Un calculateur gratuit qui te montre le vrai coût de tes habitudes : en argent, en temps, et en opportunités perdues.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://acwebcreation.github.io/mauvaiseshabitudes/">
+  <meta property="og:image" content="https://acwebcreation.github.io/mauvaiseshabitudes/preview.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
+  <meta name="twitter:description" content="Calcule le coût réel de tes mauvaises habitudes en argent et en temps. Résultat choc garanti.">
+  <meta name="twitter:image" content="https://acwebcreation.github.io/mauvaiseshabitudes/preview.png">
+
+  <!-- Google AdSense — remplace ca-pub-XXXXXXXXXXXXXXXX par ton vrai ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #E24B4A;
+      --red-light: #FCEBEB;
+      --red-dark: #A32D2D;
+      --green: #639922;
+      --green-light: #EAF3DE;
+      --bg: #FAFAF8;
+      --bg2: #F2F1ED;
+      --border: rgba(0,0,0,0.1);
+      --text: #1a1a18;
+      --text2: #6b6b66;
+      --text3: #999994;
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161614;
+        --bg2: #1f1f1d;
+        --border: rgba(255,255,255,0.1);
+        --text: #f0efe8;
+        --text2: #9a9a92;
+        --text3: #666660;
+        --red-light: #3a1212;
+        --green-light: #1a2e08;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--red); }
+    .header-tag { font-size: 11px; color: var(--text3); background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 700px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+    /* ===== HERO ===== */
+    .hero { text-align: center; padding: 3rem 0 2.5rem; }
+    .hero-badge { display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); background: var(--red-light); border-radius: 20px; padding: 5px 14px; margin-bottom: 1.25rem; font-weight: 500; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 38px); line-height: 1.25; color: var(--text); margin-bottom: 1rem; }
+    .hero h1 em { font-style: normal; color: var(--red); }
+    .hero p { font-size: 15px; color: var(--text2); max-width: 480px; margin: 0 auto; }
+
+    /* ===== AD SLOT ===== */
+    .ad-slot { background: var(--bg2); border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 1rem; text-align: center; margin: 1.5rem 0; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+    .ad-slot ins { width: 100%; }
+    /* Masquer le placeholder dashed une fois AdSense chargé */
+    .ad-slot:has(ins[data-ad-status="filled"]) { border: none; padding: 0; background: transparent; }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 1rem; margin-top: 2rem; }
+
+    /* ===== HABITS GRID ===== */
+    .habits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+    .habit-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+      position: relative;
+    }
+    .habit-card:hover { border-color: rgba(226,75,74,0.4); transform: translateY(-1px); }
+    .habit-card.selected { border: 2px solid var(--red); background: var(--red-light); }
+    .habit-card.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px; font-size: 11px; color: var(--red); font-weight: 600; }
+    .habit-icon { font-size: 22px; margin-bottom: 6px; }
+    .habit-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+    .habit-unit { font-size: 11px; color: var(--text3); }
+
+    /* ===== CONFIG ===== */
+    .config-box { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; display: none; }
+    .config-box.visible { display: block; }
+    .habit-config { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .habit-config:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .config-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+    .config-row { display: flex; align-items: center; gap: 12px; }
+    .config-row label { font-size: 12px; color: var(--text2); min-width: 90px; }
+    .config-row input[type=range] { flex: 1; accent-color: var(--red); cursor: pointer; }
+    .config-row .val { font-size: 13px; font-weight: 600; color: var(--text); min-width: 55px; text-align: right; }
+
+    /* ===== BUTTON ===== */
+    .calc-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: opacity 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+    .calc-btn:hover:not(:disabled) { opacity: 0.92; transform: translateY(-1px); }
+    .calc-btn:active:not(:disabled) { transform: scale(0.99); }
+    .calc-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ===== RESULTS ===== */
+    .results { display: none; animation: fadeUp 0.4s ease; }
+    .results.visible { display: block; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Shock box */
+    .shock-box { background: var(--red); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; margin-bottom: 1.25rem; }
+    .shock-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.65); margin-bottom: 10px; font-weight: 500; }
+    .shock-amount { font-family: 'Playfair Display', serif; font-size: clamp(44px, 10vw, 64px); color: #fff; line-height: 1; margin-bottom: 8px; }
+    .shock-sub { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+    /* Metrics */
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
+    .metric-card { background: var(--bg2); border-radius: var(--radius-sm); padding: 1rem; text-align: center; border: 1px solid var(--border); }
+    .metric-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text3); margin-bottom: 6px; }
+    .metric-value { font-size: 20px; font-weight: 600; color: var(--text); }
+
+    /* Invest box */
+    .invest-box { background: var(--green-light); border: 1px solid rgba(99,153,34,0.25); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+    .invest-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); font-weight: 600; margin-bottom: 6px; }
+    .invest-amount { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--green); margin-bottom: 4px; }
+    .invest-sub { font-size: 13px; color: var(--text2); }
+
+    /* Chart */
+    .chart-section { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.25rem; margin-bottom: 1.25rem; }
+    .chart-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text2); margin-bottom: 1rem; flex-wrap: wrap; }
+    .chart-legend span { display: flex; align-items: center; gap: 5px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .chart-wrap { position: relative; width: 100%; height: 220px; }
+
+    /* Breakdown */
+    .breakdown-box { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 1.5rem; }
+    .breakdown-item { display: flex; justify-content: space-between; align-items: center; padding: 11px 1.25rem; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .breakdown-item:last-child { border-bottom: none; }
+    .breakdown-name { color: var(--text2); }
+    .breakdown-cost { font-weight: 600; color: var(--text); }
+
+    /* Phrase choc */
+    .phrase-choc { background: var(--bg2); border-left: 3px solid var(--red); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 14px; color: var(--text); font-style: italic; }
+
+    /* Share / reset */
+    .action-row { display: flex; gap: 10px; margin-bottom: 2rem; }
+    .share-btn { flex: 1; padding: 12px; background: var(--text); color: var(--bg); border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
+    .share-btn:hover { opacity: 0.85; }
+    .reset-btn { padding: 12px 20px; background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text2); cursor: pointer; }
+    .reset-btn:hover { background: var(--bg2); }
+
+    /* ===== FOOTER ===== */
+    footer { border-top: 1px solid var(--border); padding: 2rem 1.25rem; text-align: center; max-width: 700px; margin: 0 auto; }
+    footer p { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    footer a { color: var(--text3); text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .shock-amount { font-size: 42px; }
+      .habits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.fr</a>
+  <span class="header-tag">Calculateur gratuit</span>
+</header>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Résultat en 60 secondes</div>
+    <h1>Combien te coûtent vraiment<br>tes <em>mauvaises habitudes</em> ?</h1>
+    <p>En argent, en temps, et en opportunités perdues. Les chiffres vont te surprendre.</p>
+  </section>
+
+  <!-- AD SLOT 1 — Bannière haut de page -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- ÉTAPE 1 -->
+  <p class="section-label">Étape 1 — Choisis tes habitudes</p>
+  <div class="habits-grid" id="habitsGrid"></div>
+
+  <!-- ÉTAPE 2 — Config -->
+  <div class="config-box" id="configBox">
+    <p class="section-label" style="margin-top:0;">Étape 2 — Ajuste ta consommation</p>
+    <div id="configItems"></div>
+  </div>
+
+  <!-- BOUTON -->
+  <button class="calc-btn" id="calcBtn" onclick="calculate()" disabled>
+    Calculer mon coût total →
+  </button>
+
+  <!-- RÉSULTATS -->
+  <div class="results" id="results">
+
+    <!-- Choc principal -->
+    <div class="shock-box">
+      <div class="shock-label">Tu dépenses chaque année</div>
+      <div class="shock-amount" id="shockYear">0 €</div>
+      <div class="shock-sub" id="shockSub"></div>
+    </div>
+
+    <!-- AD SLOT 2 — Avant métriques (fort taux de clics) -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Métriques -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Par mois</div>
+        <div class="metric-value" id="mMonth">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Sur 5 ans</div>
+        <div class="metric-value" id="m5y">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Sur 10 ans</div>
+        <div class="metric-value" id="m10y">—</div>
+      </div>
+    </div>
+
+    <!-- Phrase choc -->
+    <div class="phrase-choc" id="phraseChoc"></div>
+
+    <!-- Investissement -->
+    <div class="invest-box">
+      <div class="invest-title">💸 Et si tu avais investi cet argent à 7%/an ?</div>
+      <div class="invest-amount" id="investAmount">—</div>
+      <div class="invest-sub" id="investSub"></div>
+    </div>
+
+    <!-- Graphique -->
+    <div class="chart-section">
+      <div class="chart-legend">
+        <span><span class="legend-dot" style="background:#E24B4A;"></span>Coût dépensé</span>
+        <span><span class="legend-dot" style="background:#639922;"></span>Si investi à 7%</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="costChart" role="img" aria-label="Graphique d'évolution du coût cumulé vs investissement sur 10 ans">Évolution du coût sur 10 ans.</canvas>
+      </div>
+    </div>
+
+    <!-- Détail par habitude -->
+    <p class="section-label">Détail par habitude</p>
+    <div class="breakdown-box" id="breakdownList"></div>
+
+    <!-- AD SLOT 3 — Sous le résultat -->
+    <div class="ad-slot">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+        data-ad-slot="XXXXXXXXXX"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-row">
+      <button class="share-btn" onclick="shareResult()">📤 Partager mon résultat</button>
+      <button class="reset-btn" onclick="resetAll()">Recommencer</button>
+    </div>
+
+  </div>
+  <!-- /results -->
+
+</div>
+<!-- /container -->
+
+<footer>
+  <p>
+    Calculateur créatif à titre informatif — les montants sont des estimations moyennes.<br>
+    Données non collectées. Aucun compte requis.<br>
+    <a href="#">Mentions légales</a> · <a href="#">Contact</a>
+  </p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const HABITS = [
+  { id:'cig',      icon:'🚬', name:'Cigarettes',       unit:'paquets / semaine', defaultVal:7,  min:1,  max:30,  step:1,   unitCost:11.5, timeMins:120 },
+  { id:'cafe',     icon:'☕', name:'Cafés dehors',      unit:'cafés / semaine',   defaultVal:5,  min:1,  max:30,  step:1,   unitCost:3,    timeMins:15 },
+  { id:'alcool',   icon:'🍺', name:'Alcool',            unit:'verres / semaine',  defaultVal:7,  min:1,  max:50,  step:1,   unitCost:4,    timeMins:0 },
+  { id:'jeux',     icon:'🎰', name:'Jeux d\'argent',   unit:'€ / semaine',       defaultVal:20, min:5,  max:200, step:5,   unitCost:1,    timeMins:60,  euroMode:true },
+  { id:'fastfood', icon:'🍔', name:'Fast food',         unit:'repas / semaine',   defaultVal:2,  min:1,  max:14,  step:1,   unitCost:12,   timeMins:40 },
+  { id:'social',   icon:'📱', name:'Réseaux sociaux',   unit:'heures / jour',     defaultVal:2,  min:0.5,max:8,   step:0.5, unitCost:0,    timeMins:60,  timeMode:true },
+  { id:'shopping', icon:'🛒', name:'Achats impulsifs',  unit:'€ / semaine',       defaultVal:30, min:5,  max:300, step:5,   unitCost:1,    timeMins:0,   euroMode:true },
+  { id:'uber',     icon:'🚗', name:'VTC / Uber',        unit:'courses / semaine', defaultVal:3,  min:1,  max:20,  step:1,   unitCost:15,   timeMins:0 },
+  { id:'abos',     icon:'📺', name:'Abonnements oubliés',unit:'€ / mois',         defaultVal:25, min:5,  max:200, step:5,   unitCost:1,    timeMins:0,   monthlyMode:true },
+  { id:'snacks',   icon:'🍟', name:'Snacks / sucreries',unit:'€ / semaine',       defaultVal:15, min:2,  max:100, step:1,   unitCost:1,    timeMins:0,   euroMode:true },
+];
+
+let selected = {};
+let vals = {};
+let chartInst = null;
+
+function fmt(n) {
+  return Math.round(n).toLocaleString('fr-FR') + ' €';
+}
+function fmtH(mins) {
+  if (mins === 0) return null;
+  const h = Math.round(mins / 60);
+  if (h < 24) return h + 'h/an';
+  const d = Math.round(h / 24);
+  return d + ' jours/an';
+}
+
+// Init cards
+const grid = document.getElementById('habitsGrid');
+HABITS.forEach(h => {
+  vals[h.id] = h.defaultVal;
+  const card = document.createElement('div');
+  card.className = 'habit-card';
+  card.id = 'card-' + h.id;
+  card.innerHTML = `<div class="habit-icon">${h.icon}</div><div class="habit-name">${h.name}</div><div class="habit-unit">${h.unit}</div>`;
+  card.onclick = () => toggleHabit(h.id);
+  grid.appendChild(card);
+});
+
+function toggleHabit(id) {
+  if (selected[id]) {
+    delete selected[id];
+    document.getElementById('card-' + id).classList.remove('selected');
+  } else {
+    selected[id] = true;
+    document.getElementById('card-' + id).classList.add('selected');
+  }
+  renderConfig();
+}
+
+function renderConfig() {
+  const ids = Object.keys(selected);
+  const box = document.getElementById('configBox');
+  const ci = document.getElementById('configItems');
+  const btn = document.getElementById('calcBtn');
+  if (!ids.length) { box.classList.remove('visible'); btn.disabled = true; return; }
+  box.classList.add('visible');
+  btn.disabled = false;
+  ci.innerHTML = '';
+  ids.forEach(id => {
+    const h = HABITS.find(x => x.id === id);
+    const div = document.createElement('div');
+    div.className = 'habit-config';
+    div.innerHTML = `
+      <div class="config-name">${h.icon} ${h.name}</div>
+      <div class="config-row">
+        <label style="font-size:12px;color:var(--text2);min-width:90px;">${h.unit}</label>
+        <input type="range" min="${h.min}" max="${h.max}" step="${h.step}" value="${vals[id]}"
+          id="slider-${id}" oninput="updateVal('${id}',this.value)">
+        <span class="val" id="valdisp-${id}">${vals[id]}</span>
+      </div>`;
+    ci.appendChild(div);
+  });
+}
+
+function updateVal(id, v) {
+  vals[id] = parseFloat(v);
+  document.getElementById('valdisp-' + id).textContent = v;
+}
+
+function getCostYear(h) {
+  const v = vals[h.id];
+  if (h.monthlyMode) return v * 12;
+  if (h.timeMode) return 0;
+  if (h.euroMode) return v * 52;
+  return v * 52 * h.unitCost;
+}
+
+function getTimeYear(h) {
+  const v = vals[h.id];
+  if (h.timeMode) return v * 60 * 365;
+  if (h.monthlyMode || h.euroMode) return 0;
+  return v * 52 * h.timeMins;
+}
+
+function compound(monthly, years, rate) {
+  let t = 0;
+  const r = rate / 12;
+  for (let i = 0; i < years * 12; i++) t = (t + monthly) * (1 + r);
+  return t;
+}
+
+function getPhraseChoc(totalYear, totalTimeH) {
+  const phrases = [
+    `Avec ${fmt(totalYear)}/an, tu pourrais t'offrir un voyage à Bali chaque année.`,
+    `${fmt(totalYear)} par an, c'est ${fmt(Math.round(totalYear / 12))} de loyer offert chaque mois.`,
+    `En 10 ans, tu auras dépensé ${fmt(totalYear * 10)} en mauvaises habitudes. De quoi acheter une voiture neuve.`,
+    `${fmt(totalYear)} par an, c'est ${Math.round(totalYear / 365)}€ gaspillés chaque jour.`,
+  ];
+  if (totalTimeH > 200) return `Tu perds ${fmtH(totalTimeH * 60)} à cause de ces habitudes — du temps que tu ne récupéreras jamais.`;
+  return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
+function calculate() {
+  const ids = Object.keys(selected);
+  if (!ids.length) return;
+
+  let totalYear = 0, totalTimeMins = 0;
+  const breakdown = [];
+
+  ids.forEach(id => {
+    const h = HABITS.find(x => x.id === id);
+    const cy = getCostYear(h);
+    const ty = getTimeYear(h);
+    totalYear += cy;
+    totalTimeMins += ty;
+    breakdown.push({ label: h.icon + ' ' + h.name, cost: cy, time: ty });
+  });
+
+  const totalMonth = totalYear / 12;
+  const invest10 = compound(totalMonth, 10, 0.07);
+  const totalTimeH = Math.round(totalTimeMins / 60);
+
+  document.getElementById('shockYear').textContent = fmt(totalYear);
+  document.getElementById('shockSub').textContent = totalTimeMins > 0
+    ? `+ ${fmtH(totalTimeMins)} de ta vie perdues en plus`
+    : `soit ${fmt(totalMonth)} par mois`;
+
+  document.getElementById('mMonth').textContent = fmt(totalMonth);
+  document.getElementById('m5y').textContent = fmt(totalYear * 5);
+  document.getElementById('m10y').textContent = fmt(totalYear * 10);
+
+  document.getElementById('phraseChoc').textContent = getPhraseChoc(totalYear, totalTimeH);
+
+  document.getElementById('investAmount').textContent = fmt(invest10);
+  document.getElementById('investSub').textContent =
+    `En plaçant ${fmt(totalMonth)}/mois pendant 10 ans à 7%/an (ETF monde), tu obtiendrais ${fmt(invest10)} — au lieu de ${fmt(totalYear * 10)} dépensés en habitudes.`;
+
+  // Breakdown
+  const bl = document.getElementById('breakdownList');
+  bl.innerHTML = breakdown
+    .filter(b => b.cost > 0 || b.time > 0)
+    .sort((a, b) => b.cost - a.cost)
+    .map(b => {
+      const timeStr = b.time > 0 ? ` · ${fmtH(b.time)}` : '';
+      const costStr = b.cost > 0 ? fmt(b.cost) + '/an' : fmtH(b.time);
+      return `<div class="breakdown-item"><span class="breakdown-name">${b.label}</span><span class="breakdown-cost">${costStr}${b.cost > 0 ? timeStr : ''}</span></div>`;
+    }).join('');
+
+  // Graphique
+  const labels = Array.from({length:11}, (_,i) => i === 0 ? 'Maintenant' : 'An ' + i);
+  const cumCost = labels.map((_, i) => Math.round(totalYear * i));
+  const cumInvest = labels.map((_, i) => i === 0 ? 0 : Math.round(compound(totalMonth, i, 0.07)));
+
+  if (chartInst) chartInst.destroy();
+  chartInst = new Chart(document.getElementById('costChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Coût dépensé',
+          data: cumCost,
+          borderColor: '#E24B4A',
+          backgroundColor: 'rgba(226,75,74,0.07)',
+          tension: 0.35,
+          fill: true,
+          pointRadius: 3,
+          pointBackgroundColor: '#E24B4A',
+        },
+        {
+          label: 'Si investi à 7%',
+          data: cumInvest,
+          borderColor: '#639922',
+          backgroundColor: 'rgba(99,153,34,0.07)',
+          tension: 0.35,
+          fill: true,
+          pointRadius: 3,
+          pointBackgroundColor: '#639922',
+          borderDash: [5, 4],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          ticks: {
+            callback: v => {
+              if (v >= 1000) return Math.round(v/1000) + 'k €';
+              return v + ' €';
+            },
+            font: { size: 11 },
+            color: '#999994',
+          },
+          grid: { color: 'rgba(128,128,128,0.08)' },
+          border: { display: false }
+        },
+        x: {
+          ticks: { font: { size: 11 }, color: '#999994', autoSkip: false, maxRotation: 0 },
+          grid: { display: false },
+          border: { display: false }
+        }
+      }
+    }
+  });
+
+  // Afficher
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function shareResult() {
+  const year = document.getElementById('shockYear').textContent;
+  const text = `Mes mauvaises habitudes me coûtent ${year} par an 😱 J'ai calculé ça sur ce site gratuit :`;
+  const url = window.location.href;
+  if (navigator.share) {
+    navigator.share({ title: 'Mon coût réel', text, url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text + ' ' + url)
+      .then(() => alert('✅ Texte copié ! Colle-le où tu veux.'))
+      .catch(() => alert('Copie manuelle : ' + text + ' ' + url));
+  }
+}
+
+function resetAll() {
+  selected = {};
+  document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('configBox').classList.remove('visible');
+  document.getElementById('calcBtn').disabled = true;
+  document.getElementById('results').classList.remove('visible');
+  if (chartInst) { chartInst.destroy(); chartInst = null; }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
