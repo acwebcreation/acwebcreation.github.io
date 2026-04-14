@@ -301,7 +301,7 @@
 <body>
 
 <header>
-  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.fr</a>
+  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
   <span class="header-tag">Calculateur gratuit</span>
 </header>
 
@@ -817,7 +817,7 @@ function shareResult() {
   } else {
     navigator.clipboard.writeText(text + ' ' + url)
       .then(() => alert('✅ Texte copié ! Colle-le où tu veux.'))
-      .catch(() => alert('Copie manuelle : ' + text + ' ' + url));
+      .catch(() => alert("Copie manuelle : " + text + " " + url));
   }
 }
 
@@ -825,7 +825,13 @@ function resetAll() {
   selected = {};
   document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
   document.getElementById('configBox').classList.remove('visible');
-  
+  document.getElementById('calcBtn').disabled = true;
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('cardPreview').style.display = 'none';
+  if (chartInst) { chartInst.destroy(); chartInst = null; }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 // Lead magnet
 document.addEventListener('DOMContentLoaded', () => {
   const banner = document.getElementById('lm-banner');
@@ -844,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function submitLeadmagnet() {
   const email = document.getElementById('lm-email').value.trim();
   if (!email || !email.includes('@')) {
-    alert('Merci d\'entrer un email valide.');
+    alert("Merci d'entrer un email valide.");
     return;
   }
   const systemeUrl = 'https://d110-contact.systeme.io/5598a588-a48ef4ee';
@@ -855,17 +861,6 @@ function submitLeadmagnet() {
       <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">C'est parti !</div>
       <div style="font-size:12px;color:var(--text2);">Vérifie ta boîte email dans quelques secondes.</div>
     </div>`;
-}
-
-function resetAll() {
-  selected = {};
-  document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
-  document.getElementById('configBox').classList.remove('visible');
-  document.getElementById('calcBtn').disabled = true;
-  document.getElementById('results').classList.remove('visible');
-  document.getElementById('cardPreview').style.display = 'none';
-  if (chartInst) { chartInst.destroy(); chartInst = null; }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function generateCard() {
@@ -916,7 +911,7 @@ function downloadCard() {
   }).catch(() => {
     btn.textContent = '📥 Télécharger l\'image (PNG)';
     btn.disabled = false;
-    alert('Erreur lors de la génération. Essaie de faire une capture d\'écran.');
+    alert("Erreur lors de la génération. Essaie de faire une capture d'écran.");
   });
 }
 </script>
