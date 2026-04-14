@@ -301,7 +301,7 @@
 <body>
 
 <header>
-  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
+  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.fr</a>
   <span class="header-tag">Calculateur gratuit</span>
 </header>
 
@@ -847,10 +847,8 @@ function submitLeadmagnet() {
     alert('Merci d\'entrer un email valide.');
     return;
   }
-  // Remplace cette URL par ton formulaire Systeme.io 
   const systemeUrl = 'https://d110-contact.systeme.io/5598a588-a48ef4ee';
   window.open(systemeUrl + '?email=' + encodeURIComponent(email), '_blank');
-
   document.getElementById('leadmagnet-form').innerHTML = `
     <div style="text-align:center;padding:1rem;">
       <div style="font-size:28px;margin-bottom:8px;">🎉</div>
@@ -858,8 +856,14 @@ function submitLeadmagnet() {
       <div style="font-size:12px;color:var(--text2);">Vérifie ta boîte email dans quelques secondes.</div>
     </div>`;
 }
+
+function resetAll() {
+  selected = {};
+  document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('configBox').classList.remove('visible');
+  document.getElementById('calcBtn').disabled = true;
   document.getElementById('results').classList.remove('visible');
-  document.getElementById('cardPreviewWrap').style.display = 'none';
+  document.getElementById('cardPreview').style.display = 'none';
   if (chartInst) { chartInst.destroy(); chartInst = null; }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -993,20 +997,12 @@ function submitNewsletter(source) {
     : '';
 
   if (!email || !email.includes('@')) {
-    alert('Merci d'entrer un email valide.');
+    alert("Merci d'entrer un email valide.");
     return;
   }
 
-  // ================================================================
-  // REMPLACE cette URL par ton vrai lien de tunnel Systeme.io
-  // Une fois le domaine propagé et le tunnel configuré
-  // ================================================================
-  const systemeUrl = 'https://mauvaiseshabitudes.systeme.io/checklist';
-
-  // Stocke localement en attendant Systeme.io
-  const leads = JSON.parse(localStorage.getItem('nl_leads') || '[]');
-  leads.push({ email, prenom, date: new Date().toISOString(), source });
-  localStorage.setItem('nl_leads', JSON.stringify(leads));
+  const systemeUrl = 'https://d110-contact.systeme.io/5598a588-a48ef4ee';
+  window.open(systemeUrl + '?email=' + encodeURIComponent(email) + '&first_name=' + encodeURIComponent(prenom), '_blank');
 
   if (source === 'modal') {
     document.getElementById('nl-modal-content').style.display = 'none';
