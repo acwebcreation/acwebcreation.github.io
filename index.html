@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Combien coûtent vraiment tes mauvaises habitudes ? | Calculateur gratuit</title>
+  <meta name="description" content="Calcule le coût réel de tes mauvaises habitudes en argent ET en temps : cigarettes, café, alcool, réseaux sociaux... Résultat instantané et chiffres chocs.">
+  <meta name="keywords" content="calculateur mauvaises habitudes, coût cigarette, arrêter fumer économies, mauvaises habitudes argent, combien coûte habitude">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mauvaiseshabitudes.com/">
+
+  <!-- Open Graph (partage Facebook / WhatsApp) -->
+  <meta property="og:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
+  <meta property="og:description" content="Un calculateur gratuit qui te montre le vrai coût de tes habitudes : en argent, en temps, et en opportunités perdues.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.mauvaiseshabitudes.com/">
+  <meta property="og:image" content="https://www.mauvaiseshabitudes.com/preview.png">
+  <meta property="og:locale" content="fr_FR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
+  <meta name="twitter:description" content="Calcule le coût réel de tes mauvaises habitudes en argent et en temps. Résultat choc garanti.">
+  <meta name="twitter:image" content="https://www.mauvaiseshabitudes.com/preview.png">
+
+  <!-- Google AdSense — remplace ca-pub-XXXXXXXXXXXXXXXX par ton vrai ID -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red: #E24B4A;
+      --red-light: #FCEBEB;
+      --red-dark: #A32D2D;
+      --green: #639922;
+      --green-light: #EAF3DE;
+      --bg: #FAFAF8;
+      --bg2: #F2F1ED;
+      --border: rgba(0,0,0,0.1);
+      --text: #1a1a18;
+      --text2: #6b6b66;
+      --text3: #999994;
+      --radius: 14px;
+      --radius-sm: 8px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161614;
+        --bg2: #1f1f1d;
+        --border: rgba(255,255,255,0.1);
+        --text: #f0efe8;
+        --text2: #9a9a92;
+        --text3: #666660;
+        --red-light: #3a1212;
+        --green-light: #1a2e08;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text); text-decoration: none; }
+    .logo span { color: var(--red); }
+    .header-tag { font-size: 11px; color: var(--text3); background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; }
+
+    /* ===== LAYOUT ===== */
+    .page-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 0; max-width: 1280px; margin: 0 auto; }
+    .sidebar { width: 160px; flex-shrink: 0; position: sticky; top: 80px; padding-top: 2rem; display: none; }
+    .sidebar-ad { width: 160px; min-height: 600px; background: var(--bg2); border: 1px dashed var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
+    .sidebar-ad ins { width: 160px; }
+    .container { max-width: 700px; width: 100%; padding: 0 1.25rem 4rem; }
+    @media (min-width: 1080px) { .sidebar { display: block; } .page-wrapper { gap: 24px; } }
+    @media (min-width: 1280px) { .sidebar { width: 200px; } .sidebar-ad { width: 200px; } }
+
+    /* ===== HERO ===== */
+    .hero { text-align: center; padding: 3rem 0 2.5rem; }
+    .hero-badge { display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); background: var(--red-light); border-radius: 20px; padding: 5px 14px; margin-bottom: 1.25rem; font-weight: 500; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 38px); line-height: 1.25; color: var(--text); margin-bottom: 1rem; }
+    .hero h1 em { font-style: normal; color: var(--red); }
+    .hero p { font-size: 15px; color: var(--text2); max-width: 480px; margin: 0 auto; }
+
+    /* ===== AD SLOT ===== */
+    .ad-slot { background: var(--bg2); border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 1rem; text-align: center; margin: 1.5rem 0; min-height: 90px; display: flex; align-items: center; justify-content: center; }
+    .ad-slot ins { width: 100%; }
+    /* Masquer le placeholder dashed une fois AdSense chargé */
+    .ad-slot:has(ins[data-ad-status="filled"]) { border: none; padding: 0; background: transparent; }
+
+    /* ===== SECTION LABEL ===== */
+    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 1rem; margin-top: 2rem; }
+
+    /* ===== HABITS GRID ===== */
+    .habits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
+    .habit-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 12px;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+      position: relative;
+    }
+    .habit-card:hover { border-color: rgba(226,75,74,0.4); transform: translateY(-1px); }
+    .habit-card.selected { border: 2px solid var(--red); background: var(--red-light); }
+    .habit-card.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px; font-size: 11px; color: var(--red); font-weight: 600; }
+    .habit-icon { font-size: 22px; margin-bottom: 6px; }
+    .habit-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+    .habit-unit { font-size: 11px; color: var(--text3); }
+
+    /* ===== CONFIG ===== */
+    .config-box { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; display: none; }
+    .config-box.visible { display: block; }
+    .habit-config { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+    .habit-config:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .config-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+    .config-row { display: flex; align-items: center; gap: 12px; }
+    .config-row label { font-size: 12px; color: var(--text2); min-width: 90px; }
+    .config-row input[type=range] { flex: 1; accent-color: var(--red); cursor: pointer; }
+    .config-row .val { font-size: 13px; font-weight: 600; color: var(--text); min-width: 55px; text-align: right; }
+
+    /* ===== BUTTON ===== */
+    .calc-btn {
+      width: 100%;
+      padding: 16px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: opacity 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+    .calc-btn:hover:not(:disabled) { opacity: 0.92; transform: translateY(-1px); }
+    .calc-btn:active:not(:disabled) { transform: scale(0.99); }
+    .calc-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    /* ===== RESULTS ===== */
+    .results { display: none; animation: fadeUp 0.4s ease; }
+    .results.visible { display: block; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Shock box */
+    .shock-box { background: var(--red); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; margin-bottom: 1.25rem; }
+    .shock-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.65); margin-bottom: 10px; font-weight: 500; }
+    .shock-amount { font-family: 'Playfair Display', serif; font-size: clamp(44px, 10vw, 64px); color: #fff; line-height: 1; margin-bottom: 8px; }
+    .shock-sub { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+    /* Metrics */
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
+    .metric-card { background: var(--bg2); border-radius: var(--radius-sm); padding: 1rem; text-align: center; border: 1px solid var(--border); }
+    .metric-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text3); margin-bottom: 6px; }
+    .metric-value { font-size: 20px; font-weight: 600; color: var(--text); }
+
+    /* Invest box */
+    .invest-box { background: var(--green-light); border: 1px solid rgba(99,153,34,0.25); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
+    .invest-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); font-weight: 600; margin-bottom: 6px; }
+    .invest-amount { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--green); margin-bottom: 4px; }
+    .invest-sub { font-size: 13px; color: var(--text2); }
+
+    /* Chart */
+    .chart-section { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.25rem; margin-bottom: 1.25rem; }
+    .chart-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text2); margin-bottom: 1rem; flex-wrap: wrap; }
+    .chart-legend span { display: flex; align-items: center; gap: 5px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
+    .chart-wrap { position: relative; width: 100%; height: 220px; }
+
+    /* Breakdown */
+    .breakdown-box { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 1.5rem; }
+    .breakdown-item { display: flex; justify-content: space-between; align-items: center; padding: 11px 1.25rem; border-bottom: 1px solid var(--border); font-size: 13px; }
+    .breakdown-item:last-child { border-bottom: none; }
+    .breakdown-name { color: var(--text2); }
+    .breakdown-cost { font-weight: 600; color: var(--text); }
+
+    /* Phrase choc */
+    .phrase-choc { background: var(--bg2); border-left: 3px solid var(--red); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 14px; color: var(--text); font-style: italic; }
+
+    /* Share / reset */
+    .action-row { display: flex; gap: 10px; margin-bottom: 2rem; }
+    .share-btn { flex: 1; padding: 12px; background: var(--text); color: var(--bg); border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
+    .share-btn:hover { opacity: 0.85; }
+    .reset-btn { padding: 12px 20px; background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text2); cursor: pointer; }
+    .reset-btn:hover { background: var(--bg2); }
+
+    /* ===== FOOTER ===== */
+    footer { border-top: 1px solid var(--border); padding: 2rem 1.25rem; text-align: center; max-width: 700px; margin: 0 auto; }
+    footer p { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    footer a { color: var(--text3); text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .shock-amount { font-size: 42px; }
+      .habits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ===== BANNIÈRE LEAD MAGNET INLINE ===== */
+    .lm-inline-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--bg2);
+      border: 1px solid rgba(226,75,74,0.25);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 1.5rem 0;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .lm-inline-banner:hover { border-color: var(--red); transform: translateY(-1px); }
+    .lm-inline-left { flex: 1; }
+    .lm-inline-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); background:rgba(226,75,74,0.1); border-radius:10px; padding:2px 8px; margin-bottom:5px; }
+    .lm-inline-title { font-size:13px; color:var(--text); margin-bottom:3px; }
+    .lm-inline-sub { font-size:11px; color:var(--text2); }
+    .lm-inline-cta { flex-shrink:0; background:var(--red); color:#fff; font-size:12px; font-weight:700; padding:9px 14px; border-radius:var(--radius-sm); white-space:nowrap; }
+
+    /* ===== BANDEAU NEWSLETTER FIXE ===== */
+    .newsletter-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--bg2);
+      border-top: 1px solid rgba(226,75,74,0.3);
+      padding: 12px 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 200;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .newsletter-bar.visible { transform: translateY(0); }
+    .newsletter-bar.hidden { transform: translateY(100%); }
+    .nl-text { flex: 1; }
+    .nl-text strong { font-size: 13px; color: var(--text); display:block; margin-bottom:2px; }
+    .nl-text span { font-size: 11px; color: var(--text2); }
+    .nl-form { display: flex; gap: 8px; align-items: center; }
+    .nl-input { padding: 9px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; width: 200px; }
+    .nl-input::placeholder { color: var(--text3); }
+    .nl-input:focus { outline: none; border-color: var(--red); }
+    .nl-btn { padding: 9px 16px; background: var(--red); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .nl-close { background: none; border: none; color: var(--text3); font-size: 18px; cursor: pointer; padding: 4px; flex-shrink: 0; }
+
+    /* Modal newsletter */
+    .nl-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:300; align-items:center; justify-content:center; }
+    .nl-modal.open { display:flex; }
+    .nl-modal-box { background:var(--bg2); border:1px solid rgba(226,75,74,0.3); border-radius:20px; padding:2rem; width:90%; max-width:420px; position:relative; }
+    .nl-modal-box::before { content:''; position:absolute; top:0;left:0;right:0; height:3px; background:linear-gradient(90deg,var(--red),#ff8a65); border-radius:20px 20px 0 0; }
+    .nl-modal-close { position:absolute; top:12px; right:14px; background:none; border:none; color:var(--text3); font-size:20px; cursor:pointer; }
+    .nl-modal-icon { font-size:40px; margin-bottom:12px; }
+    .nl-modal-title { font-family:'Playfair Display',serif; font-size:20px; color:var(--text); margin-bottom:8px; line-height:1.3; }
+    .nl-modal-sub { font-size:13px; color:var(--text2); margin-bottom:20px; line-height:1.6; }
+    .nl-modal-form { display:flex; flex-direction:column; gap:10px; }
+    .nl-modal-form input { padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--text); font-family:'DM Sans',sans-serif; font-size:14px; }
+    .nl-modal-form input::placeholder { color:var(--text3); }
+    .nl-modal-form input:focus { outline:none; border-color:var(--red); }
+    .nl-modal-submit { padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-sm); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; cursor:pointer; }
+    .nl-success { display:none; text-align:center; padding:1rem 0; }
+    .nl-guarantee-modal { font-size:11px; color:var(--text3); text-align:center; }
+
+    @media (max-width: 600px) {
+      .newsletter-bar { flex-direction:column; align-items:flex-start; padding:14px 1rem; }
+      .nl-form { width:100%; }
+      .nl-input { flex:1; width:auto; }
+      .lm-inline-banner { flex-direction:column; align-items:flex-start; }
+      .lm-inline-cta { align-self:stretch; text-align:center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
+  <span class="header-tag">Calculateur gratuit</span>
+</header>
+
+<div class="page-wrapper">
+
+<!-- SIDEBAR GAUCHE — Lead Magnet -->
+<div class="sidebar">
+  <a href="#leadmagnet-form" id="lm-banner" style="display:block;text-decoration:none;position:relative;overflow:hidden;border-radius:16px;background:#161614;border:1px solid rgba(226,75,74,0.25);padding:1.25rem;">
+
+    <!-- Fond déco -->
+    <div style="position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);pointer-events:none;"></div>
+    <!-- Barre top -->
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E24B4A,#ff8a65);border-radius:16px 16px 0 0;"></div>
+
+    <div style="position:relative;z-index:1;">
+      <!-- Badge -->
+      <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E24B4A;background:rgba(226,75,74,0.12);border-radius:20px;padding:3px 10px;margin-bottom:12px;">Gratuit</div>
+
+      <!-- Icône -->
+      <div style="font-size:36px;margin-bottom:10px;">📋</div>
+
+      <!-- Titre -->
+      <div style="font-size:14px;font-weight:700;color:#f0efe8;line-height:1.35;margin-bottom:8px;">La Checklist<br><span style="color:#E24B4A;">"Les 30 fuites<br>d'argent invisibles"</span></div>
+
+      <!-- Description -->
+      <div style="font-size:12px;color:#6b6b66;line-height:1.5;margin-bottom:16px;">Découvre les 30 habitudes qui vident ton compte sans que tu t'en rendes compte.</div>
+
+      <!-- Points clés -->
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
+          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>30 fuites identifiées
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
+          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>Solutions concrètes
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
+          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>PDF à imprimer
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="background:#E24B4A;color:#fff;text-align:center;padding:10px 8px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.02em;">
+        Je veux ma checklist →
+      </div>
+
+      <!-- Social proof -->
+      <div style="text-align:center;font-size:10px;color:#444441;margin-top:8px;">📩 Envoyée par email instantanément</div>
+    </div>
+  </a>
+
+  <!-- Formulaire email (affiché au clic ou scroll) -->
+  <div id="leadmagnet-form" style="margin-top:12px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;display:none;">
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;">Ton email gratuit :</div>
+    <input type="email" id="lm-email" placeholder="prenom@email.com"
+      style="width:100%;padding:9px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:13px;margin-bottom:8px;font-family:'DM Sans',sans-serif;">
+    <button onclick="submitLeadmagnet()" style="width:100%;padding:9px;background:#E24B4A;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;">
+      Envoyer ma checklist →
+    </button>
+    <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:6px;">Pas de spam. Désinscription en 1 clic.</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">Résultat en 60 secondes</div>
+    <h1>Combien te coûtent vraiment<br>tes <em>mauvaises habitudes</em> ?</h1>
+    <p>En argent, en temps, et en opportunités perdues. Les chiffres vont te surprendre.</p>
+  </section>
+
+  <!-- BANNIÈRE LEAD MAGNET -->
+  <div class="lm-inline-banner" onclick="openNewsletter()">
+    <div class="lm-inline-left">
+      <span class="lm-inline-badge">Gratuit</span>
+      <div class="lm-inline-title">📋 <strong>Les 30 fuites d'argent invisibles</strong></div>
+      <div class="lm-inline-sub">Identifie les habitudes qui vident ton compte chaque mois</div>
+    </div>
+    <div class="lm-inline-cta">Recevoir la checklist →</div>
+  </div>
+
+  <!-- ÉTAPE 1 -->
+  <p class="section-label">Étape 1 — Choisis tes habitudes</p>
+  <div class="habits-grid" id="habitsGrid"></div>
+
+  <!-- ÉTAPE 2 — Config -->
+  <div class="config-box" id="configBox">
+    <p class="section-label" style="margin-top:0;">Étape 2 — Ajuste ta consommation</p>
+    <div id="configItems"></div>
+  </div>
+
+  <!-- BOUTON -->
+  <button class="calc-btn" id="calcBtn" onclick="calculate()" disabled>
+    Calculer mon coût total →
+  </button>
+
+  <!-- RÉSULTATS -->
+  <div class="results" id="results">
+
+    <!-- Choc principal -->
+    <div class="shock-box">
+      <div class="shock-label">Tu dépenses chaque année</div>
+      <div class="shock-amount" id="shockYear">0 €</div>
+      <div class="shock-sub" id="shockSub"></div>
+    </div>
+
+    <!-- BANNIÈRE NEWSLETTER -->
+    <div class="lm-inline-banner" onclick="openNewsletter()" style="margin:1.5rem 0;">
+      <div class="lm-inline-left">
+        <span class="lm-inline-badge">Newsletter gratuite</span>
+        <div class="lm-inline-title">📩 <strong>1 fuite d'argent par semaine</strong></div>
+        <div class="lm-inline-sub">Chaque semaine, une habitude qui te coûte de l'argent + la solution</div>
+      </div>
+      <div class="lm-inline-cta">Je m'abonne →</div>
+    </div>
+
+    <!-- Métriques -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Par mois</div>
+        <div class="metric-value" id="mMonth">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Sur 5 ans</div>
+        <div class="metric-value" id="m5y">—</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Sur 10 ans</div>
+        <div class="metric-value" id="m10y">—</div>
+      </div>
+    </div>
+
+    <!-- Phrase choc -->
+    <div class="phrase-choc" id="phraseChoc"></div>
+
+    <!-- Investissement -->
+    <div class="invest-box">
+      <div class="invest-title">💸 Et si tu avais investi cet argent à 7%/an ?</div>
+      <div class="invest-amount" id="investAmount">—</div>
+      <div class="invest-sub" id="investSub"></div>
+    </div>
+
+    <!-- Graphique -->
+    <div class="chart-section">
+      <div class="chart-legend">
+        <span><span class="legend-dot" style="background:#E24B4A;"></span>Coût dépensé</span>
+        <span><span class="legend-dot" style="background:#639922;"></span>Si investi à 7%</span>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="costChart" role="img" aria-label="Graphique d'évolution du coût cumulé vs investissement sur 10 ans">Évolution du coût sur 10 ans.</canvas>
+      </div>
+    </div>
+
+    <!-- Détail par habitude -->
+    <p class="section-label">Détail par habitude</p>
+    <div class="breakdown-box" id="breakdownList"></div>
+
+    <!-- BANNIÈRE RÉSEAUX SOCIAUX -->
+    <div class="lm-inline-banner" onclick="window.open('https://www.tiktok.com/@cashleak','_blank')" style="margin:1.5rem 0;border-color:rgba(255,255,255,0.15);">
+      <div class="lm-inline-left">
+        <span class="lm-inline-badge" style="color:var(--text2);background:var(--bg2);">TikTok · Instagram</span>
+        <div class="lm-inline-title">🎬 <strong>Suis @CashLeak</strong></div>
+        <div class="lm-inline-sub">Une vidéo par semaine — chaque fuite expliquée en 60 secondes</div>
+      </div>
+      <div class="lm-inline-cta" style="background:var(--text);color:var(--bg);">Suivre →</div>
+    </div>
+
+    <!-- Card preview générée -->
+    <div id="cardPreviewWrap" style="display:none;margin-bottom:1.5rem;">
+      <p class="section-label" style="margin-top:0;">Ta carte personnalisée</p>
+      <canvas id="resultCard" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block;"></canvas>
+      <div style="display:flex;gap:10px;margin-top:10px;">
+        <button onclick="downloadCard()" style="flex:1;padding:11px;background:var(--text);color:var(--bg);border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:500;cursor:pointer;">⬇️ Télécharger l'image</button>
+        <button onclick="document.getElementById('cardPreviewWrap').style.display='none'" style="padding:11px 16px;background:transparent;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;color:var(--text2);cursor:pointer;">✕</button>
+      </div>
+      <p style="font-size:11px;color:var(--text3);margin-top:8px;text-align:center;">Télécharge et poste cette image sur Instagram, TikTok ou Facebook</p>
+    </div>
+
+    <!-- Actions -->
+    <div class="action-row">
+      <button class="share-btn" onclick="shareResult()">📤 Partager</button>
+      <button class="share-btn" style="background:var(--red);" onclick="generateCard()">🖼️ Créer mon image</button>
+    </div>
+    <div style="text-align:center;margin-bottom:2rem;">
+      <button class="reset-btn" style="width:100%;margin-top:6px;" onclick="resetAll()">Recommencer</button>
+    </div>
+
+    <!-- Carte résultat générée -->
+    <div id="cardPreview" style="display:none;margin-bottom:2rem;">
+      <p class="section-label">Ton image à partager</p>
+      <div id="resultCard" style="background:#161614;border-radius:20px;padding:2rem;position:relative;overflow:hidden;font-family:'DM Sans',sans-serif;">
+        <!-- Barre rouge top -->
+        <div style="position:absolute;top:0;left:0;right:0;height:5px;background:#E24B4A;border-radius:20px 20px 0 0;"></div>
+        <!-- Grille déco -->
+        <div style="position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px);pointer-events:none;"></div>
+
+        <div style="position:relative;z-index:1;">
+          <!-- Badge -->
+          <div style="display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#E24B4A;background:rgba(226,75,74,0.15);border-radius:20px;padding:4px 12px;margin-bottom:1.25rem;font-weight:600;">Calculateur de mauvaises habitudes</div>
+
+          <!-- Montant choc -->
+          <div style="background:#E24B4A;border-radius:14px;padding:1.5rem;margin-bottom:1rem;text-align:center;">
+            <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:6px;">Je dépense chaque année</div>
+            <div id="cardAmount" style="font-size:52px;font-weight:700;color:#fff;line-height:1;">—</div>
+            <div id="cardSub" style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;"></div>
+          </div>
+
+          <!-- 3 métriques -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;">
+            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Par mois</div>
+              <div id="cardMonth" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
+            </div>
+            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Sur 5 ans</div>
+              <div id="card5y" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
+            </div>
+            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
+              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Sur 10 ans</div>
+              <div id="card10y" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
+            </div>
+          </div>
+
+          <!-- Invest -->
+          <div style="background:#1a2e08;border:1px solid rgba(99,153,34,0.25);border-radius:10px;padding:12px 16px;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;">
+            <div style="font-size:12px;color:#639922;">Si investi à 7%/an pendant 10 ans</div>
+            <div id="cardInvest" style="font-size:18px;font-weight:700;color:#639922;">—</div>
+          </div>
+
+          <!-- Habits list -->
+          <div id="cardHabits" style="margin-bottom:1.25rem;"></div>
+
+          <!-- Footer -->
+          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2a2a28;padding-top:12px;">
+            <div style="font-size:11px;color:#444441;">acwebcreation.github.io</div>
+            <div style="font-size:11px;color:#444441;">Calcule le tien gratuitement →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton télécharger -->
+      <button onclick="downloadCard()" style="width:100%;margin-top:12px;padding:13px;background:#E24B4A;color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">
+        📥 Télécharger l'image (PNG)
+      </button>
+      <p style="font-size:11px;color:var(--text3);text-align:center;margin-top:8px;">Parfait pour Instagram, Facebook, WhatsApp</p>
+    </div>
+
+  </div>
+  <!-- /results -->
+
+</div>
+<!-- /container -->
+
+<!-- SIDEBAR DROITE -->
+<div class="sidebar">
+  <div class="sidebar-ad">
+    <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+      data-ad-slot="XXXXXXXXXX"
+      data-ad-format="vertical"
+      data-full-width-responsive="false"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+</div>
+<!-- /page-wrapper -->
+
+<footer>
+  <p>
+    Calculateur créatif à titre informatif — les montants sont des estimations moyennes.<br>
+    Données non collectées. Aucun compte requis.<br>
+    <a href="#">Mentions légales</a> · <a href="#">Contact</a>
+  </p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+const HABITS = [
+  { id:'cig',      icon:'🚬', name:'Cigarettes',       unit:'paquets / semaine', defaultVal:7,  min:1,  max:30,  step:1,   unitCost:11.5, timeMins:120 },
+  { id:'cafe',     icon:'☕', name:'Cafés dehors',      unit:'cafés / semaine',   defaultVal:5,  min:1,  max:30,  step:1,   unitCost:3,    timeMins:15 },
+  { id:'alcool',   icon:'🍺', name:'Alcool',            unit:'verres / semaine',  defaultVal:7,  min:1,  max:50,  step:1,   unitCost:4,    timeMins:0 },
+  { id:'jeux',     icon:'🎰', name:'Jeux d\'argent',   unit:'€ / semaine',       defaultVal:20, min:5,  max:200, step:5,   unitCost:1,    timeMins:60,  euroMode:true },
+  { id:'fastfood', icon:'🍔', name:'Fast food',         unit:'repas / semaine',   defaultVal:2,  min:1,  max:14,  step:1,   unitCost:12,   timeMins:40 },
+  { id:'social',   icon:'📱', name:'Réseaux sociaux',   unit:'heures / jour',     defaultVal:2,  min:0.5,max:8,   step:0.5, unitCost:0,    timeMins:60,  timeMode:true },
+  { id:'shopping', icon:'🛒', name:'Achats impulsifs',  unit:'€ / semaine',       defaultVal:30, min:5,  max:300, step:5,   unitCost:1,    timeMins:0,   euroMode:true },
+  { id:'uber',     icon:'🚗', name:'VTC / Uber',        unit:'courses / semaine', defaultVal:3,  min:1,  max:20,  step:1,   unitCost:15,   timeMins:0 },
+  { id:'abos',     icon:'📺', name:'Abonnements oubliés',unit:'€ / mois',         defaultVal:25, min:5,  max:200, step:5,   unitCost:1,    timeMins:0,   monthlyMode:true },
+  { id:'snacks',   icon:'🍟', name:'Snacks / sucreries',unit:'€ / semaine',       defaultVal:15, min:2,  max:100, step:1,   unitCost:1,    timeMins:0,   euroMode:true },
+];
+
+let selected = {};
+let vals = {};
+let chartInst = null;
+
+function fmt(n) {
+  return Math.round(n).toLocaleString('fr-FR') + ' €';
+}
+function fmtH(mins) {
+  if (mins === 0) return null;
+  const h = Math.round(mins / 60);
+  if (h < 24) return h + 'h/an';
+  const d = Math.round(h / 24);
+  return d + ' jours/an';
+}
+
+// Init cards
+const grid = document.getElementById('habitsGrid');
+HABITS.forEach(h => {
+  vals[h.id] = h.defaultVal;
+  const card = document.createElement('div');
+  card.className = 'habit-card';
+  card.id = 'card-' + h.id;
+  card.innerHTML = `<div class="habit-icon">${h.icon}</div><div class="habit-name">${h.name}</div><div class="habit-unit">${h.unit}</div>`;
+  card.onclick = () => toggleHabit(h.id);
+  grid.appendChild(card);
+});
+
+function toggleHabit(id) {
+  if (selected[id]) {
+    delete selected[id];
+    document.getElementById('card-' + id).classList.remove('selected');
+  } else {
+    selected[id] = true;
+    document.getElementById('card-' + id).classList.add('selected');
+  }
+  renderConfig();
+}
+
+function renderConfig() {
+  const ids = Object.keys(selected);
+  const box = document.getElementById('configBox');
+  const ci = document.getElementById('configItems');
+  const btn = document.getElementById('calcBtn');
+  if (!ids.length) { box.classList.remove('visible'); btn.disabled = true; return; }
+  box.classList.add('visible');
+  btn.disabled = false;
+  ci.innerHTML = '';
+  ids.forEach(id => {
+    const h = HABITS.find(x => x.id === id);
+    const div = document.createElement('div');
+    div.className = 'habit-config';
+    div.innerHTML = `
+      <div class="config-name">${h.icon} ${h.name}</div>
+      <div class="config-row">
+        <label style="font-size:12px;color:var(--text2);min-width:90px;">${h.unit}</label>
+        <input type="range" min="${h.min}" max="${h.max}" step="${h.step}" value="${vals[id]}"
+          id="slider-${id}" oninput="updateVal('${id}',this.value)">
+        <span class="val" id="valdisp-${id}">${vals[id]}</span>
+      </div>`;
+    ci.appendChild(div);
+  });
+}
+
+function updateVal(id, v) {
+  vals[id] = parseFloat(v);
+  document.getElementById('valdisp-' + id).textContent = v;
+}
+
+function getCostYear(h) {
+  const v = vals[h.id];
+  if (h.monthlyMode) return v * 12;
+  if (h.timeMode) return 0;
+  if (h.euroMode) return v * 52;
+  return v * 52 * h.unitCost;
+}
+
+function getTimeYear(h) {
+  const v = vals[h.id];
+  if (h.timeMode) return v * 60 * 365;
+  if (h.monthlyMode || h.euroMode) return 0;
+  return v * 52 * h.timeMins;
+}
+
+function compound(monthly, years, rate) {
+  let t = 0;
+  const r = rate / 12;
+  for (let i = 0; i < years * 12; i++) t = (t + monthly) * (1 + r);
+  return t;
+}
+
+function getPhraseChoc(totalYear, totalTimeH) {
+  const phrases = [
+    `Avec ${fmt(totalYear)}/an, tu pourrais t'offrir un voyage à Bali chaque année.`,
+    `${fmt(totalYear)} par an, c'est ${fmt(Math.round(totalYear / 12))} de loyer offert chaque mois.`,
+    `En 10 ans, tu auras dépensé ${fmt(totalYear * 10)} en mauvaises habitudes. De quoi acheter une voiture neuve.`,
+    `${fmt(totalYear)} par an, c'est ${Math.round(totalYear / 365)}€ gaspillés chaque jour.`,
+  ];
+  if (totalTimeH > 200) return `Tu perds ${fmtH(totalTimeH * 60)} à cause de ces habitudes — du temps que tu ne récupéreras jamais.`;
+  return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
+function calculate() {
+  const ids = Object.keys(selected);
+  if (!ids.length) return;
+
+  let totalYear = 0, totalTimeMins = 0;
+  const breakdown = [];
+
+  ids.forEach(id => {
+    const h = HABITS.find(x => x.id === id);
+    const cy = getCostYear(h);
+    const ty = getTimeYear(h);
+    totalYear += cy;
+    totalTimeMins += ty;
+    breakdown.push({ label: h.icon + ' ' + h.name, cost: cy, time: ty });
+  });
+
+  const totalMonth = totalYear / 12;
+  const invest10 = compound(totalMonth, 10, 0.07);
+  const totalTimeH = Math.round(totalTimeMins / 60);
+
+  document.getElementById('shockYear').textContent = fmt(totalYear);
+  document.getElementById('shockSub').textContent = totalTimeMins > 0
+    ? `+ ${fmtH(totalTimeMins)} de ta vie perdues en plus`
+    : `soit ${fmt(totalMonth)} par mois`;
+
+  document.getElementById('mMonth').textContent = fmt(totalMonth);
+  document.getElementById('m5y').textContent = fmt(totalYear * 5);
+  document.getElementById('m10y').textContent = fmt(totalYear * 10);
+
+  document.getElementById('phraseChoc').textContent = getPhraseChoc(totalYear, totalTimeH);
+
+  document.getElementById('investAmount').textContent = fmt(invest10);
+  document.getElementById('investSub').textContent =
+    `En plaçant ${fmt(totalMonth)}/mois pendant 10 ans à 7%/an (ETF monde), tu obtiendrais ${fmt(invest10)} — au lieu de ${fmt(totalYear * 10)} dépensés en habitudes.`;
+
+  // Breakdown
+  const bl = document.getElementById('breakdownList');
+  bl.innerHTML = breakdown
+    .filter(b => b.cost > 0 || b.time > 0)
+    .sort((a, b) => b.cost - a.cost)
+    .map(b => {
+      const timeStr = b.time > 0 ? ` · ${fmtH(b.time)}` : '';
+      const costStr = b.cost > 0 ? fmt(b.cost) + '/an' : fmtH(b.time);
+      return `<div class="breakdown-item"><span class="breakdown-name">${b.label}</span><span class="breakdown-cost">${costStr}${b.cost > 0 ? timeStr : ''}</span></div>`;
+    }).join('');
+
+  // Graphique
+  const labels = Array.from({length:11}, (_,i) => i === 0 ? 'Maintenant' : 'An ' + i);
+  const cumCost = labels.map((_, i) => Math.round(totalYear * i));
+  const cumInvest = labels.map((_, i) => i === 0 ? 0 : Math.round(compound(totalMonth, i, 0.07)));
+
+  if (chartInst) chartInst.destroy();
+  chartInst = new Chart(document.getElementById('costChart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Coût dépensé',
+          data: cumCost,
+          borderColor: '#E24B4A',
+          backgroundColor: 'rgba(226,75,74,0.07)',
+          tension: 0.35,
+          fill: true,
+          pointRadius: 3,
+          pointBackgroundColor: '#E24B4A',
+        },
+        {
+          label: 'Si investi à 7%',
+          data: cumInvest,
+          borderColor: '#639922',
+          backgroundColor: 'rgba(99,153,34,0.07)',
+          tension: 0.35,
+          fill: true,
+          pointRadius: 3,
+          pointBackgroundColor: '#639922',
+          borderDash: [5, 4],
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: {
+          ticks: {
+            callback: v => {
+              if (v >= 1000) return Math.round(v/1000) + 'k €';
+              return v + ' €';
+            },
+            font: { size: 11 },
+            color: '#999994',
+          },
+          grid: { color: 'rgba(128,128,128,0.08)' },
+          border: { display: false }
+        },
+        x: {
+          ticks: { font: { size: 11 }, color: '#999994', autoSkip: false, maxRotation: 0 },
+          grid: { display: false },
+          border: { display: false }
+        }
+      }
+    }
+  });
+
+  // Afficher
+  const resultsEl = document.getElementById('results');
+  resultsEl.classList.add('visible');
+  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function shareResult() {
+  const year = document.getElementById('shockYear').textContent;
+  const text = `Mes mauvaises habitudes me coûtent ${year} par an 😱 J'ai calculé ça sur ce site gratuit :`;
+  const url = 'https://www.mauvaiseshabitudes.com';
+  if (navigator.share) {
+    navigator.share({ title: 'Mon coût réel', text, url }).catch(() => {});
+  } else {
+    navigator.clipboard.writeText(text + ' ' + url)
+      .then(() => alert('✅ Texte copié ! Colle-le où tu veux.'))
+      .catch(() => alert("Copie manuelle : " + text + " " + url));
+  }
+}
+
+function resetAll() {
+  selected = {};
+  document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('configBox').classList.remove('visible');
+  document.getElementById('calcBtn').disabled = true;
+  document.getElementById('results').classList.remove('visible');
+  document.getElementById('cardPreview').style.display = 'none';
+  if (chartInst) { chartInst.destroy(); chartInst = null; }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Lead magnet
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('lm-banner');
+  if (banner) {
+    banner.addEventListener('click', (e) => {
+      e.preventDefault();
+      const form = document.getElementById('leadmagnet-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      if (form.style.display === 'block') {
+        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+});
+
+function submitLeadmagnet() {
+  const email = document.getElementById('lm-email').value.trim();
+  if (!email || !email.includes('@')) {
+    alert("Merci d'entrer un email valide.");
+    return;
+  }
+  const systemeUrl = 'https://d110-contact.systeme.io/5598a588-a48ef4ee';
+  window.open(systemeUrl + '?email=' + encodeURIComponent(email), '_blank');
+  document.getElementById('leadmagnet-form').innerHTML = `
+    <div style="text-align:center;padding:1rem;">
+      <div style="font-size:28px;margin-bottom:8px;">🎉</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">C'est parti !</div>
+      <div style="font-size:12px;color:var(--text2);">Vérifie ta boîte email dans quelques secondes.</div>
+    </div>`;
+}
+
+function generateCard() {
+  // Remplir la carte HTML avec les vraies données
+  document.getElementById('cardAmount').textContent  = document.getElementById('shockYear').textContent;
+  document.getElementById('cardSub').textContent     = document.getElementById('shockSub').textContent;
+  document.getElementById('cardMonth').textContent   = document.getElementById('mMonth').textContent;
+  document.getElementById('card5y').textContent      = document.getElementById('m5y').textContent;
+  document.getElementById('card10y').textContent     = document.getElementById('m10y').textContent;
+  document.getElementById('cardInvest').textContent  = document.getElementById('investAmount').textContent;
+
+  // Habitudes sélectionnées
+  const ids = Object.keys(selected);
+  const breakdown = ids.map(id => {
+    const h = HABITS.find(x => x.id === id);
+    return { label: h.icon + ' ' + h.name, cost: getCostYear(h) };
+  }).filter(b => b.cost > 0).sort((a,b) => b.cost - a.cost).slice(0, 4);
+
+  document.getElementById('cardHabits').innerHTML = breakdown.map(b => `
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #2a2a28;font-size:13px;">
+      <span style="color:#9a9a92;">${b.label}</span>
+      <span style="color:#E24B4A;font-weight:700;">${fmt(b.cost)}/an</span>
+    </div>`).join('');
+
+  // Afficher la section
+  document.getElementById('cardPreview').style.display = 'block';
+  setTimeout(() => document.getElementById('cardPreview').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function downloadCard() {
+  const btn = event.target;
+  btn.textContent = '⏳ Génération en cours...';
+  btn.disabled = true;
+
+  html2canvas(document.getElementById('resultCard'), {
+    scale: 2,
+    useCORS: true,
+    backgroundColor: '#161614',
+    logging: false
+  }).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'mon-cout-mauvaises-habitudes.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    btn.textContent = '✅ Image téléchargée !';
+    btn.disabled = false;
+    setTimeout(() => { btn.textContent = '📥 Télécharger l\'image (PNG)'; }, 3000);
+  }).catch(() => {
+    btn.textContent = '📥 Télécharger l\'image (PNG)';
+    btn.disabled = false;
+    alert("Erreur lors de la génération. Essaie de faire une capture d'écran.");
+  });
+}
+</script>
+
+
+<!-- ===== BANDEAU NEWSLETTER FIXE ===== -->
+<div class="newsletter-bar" id="newsletterBar">
+  <div class="nl-text">
+    <strong>📩 Reçois nos conseils finance chaque semaine</strong>
+    <span>Gratuit · Sans spam · Désabonnement en 1 clic</span>
+  </div>
+  <div class="nl-form">
+    <input class="nl-input" type="email" id="nl-email-bar" placeholder="ton@email.com">
+    <button class="nl-btn" onclick="submitNewsletter('bar')">S'inscrire</button>
+  </div>
+  <button class="nl-close" onclick="closeNewsletter()">✕</button>
+</div>
+
+<!-- ===== MODAL NEWSLETTER ===== -->
+<div class="nl-modal" id="nlModal" onclick="if(event.target===this)closeModal()">
+  <div class="nl-modal-box">
+    <button class="nl-modal-close" onclick="closeModal()">✕</button>
+    <div id="nl-modal-content">
+      <div class="nl-modal-icon">📋</div>
+      <div class="nl-modal-title">Les 30 fuites d'argent invisibles</div>
+      <p class="nl-modal-sub">Entre ton email et reçois la checklist PDF gratuite + nos conseils hebdo pour mieux gérer ton argent.</p>
+      <div class="nl-modal-form">
+        <input type="text" id="nl-prenom-modal" placeholder="Ton prénom">
+        <input type="email" id="nl-email-modal" placeholder="ton@email.com">
+        <button class="nl-modal-submit" onclick="submitNewsletter('modal')">📩 Recevoir la checklist gratuite →</button>
+      </div>
+      <p class="nl-guarantee-modal" style="margin-top:10px;">🔒 Pas de spam · Désabonnement en 1 clic</p>
+    </div>
+    <div class="nl-success" id="nl-success">
+      <div style="font-size:40px;margin-bottom:12px;">🎉</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;">C'est dans ta boîte mail !</div>
+      <div style="font-size:13px;color:var(--text2);">Vérifie aussi tes spams si besoin.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Bandeau newsletter — apparaît après 30 secondes ou au scroll 60%
+let nlShown = sessionStorage.getItem('nl_shown');
+if (!nlShown) {
+  setTimeout(() => showNewsletterBar(), 30000);
+  window.addEventListener('scroll', () => {
+    const scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (scrollPct > 0.6 && !nlShown) showNewsletterBar();
+  });
+}
+
+function showNewsletterBar() {
+  if (sessionStorage.getItem('nl_shown')) return;
+  document.getElementById('newsletterBar').classList.add('visible');
+  nlShown = true;
+  sessionStorage.setItem('nl_shown', '1');
+}
+
+function closeNewsletter() {
+  document.getElementById('newsletterBar').classList.remove('visible');
+}
+
+function openNewsletter() {
+  document.getElementById('nlModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('nlModal').classList.remove('open');
+}
+
+function submitNewsletter(source) {
+  const email = source === 'bar'
+    ? document.getElementById('nl-email-bar').value.trim()
+    : document.getElementById('nl-email-modal').value.trim();
+  const prenom = source === 'modal'
+    ? document.getElementById('nl-prenom-modal').value.trim()
+    : '';
+
+  if (!email || !email.includes('@')) {
+    alert("Merci d'entrer un email valide.");
+    return;
+  }
+
+  const systemeUrl = 'https://d110-contact.systeme.io/5598a588-a48ef4ee';
+  window.open(systemeUrl + '?email=' + encodeURIComponent(email) + '&first_name=' + encodeURIComponent(prenom), '_blank');
+
+  if (source === 'modal') {
+    document.getElementById('nl-modal-content').style.display = 'none';
+    document.getElementById('nl-success').style.display = 'block';
+    setTimeout(() => closeModal(), 3000);
+  } else {
+    document.getElementById('newsletterBar').innerHTML =
+      '<div style="width:100%;text-align:center;font-size:13px;color:var(--text);">🎉 Merci ! Vérifie ta boîte email dans quelques minutes.</div>';
+    setTimeout(() => closeNewsletter(), 4000);
+  }
+}
+</script>
+
+</body>
+</html>
