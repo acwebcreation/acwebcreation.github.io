@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>Calculateur gratuit de Mauvaises Habitudes : Combien perdez-vous chaque année ?</title>
-  <meta name="description" content="Calcule le coût réel de tes mauvaises habitudes en argent ET en temps : cigarettes, café, alcool, réseaux sociaux... Résultat instantané et chiffres chocs. 
-     Visualisez la fortune que vous pourriez bâtir en investissant cet argent.">
+  <title>Combien coûtent vraiment tes mauvaises habitudes ? | Calculateur gratuit</title>
+  <meta name="description" content="Calcule le coût réel de tes mauvaises habitudes en argent ET en temps : cigarettes, café, alcool, réseaux sociaux... Résultat instantané et chiffres chocs.">
   <meta name="keywords" content="calculateur mauvaises habitudes, coût cigarette, arrêter fumer économies, mauvaises habitudes argent, combien coûte habitude">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.mauvaiseshabitudes.com/">
@@ -17,14 +16,14 @@
   <meta property="og:description" content="Un calculateur gratuit qui te montre le vrai coût de tes habitudes : en argent, en temps, et en opportunités perdues.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.mauvaiseshabitudes.com/">
-  <meta property="og:image" content="https://www.www.mauvaiseshabitudes.com/preview.png/preview.png">
+  <meta property="og:image" content="https://www.mauvaiseshabitudes.com/preview.png">
   <meta property="og:locale" content="fr_FR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
   <meta name="twitter:description" content="Calcule le coût réel de tes mauvaises habitudes en argent et en temps. Résultat choc garanti.">
-  <meta name="twitter:image" content="https://www.mauvaiseshabitudes.com/preview.png/preview.png">
+  <meta name="twitter:image" content="https://www.mauvaiseshabitudes.com/preview.png">
 
   <!-- Google AdSense — remplace ca-pub-XXXXXXXXXXXXXXXX par ton vrai ID -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
@@ -224,6 +223,79 @@
       .shock-amount { font-size: 42px; }
       .habits-grid { grid-template-columns: repeat(2, 1fr); }
     }
+
+    /* ===== BANNIÈRE LEAD MAGNET INLINE ===== */
+    .lm-inline-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--bg2);
+      border: 1px solid rgba(226,75,74,0.25);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin: 1.5rem 0;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.1s;
+    }
+    .lm-inline-banner:hover { border-color: var(--red); transform: translateY(-1px); }
+    .lm-inline-left { flex: 1; }
+    .lm-inline-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); background:rgba(226,75,74,0.1); border-radius:10px; padding:2px 8px; margin-bottom:5px; }
+    .lm-inline-title { font-size:13px; color:var(--text); margin-bottom:3px; }
+    .lm-inline-sub { font-size:11px; color:var(--text2); }
+    .lm-inline-cta { flex-shrink:0; background:var(--red); color:#fff; font-size:12px; font-weight:700; padding:9px 14px; border-radius:var(--radius-sm); white-space:nowrap; }
+
+    /* ===== BANDEAU NEWSLETTER FIXE ===== */
+    .newsletter-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--bg2);
+      border-top: 1px solid rgba(226,75,74,0.3);
+      padding: 12px 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 200;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .newsletter-bar.visible { transform: translateY(0); }
+    .newsletter-bar.hidden { transform: translateY(100%); }
+    .nl-text { flex: 1; }
+    .nl-text strong { font-size: 13px; color: var(--text); display:block; margin-bottom:2px; }
+    .nl-text span { font-size: 11px; color: var(--text2); }
+    .nl-form { display: flex; gap: 8px; align-items: center; }
+    .nl-input { padding: 9px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; width: 200px; }
+    .nl-input::placeholder { color: var(--text3); }
+    .nl-input:focus { outline: none; border-color: var(--red); }
+    .nl-btn { padding: 9px 16px; background: var(--red); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+    .nl-close { background: none; border: none; color: var(--text3); font-size: 18px; cursor: pointer; padding: 4px; flex-shrink: 0; }
+
+    /* Modal newsletter */
+    .nl-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:300; align-items:center; justify-content:center; }
+    .nl-modal.open { display:flex; }
+    .nl-modal-box { background:var(--bg2); border:1px solid rgba(226,75,74,0.3); border-radius:20px; padding:2rem; width:90%; max-width:420px; position:relative; }
+    .nl-modal-box::before { content:''; position:absolute; top:0;left:0;right:0; height:3px; background:linear-gradient(90deg,var(--red),#ff8a65); border-radius:20px 20px 0 0; }
+    .nl-modal-close { position:absolute; top:12px; right:14px; background:none; border:none; color:var(--text3); font-size:20px; cursor:pointer; }
+    .nl-modal-icon { font-size:40px; margin-bottom:12px; }
+    .nl-modal-title { font-family:'Playfair Display',serif; font-size:20px; color:var(--text); margin-bottom:8px; line-height:1.3; }
+    .nl-modal-sub { font-size:13px; color:var(--text2); margin-bottom:20px; line-height:1.6; }
+    .nl-modal-form { display:flex; flex-direction:column; gap:10px; }
+    .nl-modal-form input { padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--text); font-family:'DM Sans',sans-serif; font-size:14px; }
+    .nl-modal-form input::placeholder { color:var(--text3); }
+    .nl-modal-form input:focus { outline:none; border-color:var(--red); }
+    .nl-modal-submit { padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-sm); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; cursor:pointer; }
+    .nl-success { display:none; text-align:center; padding:1rem 0; }
+    .nl-guarantee-modal { font-size:11px; color:var(--text3); text-align:center; }
+
+    @media (max-width: 600px) {
+      .newsletter-bar { flex-direction:column; align-items:flex-start; padding:14px 1rem; }
+      .nl-form { width:100%; }
+      .nl-input { flex:1; width:auto; }
+      .lm-inline-banner { flex-direction:column; align-items:flex-start; }
+      .lm-inline-cta { align-self:stretch; text-align:center; }
+    }
   </style>
 </head>
 <body>
@@ -235,16 +307,60 @@
 
 <div class="page-wrapper">
 
-<!-- SIDEBAR GAUCHE -->
+<!-- SIDEBAR GAUCHE — Lead Magnet -->
 <div class="sidebar">
-  <div class="sidebar-ad">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-      data-ad-slot="XXXXXXXXXX"
-      data-ad-format="vertical"
-      data-full-width-responsive="false"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <a href="#leadmagnet-form" id="lm-banner" style="display:block;text-decoration:none;position:relative;overflow:hidden;border-radius:16px;background:#161614;border:1px solid rgba(226,75,74,0.25);padding:1.25rem;">
+
+    <!-- Fond déco -->
+    <div style="position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);pointer-events:none;"></div>
+    <!-- Barre top -->
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E24B4A,#ff8a65);border-radius:16px 16px 0 0;"></div>
+
+    <div style="position:relative;z-index:1;">
+      <!-- Badge -->
+      <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E24B4A;background:rgba(226,75,74,0.12);border-radius:20px;padding:3px 10px;margin-bottom:12px;">Gratuit</div>
+
+      <!-- Icône -->
+      <div style="font-size:36px;margin-bottom:10px;">📋</div>
+
+      <!-- Titre -->
+      <div style="font-size:14px;font-weight:700;color:#f0efe8;line-height:1.35;margin-bottom:8px;">La Checklist<br><span style="color:#E24B4A;">"Les 30 fuites<br>d'argent invisibles"</span></div>
+
+      <!-- Description -->
+      <div style="font-size:12px;color:#6b6b66;line-height:1.5;margin-bottom:16px;">Découvre les 30 habitudes qui vident ton compte sans que tu t'en rendes compte.</div>
+
+      <!-- Points clés -->
+      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
+          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>30 fuites identifiées
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
+          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>Solutions concrètes
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
+          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>PDF à imprimer
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div style="background:#E24B4A;color:#fff;text-align:center;padding:10px 8px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.02em;">
+        Je veux ma checklist →
+      </div>
+
+      <!-- Social proof -->
+      <div style="text-align:center;font-size:10px;color:#444441;margin-top:8px;">📩 Envoyée par email instantanément</div>
+    </div>
+  </a>
+
+  <!-- Formulaire email (affiché au clic ou scroll) -->
+  <div id="leadmagnet-form" style="margin-top:12px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;display:none;">
+    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;">Ton email gratuit :</div>
+    <input type="email" id="lm-email" placeholder="prenom@email.com"
+      style="width:100%;padding:9px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:13px;margin-bottom:8px;font-family:'DM Sans',sans-serif;">
+    <button onclick="submitLeadmagnet()" style="width:100%;padding:9px;background:#E24B4A;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;">
+      Envoyer ma checklist →
+    </button>
+    <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:6px;">Pas de spam. Désinscription en 1 clic.</div>
   </div>
 </div>
 
@@ -257,15 +373,14 @@
     <p>En argent, en temps, et en opportunités perdues. Les chiffres vont te surprendre.</p>
   </section>
 
-  <!-- AD SLOT 1 — Bannière haut de page -->
-  <div class="ad-slot">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-      data-ad-slot="XXXXXXXXXX"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <!-- BANNIÈRE LEAD MAGNET -->
+  <div class="lm-inline-banner" onclick="openNewsletter()">
+    <div class="lm-inline-left">
+      <span class="lm-inline-badge">Gratuit</span>
+      <div class="lm-inline-title">📋 <strong>Les 30 fuites d'argent invisibles</strong></div>
+      <div class="lm-inline-sub">Identifie les habitudes qui vident ton compte chaque mois</div>
+    </div>
+    <div class="lm-inline-cta">Recevoir la checklist →</div>
   </div>
 
   <!-- ÉTAPE 1 -->
@@ -293,15 +408,14 @@
       <div class="shock-sub" id="shockSub"></div>
     </div>
 
-    <!-- AD SLOT 2 — Avant métriques (fort taux de clics) -->
-    <div class="ad-slot">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-        data-ad-slot="XXXXXXXXXX"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- BANNIÈRE LEAD MAGNET 2 -->
+    <div class="lm-inline-banner" onclick="openNewsletter()" style="margin:1.5rem 0;">
+      <div class="lm-inline-left">
+        <span class="lm-inline-badge">Gratuit</span>
+        <div class="lm-inline-title">📋 <strong>Les 30 fuites d'argent invisibles</strong></div>
+        <div class="lm-inline-sub">Reçois la checklist PDF gratuite par email</div>
+      </div>
+      <div class="lm-inline-cta">Recevoir →</div>
     </div>
 
     <!-- Métriques -->
@@ -345,15 +459,14 @@
     <p class="section-label">Détail par habitude</p>
     <div class="breakdown-box" id="breakdownList"></div>
 
-    <!-- AD SLOT 3 — Sous le résultat -->
-    <div class="ad-slot">
-      <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-        data-ad-slot="XXXXXXXXXX"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- BANNIÈRE LEAD MAGNET 3 -->
+    <div class="lm-inline-banner" onclick="openNewsletter()" style="margin:1.5rem 0;">
+      <div class="lm-inline-left">
+        <span class="lm-inline-badge">Gratuit</span>
+        <div class="lm-inline-title">💡 <strong>Tu veux aller plus loin ?</strong></div>
+        <div class="lm-inline-sub">Reçois chaque semaine des conseils pour économiser davantage</div>
+      </div>
+      <div class="lm-inline-cta">Je m'inscris →</div>
     </div>
 
     <!-- Card preview générée -->
@@ -698,7 +811,7 @@ function calculate() {
 function shareResult() {
   const year = document.getElementById('shockYear').textContent;
   const text = `Mes mauvaises habitudes me coûtent ${year} par an 😱 J'ai calculé ça sur ce site gratuit :`;
-  const url = https://www.mauvaiseshabitudes.com;
+  const url = 'https://www.mauvaiseshabitudes.com';
   if (navigator.share) {
     navigator.share({ title: 'Mon coût réel', text, url }).catch(() => {});
   } else {
@@ -712,7 +825,39 @@ function resetAll() {
   selected = {};
   document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
   document.getElementById('configBox').classList.remove('visible');
-  document.getElementById('calcBtn').disabled = true;
+  
+// Lead magnet
+document.addEventListener('DOMContentLoaded', () => {
+  const banner = document.getElementById('lm-banner');
+  if (banner) {
+    banner.addEventListener('click', (e) => {
+      e.preventDefault();
+      const form = document.getElementById('leadmagnet-form');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      if (form.style.display === 'block') {
+        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+});
+
+function submitLeadmagnet() {
+  const email = document.getElementById('lm-email').value.trim();
+  if (!email || !email.includes('@')) {
+    alert('Merci d\'entrer un email valide.');
+    return;
+  }
+  // Remplace cette URL par ton formulaire Systeme.io ou Mailchimp
+  const systemeUrl = 'https://ton-lien-systeme.io/checklist';
+  window.open(systemeUrl + '?email=' + encodeURIComponent(email), '_blank');
+
+  document.getElementById('leadmagnet-form').innerHTML = `
+    <div style="text-align:center;padding:1rem;">
+      <div style="font-size:28px;margin-bottom:8px;">🎉</div>
+      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">C'est parti !</div>
+      <div style="font-size:12px;color:var(--text2);">Vérifie ta boîte email dans quelques secondes.</div>
+    </div>`;
+}
   document.getElementById('results').classList.remove('visible');
   document.getElementById('cardPreviewWrap').style.display = 'none';
   if (chartInst) { chartInst.destroy(); chartInst = null; }
@@ -769,6 +914,109 @@ function downloadCard() {
     btn.disabled = false;
     alert('Erreur lors de la génération. Essaie de faire une capture d\'écran.');
   });
+}
+</script>
+
+
+<!-- ===== BANDEAU NEWSLETTER FIXE ===== -->
+<div class="newsletter-bar" id="newsletterBar">
+  <div class="nl-text">
+    <strong>📩 Reçois nos conseils finance chaque semaine</strong>
+    <span>Gratuit · Sans spam · Désabonnement en 1 clic</span>
+  </div>
+  <div class="nl-form">
+    <input class="nl-input" type="email" id="nl-email-bar" placeholder="ton@email.com">
+    <button class="nl-btn" onclick="submitNewsletter('bar')">S'inscrire</button>
+  </div>
+  <button class="nl-close" onclick="closeNewsletter()">✕</button>
+</div>
+
+<!-- ===== MODAL NEWSLETTER ===== -->
+<div class="nl-modal" id="nlModal" onclick="if(event.target===this)closeModal()">
+  <div class="nl-modal-box">
+    <button class="nl-modal-close" onclick="closeModal()">✕</button>
+    <div id="nl-modal-content">
+      <div class="nl-modal-icon">📋</div>
+      <div class="nl-modal-title">Les 30 fuites d'argent invisibles</div>
+      <p class="nl-modal-sub">Entre ton email et reçois la checklist PDF gratuite + nos conseils hebdo pour mieux gérer ton argent.</p>
+      <div class="nl-modal-form">
+        <input type="text" id="nl-prenom-modal" placeholder="Ton prénom">
+        <input type="email" id="nl-email-modal" placeholder="ton@email.com">
+        <button class="nl-modal-submit" onclick="submitNewsletter('modal')">📩 Recevoir la checklist gratuite →</button>
+      </div>
+      <p class="nl-guarantee-modal" style="margin-top:10px;">🔒 Pas de spam · Désabonnement en 1 clic</p>
+    </div>
+    <div class="nl-success" id="nl-success">
+      <div style="font-size:40px;margin-bottom:12px;">🎉</div>
+      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;">C'est dans ta boîte mail !</div>
+      <div style="font-size:13px;color:var(--text2);">Vérifie aussi tes spams si besoin.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Bandeau newsletter — apparaît après 30 secondes ou au scroll 60%
+let nlShown = sessionStorage.getItem('nl_shown');
+if (!nlShown) {
+  setTimeout(() => showNewsletterBar(), 30000);
+  window.addEventListener('scroll', () => {
+    const scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    if (scrollPct > 0.6 && !nlShown) showNewsletterBar();
+  });
+}
+
+function showNewsletterBar() {
+  if (sessionStorage.getItem('nl_shown')) return;
+  document.getElementById('newsletterBar').classList.add('visible');
+  nlShown = true;
+  sessionStorage.setItem('nl_shown', '1');
+}
+
+function closeNewsletter() {
+  document.getElementById('newsletterBar').classList.remove('visible');
+}
+
+function openNewsletter() {
+  document.getElementById('nlModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('nlModal').classList.remove('open');
+}
+
+function submitNewsletter(source) {
+  const email = source === 'bar'
+    ? document.getElementById('nl-email-bar').value.trim()
+    : document.getElementById('nl-email-modal').value.trim();
+  const prenom = source === 'modal'
+    ? document.getElementById('nl-prenom-modal').value.trim()
+    : '';
+
+  if (!email || !email.includes('@')) {
+    alert('Merci d'entrer un email valide.');
+    return;
+  }
+
+  // ================================================================
+  // REMPLACE cette URL par ton vrai lien de tunnel Systeme.io
+  // Une fois le domaine propagé et le tunnel configuré
+  // ================================================================
+  const systemeUrl = 'https://mauvaiseshabitudes.systeme.io/checklist';
+
+  // Stocke localement en attendant Systeme.io
+  const leads = JSON.parse(localStorage.getItem('nl_leads') || '[]');
+  leads.push({ email, prenom, date: new Date().toISOString(), source });
+  localStorage.setItem('nl_leads', JSON.stringify(leads));
+
+  if (source === 'modal') {
+    document.getElementById('nl-modal-content').style.display = 'none';
+    document.getElementById('nl-success').style.display = 'block';
+    setTimeout(() => closeModal(), 3000);
+  } else {
+    document.getElementById('newsletterBar').innerHTML =
+      '<div style="width:100%;text-align:center;font-size:13px;color:var(--text);">🎉 Merci ! Vérifie ta boîte email dans quelques minutes.</div>';
+    setTimeout(() => closeNewsletter(), 4000);
+  }
 }
 </script>
 
