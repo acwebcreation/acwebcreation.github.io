@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Fuites d'argent & Finance Perso | MauvaisesHabitudes.com</title>
+  <meta name="description" content="Conseils pratiques pour identifier et stopper les fuites d'argent invisibles. Articles finance personnelle, budget, épargne pour le marché francophone.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.mauvaiseshabitudes.com/blog.html">
+  <meta property="og:title" content="Blog CashLeak — Fuites d'argent et Finance Perso">
+  <meta property="og:description" content="Conseils pratiques pour arrêter de perdre ton argent sans le savoir.">
+  <meta property="og:url" content="https://www.mauvaiseshabitudes.com/blog.html">
+  <meta property="og:image" content="https://www.mauvaiseshabitudes.com/preview.png">
+  <meta property="og:type" content="website">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red:#E24B4A; --red-light:#FCEBEB; --red-dark:#c03030;
+      --green:#639922; --green-light:#EAF3DE;
+      --bg:#FAFAF8; --bg2:#F2F1ED; --bg3:#ECEAE4;
+      --border:rgba(0,0,0,0.1);
+      --text:#1a1a18; --text2:#6b6b66; --text3:#999994;
+      --radius:14px; --radius-sm:8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#161614; --bg2:#1f1f1d; --bg3:#2a2a28; --border:rgba(255,255,255,0.1); --text:#f0efe8; --text2:#9a9a92; --text3:#666660; --red-light:#3a1212; --green-light:#1a2e08; }
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
+    header { background:var(--bg); border-bottom:1px solid var(--border); padding:14px 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; gap:16px; }
+    .logo { font-family:'Playfair Display',serif; font-size:18px; color:var(--text); text-decoration:none; flex-shrink:0; }
+    .logo span { color:var(--red); }
+    .header-nav { display:flex; align-items:center; gap:6px; }
+    .header-nav a { font-size:13px; font-weight:500; color:var(--text2); text-decoration:none; padding:6px 12px; border-radius:var(--radius-sm); transition:background 0.15s,color 0.15s; white-space:nowrap; }
+    .header-nav a:hover { background:var(--bg2); color:var(--text); }
+    .header-nav a.active { color:var(--red); background:rgba(226,75,74,0.08); }
+    .header-nav .nav-cta { background:var(--red); color:#fff !important; padding:7px 14px; border-radius:20px; font-size:12px; font-weight:700; }
+    .nav-hamburger { display:none; background:none; border:none; color:var(--text2); font-size:20px; cursor:pointer; }
+    @media(max-width:600px){ .header-nav .nav-link{display:none;} .nav-hamburger{display:block;} }
+    #mobileNav { display:none; position:fixed; top:57px; left:0; right:0; background:var(--bg); border-bottom:1px solid var(--border); z-index:99; padding:1rem 1.5rem; flex-direction:column; gap:4px; }
+    #mobileNav a { display:block; padding:10px 12px; font-size:14px; color:var(--text); text-decoration:none; border-radius:8px; }
+    #mobileNav .mn-cta { margin-top:8px; font-weight:700; color:#fff !important; background:var(--red); text-align:center; }
+    .page-wrap { max-width:1100px; margin:0 auto; padding:0 1.25rem 4rem; }
+    .blog-layout { display:grid; grid-template-columns:1fr 300px; gap:2.5rem; align-items:start; margin-top:2rem; }
+    .blog-hero { padding:2.5rem 0 2rem; border-bottom:1px solid var(--border); }
+    .blog-hero-badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); background:var(--red-light); border-radius:20px; padding:4px 12px; margin-bottom:1rem; }
+    .blog-hero h1 { font-family:'Playfair Display',serif; font-size:clamp(26px,5vw,38px); color:var(--text); margin-bottom:0.75rem; line-height:1.25; }
+    .blog-hero p { font-size:15px; color:var(--text2); max-width:560px; }
+    .cat-filter { display:flex; gap:8px; flex-wrap:wrap; margin:1.5rem 0; }
+    .cat-btn { font-size:12px; font-weight:600; padding:6px 14px; border-radius:20px; border:1px solid var(--border); background:var(--bg); color:var(--text2); cursor:pointer; transition:all 0.15s; text-decoration:none; }
+    .cat-btn:hover,.cat-btn.active { background:var(--red); color:#fff; border-color:var(--red); }
+    .ad-slot { background:var(--bg2); border:1px dashed var(--border); border-radius:var(--radius-sm); padding:1rem; text-align:center; margin:1.5rem 0; min-height:90px; display:flex; align-items:center; justify-content:center; }
+    .ad-slot ins { width:100%; }
+    .ad-slot-sidebar { background:var(--bg2); border:1px dashed var(--border); border-radius:var(--radius-sm); min-height:260px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; }
+    .articles-list { display:flex; flex-direction:column; gap:1.5rem; }
+    .article-card { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; text-decoration:none; display:grid; grid-template-columns:140px 1fr; transition:border-color 0.15s,transform 0.1s; }
+    .article-card:hover { border-color:var(--red); transform:translateY(-1px); }
+    .article-thumb { height:140px; background:var(--bg2); display:flex; align-items:center; justify-content:center; font-size:48px; }
+    .article-body { padding:1.25rem; }
+    .article-cat { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); margin-bottom:5px; }
+    .article-title { font-family:'Playfair Display',serif; font-size:17px; color:var(--text); margin-bottom:6px; line-height:1.35; }
+    .article-excerpt { font-size:13px; color:var(--text2); line-height:1.6; margin-bottom:10px; }
+    .article-meta { font-size:11px; color:var(--text3); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+    .article-chiffre { display:inline-block; background:var(--red-light); color:var(--red); font-size:11px; font-weight:700; padding:2px 8px; border-radius:10px; }
+    .article-featured { background:var(--bg); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; text-decoration:none; display:block; transition:border-color 0.15s,transform 0.1s; margin-bottom:1.5rem; }
+    .article-featured:hover { border-color:var(--red); transform:translateY(-1px); }
+    .article-featured-thumb { height:180px; background:var(--red); display:flex; align-items:center; justify-content:center; font-size:64px; position:relative; }
+    .article-featured-badge { position:absolute; top:12px; left:12px; background:#fff; color:var(--red); font-size:10px; font-weight:700; text-transform:uppercase; padding:4px 10px; border-radius:10px; }
+    .article-featured-body { padding:1.5rem; }
+    .short-section { margin:2rem 0; }
+    .short-section-title { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text3); margin-bottom:1rem; display:flex; align-items:center; gap:8px; }
+    .short-section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+    .shorts-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; }
+    .short-card { border-radius:var(--radius-sm); overflow:hidden; border:1px solid var(--border); background:var(--bg2); text-decoration:none; display:block; transition:border-color 0.15s; }
+    .short-card:hover { border-color:var(--red); }
+    .short-embed { position:relative; padding-bottom:177%; height:0; overflow:hidden; }
+    .short-embed iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
+    .short-placeholder { position:relative; padding-bottom:177%; background:var(--bg3); }
+    .short-placeholder-inner { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; padding:12px; }
+    .short-label { padding:8px; font-size:11px; color:var(--text2); text-align:center; line-height:1.4; border-top:1px solid var(--border); }
+    .blog-sidebar { position:sticky; top:80px; }
+    .sidebar-widget { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1.25rem; }
+    .widget-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text3); margin-bottom:1rem; }
+    .widget-cta { display:block; color:#fff; text-align:center; padding:10px; border-radius:var(--radius-sm); font-size:13px; font-weight:700; text-decoration:none; margin-top:10px; background:var(--red); transition:opacity 0.15s; }
+    .widget-cta:hover { opacity:0.9; }
+    .widget-cta.green { background:var(--green); }
+    .widget-link { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--border); text-decoration:none; }
+    .widget-link:last-child { border-bottom:none; }
+    .widget-link-icon { font-size:20px; flex-shrink:0; }
+    .widget-link-text { font-size:13px; color:var(--text); font-weight:500; }
+    .widget-link-sub { font-size:11px; color:var(--text2); }
+    .nl-widget-input { width:100%; padding:9px 12px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--text); font-family:'DM Sans',sans-serif; font-size:13px; margin-bottom:8px; }
+    .nl-widget-input::placeholder { color:var(--text3); }
+    .nl-widget-input:focus { outline:none; border-color:var(--red); }
+    footer { border-top:1px solid var(--border); padding:2rem 1.25rem; text-align:center; }
+    footer p { font-size:12px; color:var(--text3); line-height:1.8; }
+    footer a { color:var(--text3); text-decoration:underline; }
+    @media(max-width:760px) {
+      .blog-layout { grid-template-columns:1fr; }
+      .blog-sidebar { display:none; }
+      .article-card { grid-template-columns:1fr; }
+      .article-thumb { width:100%; height:100px; }
+      .shorts-grid { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
+  <nav class="header-nav">
+    <a href="/" class="nav-link">🧮 Calculateur</a>
+    <a href="/blog.html" class="nav-link active">📝 Blog</a>
+    <a href="/checklist.html" class="nav-link">📋 Checklist</a>
+    <a href="/checklist.html" class="nav-cta">Gratuit →</a>
+  </nav>
+  <button class="nav-hamburger" onclick="document.getElementById('mobileNav').style.display=document.getElementById('mobileNav').style.display==='flex'?'none':'flex'">☰</button>
+</header>
+
+<div id="mobileNav">
+  <a href="/">🧮 Calculateur</a>
+  <a href="/blog.html" style="color:var(--red);">📝 Blog</a>
+  <a href="/checklist.html">📋 Checklist</a>
+  <a href="/checklist.html" class="mn-cta">Checklist gratuite →</a>
+</div>
+
+<div class="page-wrap">
+
+  <div class="blog-hero">
+    <div class="blog-hero-badge">Blog CashLeak</div>
+    <h1>Arrête de perdre ton argent<br>sans le savoir</h1>
+    <p>Conseils pratiques et calculs concrets pour identifier et stopper tes fuites d'argent invisibles.</p>
+  </div>
+
+  <!-- AD SLOT 1 -->
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="cat-filter">
+    <a href="#" class="cat-btn active" onclick="filterCat('all',this);return false;">Tous</a>
+    <a href="#" class="cat-btn" onclick="filterCat('fuites',this);return false;">💸 Fuites d'argent</a>
+    <a href="#" class="cat-btn" onclick="filterCat('banque',this);return false;">🏦 Banque & épargne</a>
+    <a href="#" class="cat-btn" onclick="filterCat('budget',this);return false;">📊 Budget</a>
+    <a href="#" class="cat-btn" onclick="filterCat('habitudes',this);return false;">🚬 Habitudes</a>
+    <a href="#" class="cat-btn" onclick="filterCat('shorts',this);return false;">🎬 Shorts</a>
+  </div>
+
+  <div class="blog-layout">
+    <main>
+
+      <!-- ARTICLE À LA UNE -->
+      <a href="#" class="article-featured" data-cat="fuites">
+        <div class="article-featured-thumb">
+          💸
+          <span class="article-featured-badge">À la une</span>
+        </div>
+        <div class="article-featured-body">
+          <div class="article-cat">💸 Fuites d'argent</div>
+          <div class="article-title" style="font-size:22px;margin-bottom:8px;">Les 30 fuites d'argent invisibles qui vident ton compte chaque mois</div>
+          <div class="article-excerpt">Tu travailles dur mais ton compte reste vide à la fin du mois ? Ces 30 habitudes silencieuses te coûtent probablement plus de 300€/mois. On les a toutes listées avec le coût estimé et la solution concrète.</div>
+          <div class="article-meta" style="margin-top:10px;">
+            <span>5 min de lecture</span><span>·</span>
+            <span class="article-chiffre">300€/mois en moyenne</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- SHORTS -->
+      <div class="short-section" data-cat="shorts">
+        <div class="short-section-title">🎬 Shorts CashLeak</div>
+        <div class="shorts-grid">
+
+          <!-- Pour activer un Short : remplace short-placeholder par :
+               <div class="short-embed"><iframe src="https://www.youtube.com/embed/TON_ID" allowfullscreen></iframe></div> -->
+
+          <div class="short-card">
+            <div class="short-placeholder"><div class="short-placeholder-inner"><div style="font-size:28px;">▶️</div><div style="font-size:10px;color:var(--text3);text-align:center;">Remplace par ID YouTube</div></div></div>
+            <div class="short-label">Abonnements oubliés — 47€/mois perdus</div>
+          </div>
+          <div class="short-card">
+            <div class="short-placeholder"><div class="short-placeholder-inner"><div style="font-size:28px;">▶️</div><div style="font-size:10px;color:var(--text3);text-align:center;">Remplace par ID YouTube</div></div></div>
+            <div class="short-label">Le café du matin — 780€/an</div>
+          </div>
+          <div class="short-card">
+            <div class="short-placeholder"><div class="short-placeholder-inner"><div style="font-size:28px;">▶️</div><div style="font-size:10px;color:var(--text3);text-align:center;">Remplace par ID YouTube</div></div></div>
+            <div class="short-label">Frais bancaires cachés</div>
+          </div>
+          <div class="short-card">
+            <div class="short-placeholder"><div class="short-placeholder-inner"><div style="font-size:28px;">▶️</div><div style="font-size:10px;color:var(--text3);text-align:center;">Remplace par ID YouTube</div></div></div>
+            <div class="short-label">Uber Eats — le vrai coût</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- AD SLOT 2 -->
+      <div class="ad-slot">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <!-- ARTICLES -->
+      <div class="articles-list">
+
+        <a href="#" class="article-card" data-cat="habitudes">
+          <div class="article-thumb">🚬</div>
+          <div class="article-body">
+            <div class="article-cat">🚬 Habitudes</div>
+            <div class="article-title">Combien coûte vraiment une cigarette sur 10 ans ?</div>
+            <div class="article-excerpt">Un paquet par jour à 11€ = 75 000€ en 20 ans. On fait le calcul complet avec les intérêts composés si tu avais investi cet argent à la place.</div>
+            <div class="article-meta"><span>3 min</span><span>·</span><span class="article-chiffre">75 000€ sur 20 ans</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card" data-cat="fuites">
+          <div class="article-thumb">📱</div>
+          <div class="article-body">
+            <div class="article-cat">💸 Fuites d'argent</div>
+            <div class="article-title">30 abonnements oubliés que tu paies sûrement encore</div>
+            <div class="article-excerpt">Netflix, Spotify, salle de sport de janvier... La liste complète des abonnements les plus souvent oubliés et comment les trouver en 2 minutes sur ton téléphone.</div>
+            <div class="article-meta"><span>4 min</span><span>·</span><span class="article-chiffre">47€/mois en moyenne</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card" data-cat="budget">
+          <div class="article-thumb">📊</div>
+          <div class="article-body">
+            <div class="article-cat">📊 Budget</div>
+            <div class="article-title">Comment faire un budget mensuel en 30 minutes chrono</div>
+            <div class="article-excerpt">Pas besoin de tableur compliqué. Une méthode simple en 4 étapes pour voir exactement où part ton argent — et récupérer facilement 100 à 300€ par mois.</div>
+            <div class="article-meta"><span>5 min</span><span>·</span><span class="article-chiffre">Méthode 50/30/20</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card" data-cat="banque">
+          <div class="article-thumb">🏦</div>
+          <div class="article-body">
+            <div class="article-cat">🏦 Banque & épargne</div>
+            <div class="article-title">Meilleures banques en ligne pour économiser en Belgique et France</div>
+            <div class="article-excerpt">Boursorama, Revolut, N26, Belfius... On compare les frais et les avantages de chaque banque pour t'aider à choisir celle qui te coûte le moins cher.</div>
+            <div class="article-meta"><span>6 min</span><span>·</span><span class="article-chiffre">Jusqu'à 200€ économisés/an</span></div>
+          </div>
+        </a>
+
+        <a href="#" class="article-card" data-cat="banque">
+          <div class="article-thumb">📈</div>
+          <div class="article-body">
+            <div class="article-cat">📈 Investissement</div>
+            <div class="article-title">Investir 50€ par mois : ce que ça donne vraiment en 20 ans</div>
+            <div class="article-excerpt">Grâce aux intérêts composés, 50€ par mois pendant 20 ans à 7%/an = 26 000€. On te montre le calcul complet et les meilleurs placements accessibles dès 50€.</div>
+            <div class="article-meta"><span>4 min</span><span>·</span><span class="article-chiffre">26 000€ en 20 ans</span></div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- AD SLOT 3 -->
+      <div class="ad-slot" style="margin-top:2rem;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Outil gratuit</div>
+        <div style="font-size:32px;margin-bottom:8px;">🧮</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Calculateur de mauvaises habitudes</div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.5;">Découvre en 2 minutes combien tu perds chaque mois.</div>
+        <a href="/" class="widget-cta">Calculer maintenant →</a>
+      </div>
+
+      <div class="ad-slot-sidebar">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Newsletter gratuite</div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.5;">1 fuite d'argent révélée chaque semaine. Gratuit, sans spam.</div>
+        <input class="nl-widget-input" type="email" id="blog-nl-email" placeholder="ton@email.com">
+        <button class="widget-cta" style="margin-top:0;" onclick="blogNewsletter()">Je m'abonne →</button>
+        <div id="blog-nl-success" style="display:none;font-size:12px;color:var(--green);margin-top:8px;text-align:center;">🎉 Inscription confirmée !</div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">PDF Gratuit</div>
+        <div style="font-size:32px;margin-bottom:8px;">📋</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Les 30 fuites d'argent invisibles</div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;">Checklist PDF — identifie tes fuites en 30 minutes</div>
+        <a href="/checklist.html" class="widget-cta green">Télécharger gratuitement →</a>
+      </div>
+
+      <div class="ad-slot-sidebar">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="widget-title">Suivre @CashLeak</div>
+        <a href="https://www.tiktok.com/@cashleak" target="_blank" rel="noopener" class="widget-link">
+          <div class="widget-link-icon">🎬</div>
+          <div><div class="widget-link-text">TikTok</div><div class="widget-link-sub">@CashLeak</div></div>
+        </a>
+        <a href="https://www.instagram.com/cashleak" target="_blank" rel="noopener" class="widget-link">
+          <div class="widget-link-icon">📸</div>
+          <div><div class="widget-link-text">Instagram</div><div class="widget-link-sub">@CashLeak</div></div>
+        </a>
+        <a href="https://www.youtube.com/@cashleak" target="_blank" rel="noopener" class="widget-link">
+          <div class="widget-link-icon">▶️</div>
+          <div><div class="widget-link-text">YouTube</div><div class="widget-link-sub">@CashLeak</div></div>
+        </a>
+        <a href="https://www.facebook.com/cashleak" target="_blank" rel="noopener" class="widget-link">
+          <div class="widget-link-icon">👥</div>
+          <div><div class="widget-link-text">Facebook</div><div class="widget-link-sub">Page CashLeak</div></div>
+        </a>
+      </div>
+
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div style="max-width:1100px;margin:0 auto;padding:0 1.25rem;">
+    <p>
+      © 2025 ActivityWeb — Contenu informatif à titre éducatif.<br>
+      <a href="/">Calculateur</a> · <a href="/blog.html">Blog</a> · <a href="/checklist.html">Checklist gratuite</a> · <a href="#">Mentions légales</a> · <a href="#">Contact</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('[data-cat]').forEach(el => {
+    el.style.display = (cat === 'all' || el.dataset.cat === cat) ? '' : 'none';
+  });
+}
+
+function blogNewsletter() {
+  const email = document.getElementById('blog-nl-email').value.trim();
+  if (!email || !email.includes('@')) { alert("Merci d'entrer un email valide."); return; }
+  window.open('https://d110-contact.systeme.io/5598a588-a48ef4ee?email=' + encodeURIComponent(email), '_blank');
+  document.getElementById('blog-nl-success').style.display = 'block';
+  document.getElementById('blog-nl-email').value = '';
+}
+</script>
+
+</body>
+</html>

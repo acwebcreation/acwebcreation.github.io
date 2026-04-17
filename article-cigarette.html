@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combien coûte vraiment une cigarette sur 10 ans ? Le calcul complet</title>
+  <meta name="description" content="Un paquet par jour à 11€ = 75 000€ en 20 ans. On fait le calcul complet du coût réel de la cigarette avec les intérêts composés. Les chiffres vont vous surprendre.">
+  <meta name="keywords" content="coût cigarette, arrêter fumer économies, prix paquet cigarette, combien coûte fumer, économies arrêt tabac">
+  <link rel="canonical" href="https://www.mauvaiseshabitudes.com/article-cigarette.html">
+  <meta property="og:title" content="Combien coûte vraiment une cigarette sur 10 ans ?">
+  <meta property="og:description" content="Le calcul complet du coût réel du tabac — en argent, en temps et en opportunités perdues.">
+  <meta property="og:url" content="https://www.mauvaiseshabitudes.com/article-cigarette.html">
+  <meta property="og:image" content="https://www.mauvaiseshabitudes.com/preview.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red:#E24B4A; --red-light:#FCEBEB; --green:#639922; --green-light:#EAF3DE;
+      --amber:#BA7517; --amber-light:#FAEEDA;
+      --bg:#FAFAF8; --bg2:#F2F1ED; --border:rgba(0,0,0,0.1);
+      --text:#1a1a18; --text2:#6b6b66; --text3:#999994;
+      --radius:14px; --radius-sm:8px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#161614; --bg2:#1f1f1d; --border:rgba(255,255,255,0.1); --text:#f0efe8; --text2:#9a9a92; --text3:#666660; --red-light:#3a1212; --green-light:#1a2e08; --amber-light:#2a1e08; }
+    }
+    body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
+    header { background:var(--bg); border-bottom:1px solid var(--border); padding:14px 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; gap:16px; }
+    .logo { font-family:'Playfair Display',serif; font-size:18px; color:var(--text); text-decoration:none; }
+    .logo span { color:var(--red); }
+    .header-nav { display:flex; align-items:center; gap:6px; }
+    .header-nav a { font-size:13px; font-weight:500; color:var(--text2); text-decoration:none; padding:6px 12px; border-radius:var(--radius-sm); }
+    .header-nav a:hover { background:var(--bg2); color:var(--text); }
+    .header-nav .nav-cta { background:var(--red); color:#fff !important; padding:7px 14px; border-radius:20px; font-size:12px; font-weight:700; }
+    .page-wrap { max-width:1100px; margin:0 auto; padding:0 1.25rem 4rem; }
+    .article-layout { display:grid; grid-template-columns:1fr 300px; gap:2.5rem; align-items:start; margin-top:2rem; }
+    .article-header { padding:2.5rem 0 2rem; border-bottom:1px solid var(--border); margin-bottom:2rem; }
+    .article-cat-link { font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); text-decoration:none; }
+    .article-cat-link:hover { text-decoration:underline; }
+    .article-h1 { font-family:'Playfair Display',serif; font-size:clamp(26px,5vw,40px); color:var(--text); margin:0.75rem 0; line-height:1.25; }
+    .article-intro { font-size:17px; color:var(--text2); line-height:1.7; margin-bottom:1rem; }
+    .article-meta { font-size:12px; color:var(--text3); display:flex; gap:12px; flex-wrap:wrap; }
+    .article-body { font-size:15px; line-height:1.8; }
+    .article-body h2 { font-family:'Playfair Display',serif; font-size:22px; color:var(--text); margin:2rem 0 0.75rem; }
+    .article-body h3 { font-size:16px; font-weight:600; color:var(--text); margin:1.5rem 0 0.5rem; }
+    .article-body p { margin-bottom:1rem; color:var(--text); }
+    .article-body a { color:var(--red); }
+    .article-body ul, .article-body ol { margin:1rem 0 1rem 1.5rem; }
+    .article-body li { margin-bottom:0.5rem; color:var(--text2); }
+    .chiffre-box { background:var(--red); border-radius:var(--radius); padding:1.5rem 2rem; margin:1.5rem 0; text-align:center; }
+    .chiffre-box .montant { font-family:'Playfair Display',serif; font-size:52px; color:#fff; line-height:1; margin-bottom:6px; }
+    .chiffre-box .label { font-size:14px; color:rgba(255,255,255,0.75); }
+    .calcul-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:14px; }
+    .calcul-table th { background:var(--bg2); padding:10px 14px; text-align:left; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text3); border-bottom:2px solid var(--border); }
+    .calcul-table td { padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text2); }
+    .calcul-table tr:last-child td { font-weight:600; color:var(--red); font-size:15px; border-bottom:none; background:var(--red-light); }
+    .highlight-box { border-left:3px solid var(--red); background:var(--red-light); border-radius:0 var(--radius-sm) var(--radius-sm) 0; padding:1rem 1.25rem; margin:1.5rem 0; font-size:14px; color:var(--text); }
+    .invest-box { background:var(--green-light); border:1px solid rgba(99,153,34,0.25); border-radius:var(--radius); padding:1.5rem; margin:1.5rem 0; }
+    .invest-box .invest-amount { font-family:'Playfair Display',serif; font-size:36px; color:var(--green); margin:6px 0; }
+    .invest-box .invest-label { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--green); margin-bottom:4px; }
+    .invest-box .invest-sub { font-size:13px; color:var(--text2); }
+    .comparaison-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:10px; margin:1.5rem 0; }
+    .comp-card { background:var(--bg2); border-radius:var(--radius-sm); padding:1rem; text-align:center; border:1px solid var(--border); }
+    .comp-icon { font-size:28px; margin-bottom:6px; }
+    .comp-label { font-size:11px; color:var(--text3); margin-bottom:4px; }
+    .comp-value { font-size:14px; font-weight:600; color:var(--text); }
+    .cta-box { background:var(--bg2); border-radius:var(--radius); padding:2rem; text-align:center; margin:2rem 0; border:1px solid var(--border); }
+    .cta-box h3 { font-family:'Playfair Display',serif; font-size:22px; color:var(--text); margin-bottom:0.75rem; }
+    .cta-box p { font-size:14px; color:var(--text2); margin-bottom:1.25rem; }
+    .cta-btn { display:inline-block; padding:13px 28px; background:var(--red); color:#fff; border-radius:var(--radius-sm); font-size:14px; font-weight:700; text-decoration:none; margin:4px; }
+    .cta-btn.green { background:var(--green); }
+    .ad-slot { background:var(--bg2); border:1px dashed var(--border); border-radius:var(--radius-sm); padding:1rem; text-align:center; margin:1.5rem 0; min-height:90px; display:flex; align-items:center; justify-content:center; }
+    .ad-slot ins { width:100%; }
+    .sidebar-widget { background:var(--bg2); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:1.25rem; }
+    .widget-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--text3); margin-bottom:1rem; }
+    .widget-cta { display:block; color:#fff; text-align:center; padding:10px; border-radius:var(--radius-sm); font-size:13px; font-weight:700; text-decoration:none; margin-top:10px; background:var(--red); }
+    .widget-cta.green { background:var(--green); }
+    .related-article { display:flex; gap:10px; padding:10px 0; border-bottom:1px solid var(--border); text-decoration:none; }
+    .related-article:last-child { border-bottom:none; }
+    .related-icon { font-size:24px; flex-shrink:0; }
+    .related-title { font-size:13px; font-weight:500; color:var(--text); line-height:1.4; }
+    .related-cat { font-size:11px; color:var(--text3); margin-bottom:2px; }
+    footer { border-top:1px solid var(--border); padding:2rem 1.25rem; text-align:center; }
+    footer p { font-size:12px; color:var(--text3); line-height:1.8; }
+    footer a { color:var(--text3); text-decoration:underline; }
+    @media(max-width:760px) { .article-layout { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
+  <nav class="header-nav">
+    <a href="/" style="font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:6px 12px;">🧮 Calculateur</a>
+    <a href="/blog.html" style="font-size:13px;font-weight:500;color:var(--text2);text-decoration:none;padding:6px 12px;">📝 Blog</a>
+    <a href="/checklist.html" class="nav-cta">Gratuit →</a>
+  </nav>
+</header>
+
+<div class="page-wrap">
+  <div class="article-layout">
+    <article>
+
+      <div class="article-header">
+        <a href="/blog.html" class="article-cat-link">🚬 Habitudes</a>
+        <h1 class="article-h1">Combien coûte vraiment une cigarette sur 10 ans ?</h1>
+        <p class="article-intro">Un paquet par jour à 11€, ça semble anodin. Mais sur 10, 20 ou 30 ans, le calcul est brutal. Et si tu avais investi cet argent à la place ?</p>
+        <div class="article-meta">
+          <span>⏱️ 3 min de lecture</span>
+          <span>·</span>
+          <span>💸 Fuite d'argent #5</span>
+        </div>
+      </div>
+
+      <div class="article-body">
+
+        <p>On ne réalise jamais vraiment combien coûte la cigarette. Pas parce qu'on est stupide, mais parce qu'on ne fait jamais le calcul complet. Le prix d'un paquet semble supportable. C'est l'accumulation silencieuse qui est terrifiante.</p>
+
+        <p>Voici ce calcul. Chiffres à l'appui.</p>
+
+        <h2>Le coût de base — 1 paquet par jour</h2>
+
+        <p>En France et en Belgique, un paquet de cigarettes coûte en moyenne <strong>11€</strong>. C'est le prix de base. Voilà ce que ça représente dans le temps :</p>
+
+        <table class="calcul-table">
+          <thead><tr><th>Période</th><th>Calcul</th><th>Coût</th></tr></thead>
+          <tbody>
+            <tr><td>Par jour</td><td>11€</td><td>11€</td></tr>
+            <tr><td>Par semaine</td><td>11€ × 7</td><td>77€</td></tr>
+            <tr><td>Par mois</td><td>11€ × 30</td><td>330€</td></tr>
+            <tr><td>Par an</td><td>11€ × 365</td><td>4 015€</td></tr>
+            <tr><td>Sur 5 ans</td><td>4 015€ × 5</td><td>20 075€</td></tr>
+            <tr><td>Sur 10 ans</td><td>4 015€ × 10</td><td>40 150€</td></tr>
+            <tr><td>Sur 20 ans</td><td>4 015€ × 20</td><td>80 300€</td></tr>
+          </tbody>
+        </table>
+
+        <div class="chiffre-box">
+          <div class="montant">80 300€</div>
+          <div class="label">dépensés en cigarettes sur 20 ans — 1 paquet/jour</div>
+        </div>
+
+        <h2>Et si tu avais investi cet argent ?</h2>
+
+        <p>C'est là que ça devient vraiment douloureux. Si au lieu de fumer tu avais placé ces 330€/mois dans un ETF monde à 7% de rendement annuel moyen :</p>
+
+        <div class="invest-box">
+          <div class="invest-label">En investissant 330€/mois à 7%/an pendant 20 ans</div>
+          <div class="invest-amount">201 000€</div>
+          <div class="invest-sub">Soit 2,5 fois plus que ce que tu aurais dépensé en cigarettes</div>
+        </div>
+
+        <p>La différence entre fumer et investir sur 20 ans : <strong>plus de 120 000€</strong>. C'est le vrai coût de la cigarette.</p>
+
+        <h2>Ce que représente 4 015€ par an</h2>
+
+        <p>Pour rendre ce chiffre encore plus concret, voilà ce que tu pourrais t'offrir chaque année avec l'argent des cigarettes :</p>
+
+        <div class="comparaison-grid">
+          <div class="comp-card"><div class="comp-icon">✈️</div><div class="comp-label">Voyages</div><div class="comp-value">4 vols Paris-New York</div></div>
+          <div class="comp-card"><div class="comp-icon">🚗</div><div class="comp-label">Transport</div><div class="comp-value">2 ans de carburant</div></div>
+          <div class="comp-card"><div class="comp-icon">🎓</div><div class="comp-label">Formation</div><div class="comp-value">2 formations pro complètes</div></div>
+          <div class="comp-card"><div class="comp-icon">📱</div><div class="comp-label">Tech</div><div class="comp-value">4 iPhones neufs</div></div>
+        </div>
+
+        <!-- AD SLOT -->
+        <div class="ad-slot">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <h2>Le coût caché : la santé</h2>
+
+        <p>On n'intègre jamais le coût de santé dans le calcul. Pourtant :</p>
+        <ul>
+          <li>Consultations médicales supplémentaires liées au tabac</li>
+          <li>Médicaments, traitements respiratoires</li>
+          <li>Jours de travail perdus pour cause de maladie</li>
+          <li>Assurance santé et mutuelle plus chères pour les fumeurs</li>
+          <li>Coût potentiel de maladies graves à long terme</li>
+        </ul>
+
+        <p>Certaines études estiment ce surcoût santé entre <strong>2 000€ et 5 000€ par an</strong> selon les situations.</p>
+
+        <div class="highlight-box">
+          💡 Le coût total réel d'un fumeur d'un paquet/jour se situe entre <strong>6 000€ et 9 000€ par an</strong> en intégrant les coûts de santé.
+        </div>
+
+        <h2>Et pour un demi-paquet par jour ?</h2>
+
+        <p>Tout le monde n'est pas à un paquet/jour. Voici le calcul pour différents niveaux de consommation :</p>
+
+        <table class="calcul-table">
+          <thead><tr><th>Consommation</th><th>Coût/mois</th><th>Coût/an</th><th>Sur 10 ans</th></tr></thead>
+          <tbody>
+            <tr><td>5 cigarettes/jour</td><td>55€</td><td>660€</td><td>6 600€</td></tr>
+            <tr><td>10 cigarettes/jour</td><td>110€</td><td>1 320€</td><td>13 200€</td></tr>
+            <tr><td>1/2 paquet/jour</td><td>165€</td><td>2 008€</td><td>20 080€</td></tr>
+            <tr><td>1 paquet/jour</td><td>330€</td><td>4 015€</td><td>40 150€</td></tr>
+          </tbody>
+        </table>
+
+        <h2>La solution — calcule tes propres fuites</h2>
+
+        <p>La cigarette est une fuite d'argent majeure, mais elle n'est souvent pas la seule. La plupart des gens qui utilisent notre calculateur découvrent entre 200€ et 500€ de fuites mensuelles en additionnant toutes leurs habitudes.</p>
+
+        <div class="cta-box">
+          <h3>Calcule toutes tes fuites d'argent</h3>
+          <p>Le calculateur gratuit prend en compte cigarettes, cafés, abonnements oubliés, fast food et bien plus. Résultat en 2 minutes.</p>
+          <a href="/" class="cta-btn">🧮 Calculer mes fuites gratuitement</a>
+          <a href="/checklist.html" class="cta-btn green">📋 Télécharger la checklist PDF</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside style="position:sticky;top:80px;">
+      <div class="sidebar-widget">
+        <div class="widget-title">Outil gratuit</div>
+        <div style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.5;">Calcule en 2 minutes combien tu perds chaque mois en mauvaises habitudes.</div>
+        <a href="/" class="widget-cta">🧮 Lancer le calculateur →</a>
+      </div>
+      <div class="ad-slot" style="min-height:280px;">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+      </div>
+      <div class="sidebar-widget">
+        <div class="widget-title">PDF Gratuit</div>
+        <div style="font-size:32px;margin-bottom:8px;">📋</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Les 30 fuites d'argent invisibles</div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;">Identifie toutes tes fuites en 30 minutes</div>
+        <a href="/checklist.html" class="widget-cta green">Télécharger gratuitement →</a>
+      </div>
+      <div class="sidebar-widget">
+        <div class="widget-title">Articles similaires</div>
+        <a href="/article-abonnements.html" class="related-article">
+          <div class="related-icon">📱</div>
+          <div><div class="related-cat">Fuites d'argent</div><div class="related-title">30 abonnements oubliés que tu paies encore</div></div>
+        </a>
+        <a href="/article-cafe.html" class="related-article">
+          <div class="related-icon">☕</div>
+          <div><div class="related-cat">Habitudes</div><div class="related-title">Le café du matin : 780€ par an</div></div>
+        </a>
+        <a href="/article-budget.html" class="related-article">
+          <div class="related-icon">📊</div>
+          <div><div class="related-cat">Budget</div><div class="related-title">Faire un budget en 30 minutes</div></div>
+        </a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 ActivityWeb — <a href="/">Calculateur</a> · <a href="/blog.html">Blog</a> · <a href="/checklist.html">Checklist gratuite</a></p>
+</footer>
+</body>
+</html>

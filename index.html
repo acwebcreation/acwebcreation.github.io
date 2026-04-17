@@ -86,10 +86,37 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      gap: 16px;
     }
-    .logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text); text-decoration: none; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text); text-decoration: none; flex-shrink: 0; }
     .logo span { color: var(--red); }
-    .header-tag { font-size: 11px; color: var(--text3); background: var(--bg2); border: 1px solid var(--border); border-radius: 20px; padding: 4px 10px; }
+    .header-nav { display: flex; align-items: center; gap: 6px; }
+    .header-nav a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text2);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+    .header-nav a:hover { background: var(--bg2); color: var(--text); }
+    .header-nav a.active { color: var(--red); background: rgba(226,75,74,0.08); }
+    .header-nav .nav-cta {
+      background: var(--red);
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .header-nav .nav-cta:hover { background: var(--red-dark, #c03030); color: #fff; }
+    .nav-hamburger { display: none; background: none; border: none; color: var(--text2); font-size: 20px; cursor: pointer; padding: 4px; }
+    @media (max-width: 600px) {
+      .header-nav .nav-link { display: none; }
+      .nav-hamburger { display: block; }
+    }
 
     /* ===== LAYOUT ===== */
     .page-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 0; max-width: 1280px; margin: 0 auto; }
@@ -302,8 +329,22 @@
 
 <header>
   <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
-  <span class="header-tag">Calculateur gratuit</span>
+  <nav class="header-nav">
+    <a href="/" class="nav-link active">🧮 Calculateur</a>
+    <a href="/blog.html" class="nav-link">📝 Blog</a>
+    <a href="/checklist.html" class="nav-link">📋 Checklist</a>
+    <a href="/checklist.html" class="nav-cta">Gratuit →</a>
+  </nav>
+  <button class="nav-hamburger" onclick="toggleMobileNav()">☰</button>
 </header>
+
+<!-- Menu mobile -->
+<div id="mobileNav" style="display:none;position:fixed;top:57px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:99;padding:1rem 1.5rem;flex-direction:column;gap:4px;">
+  <a href="/" style="display:block;padding:10px 12px;font-size:14px;color:var(--text);text-decoration:none;border-radius:8px;" onclick="toggleMobileNav()">🧮 Calculateur</a>
+  <a href="/blog.html" style="display:block;padding:10px 12px;font-size:14px;color:var(--text);text-decoration:none;border-radius:8px;" onclick="toggleMobileNav()">📝 Blog</a>
+  <a href="/checklist.html" style="display:block;padding:10px 12px;font-size:14px;color:var(--text);text-decoration:none;border-radius:8px;" onclick="toggleMobileNav()">📋 Checklist</a>
+  <a href="/checklist.html" style="display:block;margin-top:8px;padding:11px 12px;font-size:14px;font-weight:700;color:#fff;background:var(--red);text-decoration:none;border-radius:8px;text-align:center;" onclick="toggleMobileNav()">Checklist gratuite →</a>
+</div>
 
 <div class="page-wrapper">
 
@@ -954,6 +995,11 @@ function downloadCard() {
 </div>
 
 <script>
+function toggleMobileNav() {
+  const nav = document.getElementById('mobileNav');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+
 // Bandeau newsletter — apparaît après 30 secondes ou au scroll 60%
 let nlShown = sessionStorage.getItem('nl_shown');
 if (!nlShown) {
