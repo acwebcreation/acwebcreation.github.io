@@ -626,16 +626,16 @@
 const HABITS = [
   { id:'cig',      icon:'🚬', name:'Cigarettes',       unit:'paquets / semaine', defaultVal:7,  min:1,  max:30,  step:1,   unitCost:11.5, timeMins:120 },
   { id:'cafe',     icon:'☕', name:'Cafés dehors',      unit:'cafés / semaine',   defaultVal:5,  min:1,  max:30,  step:1,   unitCost:3,    timeMins:15 },
-  { id:'alcool',   icon:'🍺', name:'Alcool',            unit:'verres / semaine',  defaultVal:7,  min:1,  max:50,  step:1,   unitCost:4,    timeMins:0 },
+  { id:'alcool',   icon:'🍺', name:'Alcool',            unit:'verres / semaine',  defaultVal:7,  min:1,  max:50,  step:1,   unitCost:5,    timeMins:0 },
   { id:'jeux',     icon:'🎰', name:'Jeux d\'argent',   unit:'€ / semaine',       defaultVal:20, min:5,  max:200, step:5,   unitCost:1,    timeMins:60,  euroMode:true },
   { id:'fastfood', icon:'🍔', name:'Fast food',         unit:'repas / semaine',   defaultVal:2,  min:1,  max:14,  step:1,   unitCost:12,   timeMins:40 },
-  { id:'social',   icon:'📱', name:'Réseaux sociaux',   unit:'heures / jour',     defaultVal:2,  min:0.5,max:8,   step:0.5, unitCost:0,    timeMins:60,  timeMode:true },
+  { id:'social',   icon:'💊', name:'Compléments alimentaires',  unit:'€ / mois',  defaultVal:2,  min:0.5,max:8,   step:0.5, unitCost:30,    timeMins:60,  timeMode:true },
   { id:'shopping', icon:'🛒', name:'Achats impulsifs',  unit:'€ / semaine',       defaultVal:30, min:5,  max:300, step:5,   unitCost:1,    timeMins:0,   euroMode:true },
   { id:'uber',     icon:'🚗', name:'VTC / Uber',        unit:'courses / semaine', defaultVal:3,  min:1,  max:20,  step:1,   unitCost:15,   timeMins:0 },
   { id:'abos',     icon:'📺', name:'Abonnements oubliés',unit:'€ / mois',         defaultVal:25, min:5,  max:200, step:5,   unitCost:1,    timeMins:0,   monthlyMode:true },
   { id:'snacks',   icon:'🍟', name:'Snacks / sucreries',unit:'€ / semaine',       defaultVal:15, min:2,  max:100, step:1,   unitCost:1,    timeMins:0,   euroMode:true },
 ];
-
+  oubliés
 let selected = {};
 let vals = {};
 let chartInst = null;
@@ -894,7 +894,7 @@ function submitLeadmagnet() {
     alert("Merci d'entrer un email valide.");
     return;
   }
-  const systemeUrl = 'https://https://www.checklist.mauvaiseshabitudes.com/30fuites';
+  const systemeUrl = 'https://www.checklist.mauvaiseshabitudes.com/30fuites';
   window.open(systemeUrl + '?email=' + encodeURIComponent(email), '_blank');
   document.getElementById('leadmagnet-form').innerHTML = `
     <div style="text-align:center;padding:1rem;">
