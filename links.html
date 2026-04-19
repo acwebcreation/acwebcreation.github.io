@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CashLeak — Liens</title>
+  <meta name="description" content="Tous les liens CashLeak — calculateur gratuit, checklist PDF, réseaux sociaux.">
+  <meta property="og:title" content="CashLeak — Arrête de perdre ton cash">
+  <meta property="og:description" content="Calcule tes fuites d'argent et télécharge la checklist gratuite.">
+  <meta property="og:image" content="https://www.mauvaiseshabitudes.com/preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { height: 100%; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #0e0e0c;
+      color: #f0efe8;
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+    }
+
+    /* Fond grille déco */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    /* PROFIL */
+    .profile {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: #E24B4A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 36px;
+      border: 3px solid rgba(226,75,74,0.4);
+      position: relative;
+    }
+    .avatar::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(226,75,74,0.2);
+    }
+    .profile-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: #f0efe8;
+      margin-bottom: 4px;
+    }
+    .profile-name span { color: #E24B4A; }
+    .profile-bio {
+      font-size: 13px;
+      color: #9a9a92;
+      line-height: 1.6;
+      max-width: 300px;
+      margin: 0 auto 12px;
+    }
+    .profile-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #E24B4A;
+      background: rgba(226,75,74,0.1);
+      border: 1px solid rgba(226,75,74,0.2);
+      border-radius: 20px;
+      padding: 3px 12px;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555550;
+      text-align: center;
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    /* LIENS */
+    .links { display: flex; flex-direction: column; gap: 10px; }
+
+    .link-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: #161614;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      text-decoration: none;
+      color: #f0efe8;
+      transition: transform 0.15s, border-color 0.15s, background 0.15s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .link-btn::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--accent, #E24B4A);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+    .link-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent, rgba(255,255,255,0.2));
+    }
+    .link-btn:hover::before { opacity: 1; }
+    .link-btn:active { transform: scale(0.98); }
+
+    .link-btn.featured {
+      background: #E24B4A;
+      border-color: #E24B4A;
+      --accent: #fff;
+    }
+    .link-btn.featured .link-title { color: #fff; }
+    .link-btn.featured .link-sub { color: rgba(255,255,255,0.7); }
+    .link-btn.featured .link-icon { background: rgba(255,255,255,0.15); }
+    .link-btn.featured .link-arrow { color: rgba(255,255,255,0.6); }
+
+    .link-btn.green-btn {
+      border-color: rgba(99,153,34,0.3);
+      --accent: #639922;
+    }
+    .link-btn.green-btn .link-icon { background: rgba(99,153,34,0.15); color: #639922; }
+    .link-btn.green-btn .link-title { color: #f0efe8; }
+
+    .link-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(226,75,74,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .link-content { flex: 1; }
+    .link-title { font-size: 14px; font-weight: 600; color: #f0efe8; margin-bottom: 2px; }
+    .link-sub { font-size: 11px; color: #6b6b66; }
+    .link-arrow { color: #444441; font-size: 16px; flex-shrink: 0; transition: transform 0.15s; }
+    .link-btn:hover .link-arrow { transform: translateX(3px); }
+
+    /* Badge "gratuit" */
+    .link-badge {
+      position: absolute;
+      top: 8px;
+      right: 40px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(99,153,34,0.15);
+      color: #639922;
+      border: 1px solid rgba(99,153,34,0.2);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+    .link-btn.featured .link-badge {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    /* RÉSEAUX SOCIAUX */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1.5rem;
+    }
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: #161614;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      text-decoration: none;
+      transition: transform 0.15s, border-color 0.15s;
+    }
+    .social-btn:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.2); }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 11px;
+      color: #333330;
+    }
+    .footer a { color: #444441; text-decoration: none; }
+    .footer a:hover { color: #E24B4A; }
+
+    /* Stats compteur */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 1.25rem 0;
+    }
+    .stat { text-align: center; }
+    .stat-value { font-size: 18px; font-weight: 700; color: #f0efe8; display: block; }
+    .stat-label { font-size: 10px; color: #555550; text-transform: uppercase; letter-spacing: 0.07em; }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- PROFIL -->
+  <div class="profile">
+    <div class="avatar">💸</div>
+    <div class="profile-name">Cash<span>Leak</span></div>
+    <p class="profile-bio">Tes fuites d'argent invisibles révélées — 1 fuite = 1 vidéo = 1 solution</p>
+    <span class="profile-tag">@CashLeak.fr</span>
+  </div>
+
+  <!-- LIENS PRINCIPAUX -->
+  <div class="section-label">Outils gratuits</div>
+  <div class="links">
+
+    <!-- Calculateur — Lien principal -->
+    <a href="https://www.mauvaiseshabitudes.com" class="link-btn featured">
+      <div class="link-icon">🧮</div>
+      <div class="link-content">
+        <div class="link-title">Calculateur de mauvaises habitudes</div>
+        <div class="link-sub">Combien tu perds vraiment chaque mois ?</div>
+      </div>
+      <div class="link-badge">Gratuit</div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <!-- Checklist -->
+    <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="link-btn green-btn">
+      <div class="link-icon">📋</div>
+      <div class="link-content">
+        <div class="link-title">Checklist PDF — 30 fuites d'argent</div>
+        <div class="link-sub">Télécharge le PDF gratuit par email</div>
+      </div>
+      <div class="link-badge">PDF gratuit</div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <!-- Blog -->
+    <a href="https://www.mauvaiseshabitudes.com/blog.html" class="link-btn" style="--accent:#9a9a92;">
+      <div class="link-icon" style="background:rgba(255,255,255,0.06);color:#9a9a92;">📝</div>
+      <div class="link-content">
+        <div class="link-title">Blog — Articles finance perso</div>
+        <div class="link-sub">Conseils pratiques et calculs concrets</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <!-- Comeup -->
+    <a href="https://comeup.com/fr/@alex-activityweb" target="_blank" rel="noopener" class="link-btn" style="--accent:#F5A623;">
+      <div class="link-icon" style="background:rgba(245,166,35,0.1);color:#F5A623;">🛒</div>
+      <div class="link-content">
+        <div class="link-title">Services IA Express</div>
+        <div class="link-sub">One Page · Blog · Newsletter — sur Comeup</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- RÉSEAUX SOCIAUX -->
+  <div class="section-label">Me suivre</div>
+  <div class="links">
+
+    <a href="https://www.tiktok.com/@CashLeak.fr" target="_blank" rel="noopener" class="link-btn" style="--accent:#ff0050;">
+      <div class="link-icon" style="background:rgba(255,0,80,0.1);color:#ff0050;">🎬</div>
+      <div class="link-content">
+        <div class="link-title">TikTok</div>
+        <div class="link-sub">@CashLeak.fr — 1 fuite par vidéo</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://www.instagram.com/cashleak.fr" target="_blank" rel="noopener" class="link-btn" style="--accent:#E1306C;">
+      <div class="link-icon" style="background:rgba(225,48,108,0.1);color:#E1306C;">📸</div>
+      <div class="link-content">
+        <div class="link-title">Instagram</div>
+        <div class="link-sub">@CashLeak.fr</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://www.youtube.com/@CashLeakFR" target="_blank" rel="noopener" class="link-btn" style="--accent:#FF0000;">
+      <div class="link-icon" style="background:rgba(255,0,0,0.1);color:#FF0000;">▶️</div>
+      <div class="link-content">
+        <div class="link-title">YouTube</div>
+        <div class="link-sub">@CashLeakFR — Shorts et vidéos</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+    <a href="https://www.facebook.com/cashleak" target="_blank" rel="noopener" class="link-btn" style="--accent:#1877F2;">
+      <div class="link-icon" style="background:rgba(24,119,242,0.1);color:#1877F2;">👥</div>
+      <div class="link-content">
+        <div class="link-title">Facebook</div>
+        <div class="link-sub">Page CashLeak</div>
+      </div>
+      <div class="link-arrow">→</div>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2025 ActivityWeb — <a href="https://www.mauvaiseshabitudes.com/mentions-legales.html">Mentions légales</a></p>
+  </div>
+
+</div>
+
+</body>
+</html>
