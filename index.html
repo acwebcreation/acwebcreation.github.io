@@ -500,14 +500,14 @@
     <p class="section-label">Détail par habitude</p>
     <div class="breakdown-box" id="breakdownList"></div>
 
-    <!-- BANNIÈRE RÉSEAUX SOCIAUX -->
-    <div class="lm-inline-banner" onclick="window.open('https://www.tiktok.com/@cashleak.fr','_blank')" style="margin:1.5rem 0;border-color:rgba(255,255,255,0.15);">
+    <!-- BANNIÈRE KIT PAYANT -->
+    <div class="lm-inline-banner" onclick="window.open('https://cashleak.gumroad.com/l/kit','_blank')" style="margin:1.5rem 0;border-color:rgba(186,117,23,0.3);">
       <div class="lm-inline-left">
-        <span class="lm-inline-badge" style="color:var(--text2);background:var(--bg2);">TikTok · Instagram</span>
-        <div class="lm-inline-title">🎬 <strong>Suis @CashLeak.fr</strong></div>
-        <div class="lm-inline-sub">Une vidéo par semaine — chaque fuite expliquée en 60 secondes</div>
+        <span class="lm-inline-badge" style="color:#BA7517;background:rgba(186,117,23,0.1);">17€ seulement</span>
+        <div class="lm-inline-title">📦 <strong>Kit Stoppe les Fuites</strong></div>
+        <div class="lm-inline-sub">Plan 30 jours + Excel + Scripts · 80 à 240€ récupérés/mois</div>
       </div>
-      <div class="lm-inline-cta" style="background:var(--text);color:var(--bg);">Suivre →</div>
+      <div class="lm-inline-cta" style="background:#BA7517;">Voir le kit →</div>
     </div>
 
     <!-- Card preview générée -->
@@ -615,8 +615,8 @@
 <footer>
   <p>
     Calculateur créatif à titre informatif — les montants sont des estimations moyennes.<br>
-    Données non collectées. Aucun compte requis. @Site créé par ActivityWeb <br>
-    <a href="/mentions-legales.html">Mentions légales</a>"· <a href="contact@mauvaiseshabitudes.com">Contact</a>
+    Données non collectées. Aucun compte requis.<br>
+    <a href="#">Mentions légales</a> · <a href="#">Contact</a>
   </p>
 </footer>
 
@@ -971,90 +971,9 @@ function downloadCard() {
   <button class="nl-close" onclick="closeNewsletter()">✕</button>
 </div>
 
-<!-- ===== MODAL NEWSLETTER ===== -->
-<div class="nl-modal" id="nlModal" onclick="if(event.target===this)closeModal()">
-  <div class="nl-modal-box">
-    <button class="nl-modal-close" onclick="closeModal()">✕</button>
-    <div id="nl-modal-content">
-      <div class="nl-modal-icon">📋</div>
-      <div class="nl-modal-title">Les 30 fuites d'argent invisibles</div>
-      <p class="nl-modal-sub">Entre ton email et reçois la checklist PDF gratuite + nos conseils hebdo pour mieux gérer ton argent.</p>
-      <div class="nl-modal-form">
-        <input type="text" id="nl-prenom-modal" placeholder="Ton prénom">
-        <input type="email" id="nl-email-modal" placeholder="ton@email.com">
-        <button class="nl-modal-submit" onclick="submitNewsletter('modal')">📩 Recevoir la checklist gratuite →</button>
-      </div>
-      <p class="nl-guarantee-modal" style="margin-top:10px;">🔒 Pas de spam · Désabonnement en 1 clic</p>
-    </div>
-    <div class="nl-success" id="nl-success">
-      <div style="font-size:40px;margin-bottom:12px;">🎉</div>
-      <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;">C'est dans ta boîte mail !</div>
-      <div style="font-size:13px;color:var(--text2);">Vérifie aussi tes spams si besoin.</div>
-    </div>
-  </div>
-</div>
 
 <script>
-function toggleMobileNav() {
-  const nav = document.getElementById('mobileNav');
-  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-}
-
-// Bandeau newsletter — apparaît après 30 secondes ou au scroll 60%
-let nlShown = sessionStorage.getItem('nl_shown');
-if (!nlShown) {
-  setTimeout(() => showNewsletterBar(), 30000);
-  window.addEventListener('scroll', () => {
-    const scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (scrollPct > 0.6 && !nlShown) showNewsletterBar();
-  });
-}
-
-function showNewsletterBar() {
-  if (sessionStorage.getItem('nl_shown')) return;
-  document.getElementById('newsletterBar').classList.add('visible');
-  nlShown = true;
-  sessionStorage.setItem('nl_shown', '1');
-}
-
-function closeNewsletter() {
-  document.getElementById('newsletterBar').classList.remove('visible');
-}
-
-function openNewsletter() {
-  document.getElementById('nlModal').classList.add('open');
-}
-
-function closeModal() {
-  document.getElementById('nlModal').classList.remove('open');
-}
-
-function submitNewsletter(source) {
-  const email = source === 'bar'
-    ? document.getElementById('nl-email-bar').value.trim()
-    : document.getElementById('nl-email-modal').value.trim();
-  const prenom = source === 'modal'
-    ? document.getElementById('nl-prenom-modal').value.trim()
-    : '';
-
-  if (!email || !email.includes('@')) {
-    alert("Merci d'entrer un email valide.");
-    return;
-  }
-
-  const systemeUrl = 'https://www.checklist.mauvaiseshabitudes.com/30fuites';
-  window.open(systemeUrl + '?email=' + encodeURIComponent(email) + '&first_name=' + encodeURIComponent(prenom), '_blank');
-
-  if (source === 'modal') {
-    document.getElementById('nl-modal-content').style.display = 'none';
-    document.getElementById('nl-success').style.display = 'block';
-    setTimeout(() => closeModal(), 3000);
-  } else {
-    document.getElementById('newsletterBar').innerHTML =
-      '<div style="width:100%;text-align:center;font-size:13px;color:var(--text);">🎉 Merci ! Vérifie ta boîte email dans quelques minutes.</div>';
-    setTimeout(() => closeNewsletter(), 4000);
-  }
-}
 </script>
+
 </body>
 </html>
