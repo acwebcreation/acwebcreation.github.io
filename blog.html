@@ -115,8 +115,8 @@
   <nav class="header-nav">
     <a href="/" class="nav-link">🧮 Calculateur</a>
     <a href="/blog.html" class="nav-link active">📝 Blog</a>
-    <a href="/checklist.html" class="nav-link">📋 Checklist</a>
-    <a href="/checklist.html" class="nav-cta">Gratuit →</a>
+    <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="nav-link">📋 Checklist</a>
+    <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="nav-cta">Gratuit →</a>
   </nav>
   <button class="nav-hamburger" onclick="document.getElementById('mobileNav').style.display=document.getElementById('mobileNav').style.display==='flex'?'none':'flex'">☰</button>
 </header>
@@ -124,8 +124,8 @@
 <div id="mobileNav">
   <a href="/">🧮 Calculateur</a>
   <a href="/blog.html" style="color:var(--red);">📝 Blog</a>
-  <a href="/checklist.html">📋 Checklist</a>
-  <a href="/checklist.html" class="mn-cta">Checklist gratuite →</a>
+  <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites">📋 Checklist</a>
+  <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="mn-cta">Checklist gratuite →</a>
 </div>
 
 <div class="page-wrap">
@@ -296,11 +296,11 @@
       </div>
 
       <div class="sidebar-widget">
-        <div class="widget-title">Newsletter gratuite</div>
-        <div style="font-size:13px;color:var(--text2);margin-bottom:12px;line-height:1.5;">1 fuite d'argent révélée chaque semaine. Gratuit, sans spam.</div>
-        <input class="nl-widget-input" type="email" id="blog-nl-email" placeholder="ton@email.com">
-        <button class="widget-cta" style="margin-top:0;" onclick="blogNewsletter()">Je m'abonne →</button>
-        <div id="blog-nl-success" style="display:none;font-size:12px;color:var(--green);margin-top:8px;text-align:center;">🎉 Inscription confirmée !</div>
+        <div class="widget-title">Kit payant — 17€</div>
+        <div style="font-size:32px;margin-bottom:8px;">📦</div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Kit Stoppe les Fuites</div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.5;">Plan 30 jours + Excel + Scripts · 80 à 240€ récupérés/mois</div>
+        <a href="/kit.html" class="widget-cta" style="background:#BA7517;">Voir le kit → 17€</a>
       </div>
 
       <div class="sidebar-widget">
@@ -308,7 +308,7 @@
         <div style="font-size:32px;margin-bottom:8px;">📋</div>
         <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Les 30 fuites d'argent invisibles</div>
         <div style="font-size:12px;color:var(--text2);margin-bottom:10px;">Checklist PDF — identifie tes fuites en 30 minutes</div>
-        <a href="/checklist.html" class="widget-cta green">Télécharger gratuitement →</a>
+        <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="widget-cta green">Télécharger gratuitement →</a>
       </div>
 
       <div class="ad-slot-sidebar">
@@ -318,7 +318,7 @@
 
       <div class="sidebar-widget">
         <div class="widget-title">Suivre @CashLeak</div>
-        <a href="https://www.tiktok.com/@cashleak" target="_blank" rel="noopener" class="widget-link">
+        <a href="https://www.tiktok.com/@cashleak.fr" target="_blank" rel="noopener" class="widget-link">
           <div class="widget-link-icon">🎬</div>
           <div><div class="widget-link-text">TikTok</div><div class="widget-link-sub">@CashLeak</div></div>
         </a>
@@ -344,7 +344,7 @@
   <div style="max-width:1100px;margin:0 auto;padding:0 1.25rem;">
     <p>
       © 2025 ActivityWeb — Contenu informatif à titre éducatif.<br>
-      <a href="/">Calculateur</a> · <a href="/blog.html">Blog</a> · <a href="/checklist.html">Checklist gratuite</a> · <a href="#">Mentions légales</a> · <a href="#">Contact</a>
+      <a href="/">Calculateur</a> · <a href="/blog.html">Blog</a> · <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites">Checklist gratuite</a> · <a href="#">Mentions légales</a> · <a href="#">Contact</a>
     </p>
   </div>
 </footer>
@@ -358,9 +358,7 @@ function filterCat(cat, btn) {
   });
 }
 
-function blogNewsletter() {
-  const email = document.getElementById('blog-nl-email').value.trim();
-  if (!email || !email.includes('@')) { alert("Merci d'entrer un email valide."); return; }
+
   window.open('https://d110-contact.systeme.io/5598a588-a48ef4ee?email=' + encodeURIComponent(email), '_blank');
   document.getElementById('blog-nl-success').style.display = 'block';
   document.getElementById('blog-nl-email').value = '';

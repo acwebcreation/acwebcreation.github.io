@@ -415,7 +415,7 @@
   </section>
 
   <!-- BANNIÈRE LEAD MAGNET -->
-  <div class="lm-inline-banner" onclick="openNewsletter()">
+  <div class="lm-inline-banner" onclick="window.open('https://www.checklist.mauvaiseshabitudes.com/30fuites','_blank')" style="cursor:pointer;">
     <div class="lm-inline-left">
       <span class="lm-inline-badge">Gratuit</span>
       <div class="lm-inline-title">📋 <strong>Les 30 fuites d'argent invisibles</strong></div>
@@ -449,14 +449,14 @@
       <div class="shock-sub" id="shockSub"></div>
     </div>
 
-    <!-- BANNIÈRE NEWSLETTER -->
-    <div class="lm-inline-banner" onclick="openNewsletter()" style="margin:1.5rem 0;">
+    <!-- BANNIÈRE LEAD MAGNET 2 -->
+    <div class="lm-inline-banner" onclick="window.open('https://www.checklist.mauvaiseshabitudes.com/30fuites','_blank')" style="margin:1.5rem 0;cursor:pointer;">
       <div class="lm-inline-left">
-        <span class="lm-inline-badge">Newsletter gratuite</span>
-        <div class="lm-inline-title">📩 <strong>1 fuite d'argent par semaine</strong></div>
-        <div class="lm-inline-sub">Chaque semaine, une habitude qui te coûte de l'argent + la solution</div>
+        <span class="lm-inline-badge">PDF Gratuit</span>
+        <div class="lm-inline-title">📋 <strong>Télécharge la checklist gratuite</strong></div>
+        <div class="lm-inline-sub">Les 30 fuites d'argent invisibles — identifie les tiennes en 30 minutes</div>
       </div>
-      <div class="lm-inline-cta">Je m'abonne →</div>
+      <div class="lm-inline-cta">Télécharger →</div>
     </div>
 
     <!-- Métriques -->
@@ -501,7 +501,7 @@
     <div class="breakdown-box" id="breakdownList"></div>
 
     <!-- BANNIÈRE KIT PAYANT -->
-    <div class="lm-inline-banner" onclick="window.open('https://cashleak.gumroad.com/l/kit','_blank')" style="margin:1.5rem 0;border-color:rgba(186,117,23,0.3);">
+    <div class="lm-inline-banner" onclick="window.open('/kit.html','_blank')" style="margin:1.5rem 0;border-color:rgba(186,117,23,0.3);">
       <div class="lm-inline-left">
         <span class="lm-inline-badge" style="color:#BA7517;background:rgba(186,117,23,0.1);">17€ seulement</span>
         <div class="lm-inline-title">📦 <strong>Kit Stoppe les Fuites</strong></div>
@@ -851,14 +851,32 @@ function calculate() {
 
 function shareResult() {
   const year = document.getElementById('shockYear').textContent;
-  const text = `Mes mauvaises habitudes me coûtent ${year} par an 😱 J'ai calculé ça sur ce site gratuit :`;
+  const text = "Mes mauvaises habitudes me coûtent " + year + " par an 😱 J'ai calculé ça sur ce site gratuit : https://www.mauvaiseshabitudes.com";
   const url = 'https://www.mauvaiseshabitudes.com';
   if (navigator.share) {
-    navigator.share({ title: 'Mon coût réel', text, url }).catch(() => {});
+    navigator.share({ title: 'Mon coût réel', text: text, url: url })
+      .catch(function() {
+        copyToClipboard(text);
+      });
   } else {
-    navigator.clipboard.writeText(text + ' ' + url)
-      .then(() => alert('✅ Texte copié ! Colle-le où tu veux.'))
-      .catch(() => alert("Copie manuelle : " + text + " " + url));
+    copyToClipboard(text);
+  }
+}
+function copyToClipboard(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text)
+      .then(function() { showShareModal(text); })
+      .catch(function() { showShareModal(text); });
+  } else {
+    showShareModal(text);
+  }
+}
+function showShareModal(text) {
+  const modal = document.getElementById('shareModal');
+  if (modal) {
+    modal.style.display = 'flex';
+  } else {
+    alert('Copie ce texte :\n\n' + text);
   }
 }
 
@@ -958,22 +976,24 @@ function downloadCard() {
 </script>
 
 
-<!-- ===== BANDEAU NEWSLETTER FIXE ===== -->
-<div class="newsletter-bar" id="newsletterBar">
-  <div class="nl-text">
-    <strong>📩 Reçois nos conseils finance chaque semaine</strong>
-    <span>Gratuit · Sans spam · Désabonnement en 1 clic</span>
-  </div>
-  <div class="nl-form">
-    <input class="nl-input" type="email" id="nl-email-bar" placeholder="ton@email.com">
-    <button class="nl-btn" onclick="submitNewsletter('bar')">S'inscrire</button>
-  </div>
-  <button class="nl-close" onclick="closeNewsletter()">✕</button>
-</div>
-
 
 <script>
 </script>
 
+
+<!-- MODAL PARTAGE -->
+<div id="shareModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:999;align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:var(--bg2);border-radius:16px;padding:1.5rem;max-width:420px;width:100%;border:1px solid var(--border);">
+    <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:12px;">📤 Partage ton résultat</div>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <a id="shareWA" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;">💬 Partager sur WhatsApp</a>
+      <a id="shareFB" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px;background:#1877F2;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;">📘 Partager sur Facebook</a>
+      <a id="shareTW" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px;background:#000;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;">🐦 Partager sur X/Twitter</a>
+      <button onclick="const t=document.getElementById('shareTxt').value;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>alert('✅ Copié !')).catch(()=>alert(t))" style="display:flex;align-items:center;gap:10px;padding:12px;background:var(--bg3);color:var(--text);border:1px solid var(--border);border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;font-family:inherit;">📋 Copier le texte</button>
+      <textarea id="shareTxt" readonly style="width:100%;padding:10px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:12px;resize:none;height:60px;font-family:inherit;"></textarea>
+    </div>
+    <button onclick="document.getElementById('shareModal').style.display='none'" style="margin-top:12px;width:100%;padding:10px;background:none;border:1px solid var(--border);border-radius:8px;color:var(--text2);cursor:pointer;font-family:inherit;">Fermer</button>
+  </div>
+</div>
 </body>
 </html>
