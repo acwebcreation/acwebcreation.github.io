@@ -35,6 +35,7 @@
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
     :root {
       --red: #E24B4A; --red-light: #FCEBEB; --red-dark: #A32D2D;
       --green: #639922; --green-light: #EAF3DE; --green-dark: #3F6612;
@@ -152,6 +153,25 @@
     .carte.malin .voir:hover { background: #4d7a19; }
     .vide { grid-column: 1 / -1; text-align: center; color: var(--text2); padding: 60px 0; }
 
+    /* ===== PROPOSER UN OBJET ===== */
+    .proposer { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; margin-bottom: 1.5rem; display: grid; grid-template-columns: 1fr 1.4fr; gap: 1.6rem; align-items: start; }
+    .proposer h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 6px; }
+    .proposer .intro p { color: var(--text2); font-size: .95rem; margin-bottom: 8px; }
+    .proposer form { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .proposer label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600; color: var(--text2); }
+    .proposer label.large { grid-column: 1 / -1; }
+    .proposer input, .proposer textarea { border: 1px solid var(--border); background: var(--bg); color: var(--text); border-radius: var(--radius-sm); padding: 9px 11px; font: 400 14px 'DM Sans', sans-serif; }
+    .proposer textarea { min-height: 80px; resize: vertical; }
+    .proposer .case { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 8px; font-weight: 500; }
+    .proposer button { grid-column: 1 / -1; justify-self: start; border: 0; background: var(--red); color: #fff; font: 700 14px 'DM Sans', sans-serif; padding: 11px 18px; border-radius: var(--radius-sm); cursor: pointer; }
+    .proposer button:disabled { opacity: .6; cursor: wait; }
+    .proposer .msg { grid-column: 1 / -1; font-size: 14px; font-weight: 600; }
+    .proposer .msg.ok { color: var(--green-dark); }
+    .proposer .msg.ko { color: var(--red); }
+    .piege { position: absolute; left: -9999px; }
+    .lien-proposer { display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--red); }
+    @media (max-width: 760px) { .proposer { grid-template-columns: 1fr; } .proposer form { grid-template-columns: 1fr; } }
+
     /* ===== BANDEAU CALCULATEUR ===== */
     .bandeau { background: var(--text); color: var(--bg); border-radius: var(--radius); padding: 1.6rem; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 2.5rem; }
     .bandeau h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 4px; }
@@ -213,6 +233,7 @@
     <div class="hero-texte">
       <h1>Ce qui te fait <em>économiser</em>… et ce qui va te ruiner quand même.</h1>
       <p>Des achats qui se remboursent tout seuls, et des objets parfaitement inutiles qu'on finit toujours par offrir.</p>
+      <a class="lien-proposer" href="#proposer" hidden>➕ Tu as trouvé un objet improbable ? Propose-le</a>
     </div>
     <div class="guides" id="guides"></div>
   </div>
@@ -252,6 +273,25 @@
   </div>
   <div class="grille" id="grille"></div>
 
+  <section class="proposer" id="proposer" hidden>
+    <div class="intro">
+      <h2>Tu as trouvé un objet improbable ?</h2>
+      <p>Un gadget absurde, un achat qui t'a fait économiser pour de vrai, une trouvaille que personne ne connaît ? Envoie-le : les meilleurs seront ajoutés au site.</p>
+      <p>Tu es créateur ou vendeur ? Tu peux aussi proposer ton propre produit, c'est gratuit.</p>
+    </div>
+    <form id="formProposer">
+      <label>Nom de l'objet<input name="objet" required maxlength="120" placeholder="Ex. : grille-pain à selfie"></label>
+      <label>Lien (Amazon, Etsy, site…)<input name="lien" type="url" required maxlength="500" placeholder="https://…"></label>
+      <label class="large">Pourquoi il mérite sa place<textarea name="pourquoi" maxlength="1000" placeholder="Utile, absurde, les deux ?"></textarea></label>
+      <label>Ton prénom (facultatif)<input name="prenom" maxlength="60"></label>
+      <label>Ton e-mail (facultatif)<input name="email" type="email" maxlength="120" placeholder="Pour te prévenir s'il est publié"></label>
+      <label class="case"><input type="checkbox" name="createur" value="oui"> Je suis le créateur ou le vendeur de ce produit</label>
+      <input class="piege" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit">Envoyer ma trouvaille</button>
+      <div class="msg" id="msgProposer" role="status"></div>
+    </form>
+  </section>
+
   <section class="bandeau">
     <div>
       <h2>Et tes vraies fuites d'argent, tu les connais ?</h2>
@@ -273,7 +313,11 @@
 
 <script>
 /* ============ RÉGLAGES ============ */
-const CONFIG = { tag: "mauvaiseshabi-21", domaine: "www.amazon.fr" };
+const CONFIG = {
+  tag: "mauvaiseshabi-21",
+  domaine: "www.amazon.fr",
+  formulaire: ""   // ← adresse Formspree, ex. "https://formspree.io/f/abcdwxyz" — le formulaire reste caché tant que c'est vide
+};
 
 /* ============ LISTES DES FILTRES ============ */
 const POUR_QUI = {
@@ -717,6 +761,25 @@ document.addEventListener("click", e => {
 $("#fond").addEventListener("click", e => { if (e.target.id === "fond") $("#fond").classList.remove("ouvert"); });
 document.addEventListener("keydown", e => { if (e.key === "Escape") $("#fond").classList.remove("ouvert"); });
 $("#hamburger").addEventListener("click", () => { const m = $("#mobileNav"); m.style.display = m.style.display === "flex" ? "none" : "flex"; });
+
+/* Formulaire « Propose un objet » */
+if (CONFIG.formulaire) {
+  $("#proposer").hidden = false; $(".lien-proposer").hidden = false;
+  $("#formProposer").addEventListener("submit", async e => {
+    e.preventDefault();
+    const f = e.target, btn = f.querySelector("button"), msg = $("#msgProposer");
+    btn.disabled = true; msg.className = "msg"; msg.textContent = "Envoi…";
+    try {
+      const r = await fetch(CONFIG.formulaire, { method: "POST", body: new FormData(f), headers: { Accept: "application/json" } });
+      if (!r.ok) throw new Error();
+      f.reset(); msg.className = "msg ok"; msg.textContent = "Merci ! Ta trouvaille est bien arrivée. 🙌";
+      if (typeof gtag === "function") gtag("event", "proposition_objet");
+    } catch(err) {
+      msg.className = "msg ko"; msg.textContent = "Oups, l'envoi n'a pas marché. Réessaie dans un instant.";
+    }
+    btn.disabled = false;
+  });
+}
 
 remplirSelects(); guides(); chips(); afficher();
 </script>
