@@ -604,6 +604,9 @@ try {
   if (GUIDES.some(g => g.id === u.get("guide"))) etat.guide = u.get("guide");
   if (OCCASIONS[u.get("occasion")]) etat.occ = u.get("occasion");
   if (POUR_QUI[u.get("pour")]) etat.qui = u.get("pour");
+  if (BUDGETS[u.get("budget")]) etat.budget = u.get("budget");
+  if (CATS[u.get("cat")]) { etat.cat = u.get("cat"); etat.rayon = CATS[etat.cat].r; }
+  if (u.get("q")) etat.txt = u.get("q").slice(0, 60);
 } catch(e) {}
 
 function lien(p){
@@ -781,7 +784,7 @@ if (CONFIG.formulaire) {
   });
 }
 
-remplirSelects(); guides(); chips(); afficher();
+remplirSelects(); guides(); chips(); $("#recherche").value = etat.txt; afficher();
 </script>
 </body>
 </html>
