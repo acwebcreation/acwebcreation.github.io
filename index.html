@@ -521,12 +521,12 @@ const PRODUITS = [
 
 /* ============ GUIDES (vignettes du haut) ============ */
 const GUIDES = [
-  {id:"absurdes", titre:n => `${n} objets complètement absurdes`, filtre:p => rayonDe(p) === "fun" && p.c !== "folies" && p.b <= 2, cover:"Oreiller autruche", emoji:"🤪"},
-  {id:"noel",     titre:n => `${n} cadeaux de Noël qui font rire`, filtre:p => rayonDe(p) === "fun" && p.b <= 3, cover:"Couverture tortilla géante", emoji:"🎄"},
+  {id:"absurdes", titre:n => `${n} objets complètement absurdes`, filtre:p => p.c === "blague" || p.c === "cuisine", cover:"Coupe-banane", emoji:"🤪"},
+  {id:"flemme",   titre:n => `${n} cadeaux pour la flemme assumée`, filtre:p => p.c === "confort", cover:"Oreiller autruche", emoji:"😴"},
+  {id:"geek",     titre:n => `${n} trouvailles pour geeks et gamers`, filtre:p => p.c === "geek", cover:"Enceinte en lévitation", emoji:"🤓"},
   {id:"malins",   titre:n => `${n} achats qui se remboursent tout seuls`, filtre:p => rayonDe(p) === "malin", cover:"Moulin à café manuel", emoji:"💚"},
-  {id:"moins20",  titre:n => `${n} cadeaux à moins de 20 €`, filtre:p => p.b === 1, cover:"Coupe-banane", emoji:"🎁"},
-  {id:"geek",     titre:n => `${n} trouvailles pour geeks et gamers`, filtre:p => qui(p).includes("geek") || qui(p).includes("gamer"), cover:"Enceinte en lévitation", emoji:"🤓"},
-  {id:"folies",   titre:n => `${n} folies hors de prix`, filtre:p => p.b >= 4, cover:"", emoji:"💎"}
+  {id:"moins20",  titre:n => `${n} cadeaux à moins de 20 €`, filtre:p => p.b === 1, cover:"Couverture tortilla géante", emoji:"🎁"},
+  {id:"folies",   titre:n => `${n} folies hors de prix`, filtre:p => p.c === "folies", cover:"", emoji:"💎"}
 ];
 
 /* ============ LOGIQUE ============ */
