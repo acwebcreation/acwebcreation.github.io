@@ -68,6 +68,36 @@
     footer p { font-size:12px; color:var(--text3); line-height:1.8; }
     footer a { color:var(--text3); text-decoration:underline; }
     @media(max-width:760px) { .article-layout { grid-template-columns:1fr; } }
+  
+    /* ===== Achats malins liés ===== */
+    .achats-lies { margin: 2.2rem 0; padding: 1.4rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--green-light); }
+    .achats-lies .al-kicker { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; background: var(--green); padding: 4px 10px; border-radius: 20px; margin-bottom: 8px; }
+    .achats-lies .al-titre { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text); margin: 0 0 6px; }
+    .achats-lies .al-intro { font-size: 14px; color: var(--text2); margin: 0 0 14px; line-height: 1.55; }
+    .al-grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+    .al-carte { display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .15s; }
+    .al-carte:hover { transform: translateY(-2px); }
+    .al-visuel { position: relative; aspect-ratio: 4/3; display: grid; place-items: center; font-size: 2.6rem; background: var(--bg2); }
+    .al-visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 8px; background: #fff; font-size: 11px; color: transparent; }
+    .al-corps { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+    .al-corps strong { font-size: 14px; line-height: 1.3; }
+    .al-eco { font-size: 12.5px; color: var(--text2); line-height: 1.45; flex: 1; }
+    .al-btn { align-self: flex-start; margin-top: 4px; background: var(--green); color: #fff; font-size: 12.5px; font-weight: 700; padding: 6px 10px; border-radius: 6px; }
+    .al-plus { display: inline-block; margin-top: 14px; font-size: 14px; font-weight: 700; color: var(--green); text-decoration: none; }
+    .al-plus:hover { text-decoration: underline; }
+    .al-mention { font-size: 11.5px; color: var(--text3); margin: 8px 0 0; }
+    .al-side-visuel { position: relative; aspect-ratio: 4/3; display: grid; place-items: center; font-size: 2.4rem; background: var(--bg2); border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
+    .al-side-visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 6px; background: #fff; font-size: 11px; color: transparent; }
+    .al-side-btn { display: block; text-align: center; background: var(--green); color: #fff; font-size: 13px; font-weight: 700; padding: 9px 10px; border-radius: 8px; text-decoration: none; margin-top: 8px; }
+    .al-side-lien { display: block; text-align: center; font-size: 12.5px; font-weight: 600; color: var(--text2); margin-top: 8px; }
+    .achats-lies a.al-carte, .achats-lies a.al-carte strong { color: var(--text) !important; text-decoration: none !important; }
+    .achats-lies a.al-plus { color: var(--green) !important; }
+    .achats-lies .al-mention { color: var(--text3) !important; }
+    @media (max-width: 560px) {
+      .al-grille { grid-template-columns: 1fr; }
+      .al-carte { flex-direction: row; }
+      .al-visuel { flex: 0 0 96px; aspect-ratio: auto; min-height: 96px; font-size: 2rem; }
+    }
   </style>
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2SKGPL32R"></script>
@@ -168,6 +198,27 @@
           <li>Attends 2 mois pour t'assurer que tout est transféré</li>
           <li>Ferme l'ancien compte</li>
         </ol>
+        <section class="achats-lies">
+          <span class="al-kicker">💚 Les achats malins liés</span>
+          <h2 class="al-titre">Pour mettre de côté ce que tu économises</h2>
+          <p class="al-intro">Changer de banque libère de l&#x27;argent chaque année. Voici de quoi le garder de côté au lieu de le voir fondre.</p>
+          <div class="al-grille">
+          <a class="al-carte" href="https://www.amazon.fr/s?k=tirelire%20compteur%20billet%20epargne&amp;tag=mauvaiseshabi-21" target="_blank" rel="nofollow sponsored noopener">
+            <div class="al-visuel"><span aria-hidden="true">🐷</span></div>
+            <div class="al-corps"><strong>Tirelire compteur</strong><span class="al-eco">💰 Elle affiche le total à chaque pièce. Étrangement motivant.</span><span class="al-btn">Voir sur Amazon →</span></div>
+          </a>
+          <a class="al-carte" href="https://www.amazon.fr/s?k=budget%20binder%20classeur%20enveloppes&amp;tag=mauvaiseshabi-21" target="_blank" rel="nofollow sponsored noopener">
+            <div class="al-visuel"><span aria-hidden="true">🗂️</span></div>
+            <div class="al-corps"><strong>Classeur budget à enveloppes</strong><span class="al-eco">💰 La méthode des enveloppes : chaque euro a une mission.</span><span class="al-btn">Voir sur Amazon →</span></div>
+          </a>
+          <a class="al-carte" href="https://www.amazon.fr/s?k=agenda%20planificateur%20budget%20mensuel&amp;tag=mauvaiseshabi-21" target="_blank" rel="nofollow sponsored noopener">
+            <div class="al-visuel"><span aria-hidden="true">📒</span></div>
+            <div class="al-corps"><strong>Agenda planificateur de budget</strong><span class="al-eco">💰 Tes dépenses du mois sur une page, sans tableur.</span><span class="al-btn">Voir sur Amazon →</span></div>
+          </a>
+          </div>
+          <a class="al-plus" href="/?guide=malins">Voir tous les achats qui se remboursent tout seuls →</a>
+          <p class="al-mention">Liens affiliés Amazon : je touche une petite commission si tu achètes, sans surcoût pour toi.</p>
+        </section>
         <div class="cta-box">
           <h3>Calcule toutes tes fuites d'argent</h3>
           <p>Le calculateur gratuit analyse toutes tes habitudes en 2 minutes.</p>
@@ -177,6 +228,14 @@
       </div>
     </article>
     <aside style="position:sticky;top:80px;">
+      <div class="sidebar-widget">
+        <div class="widget-title">Le bon achat</div>
+        <div class="al-side-visuel"><span aria-hidden="true">🐷</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">Tirelire compteur</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.5;">Elle affiche le total à chaque pièce. Étrangement motivant.</div>
+        <a href="https://www.amazon.fr/s?k=tirelire%20compteur%20billet%20epargne&amp;tag=mauvaiseshabi-21" target="_blank" rel="nofollow sponsored noopener" class="al-side-btn">Voir sur Amazon →</a>
+        <a href="/" class="al-side-lien">🛒 Toutes les trouvailles →</a>
+      </div>
       <div class="sidebar-widget">
         <div class="widget-title">Outil gratuit</div>
         <div style="font-size:13px;color:var(--text2);margin-bottom:10px;line-height:1.5;">Calcule en 2 minutes combien tu perds chaque mois.</div>
