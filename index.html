@@ -5,1004 +5,519 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO -->
-  <title>Combien coûtent vraiment tes mauvaises habitudes ? | Calculateur gratuit</title>
-  <meta name="description" content="Calcule le coût réel de tes mauvaises habitudes en argent ET en temps : cigarettes, café, alcool, compléments oubliés... Résultat instantané et chiffres chocs.">
-  <meta name="keywords" content="calculateur mauvaises habitudes, coût cigarette, arrêter fumer économies, mauvaises habitudes argent, combien coûte habitude">
+  <title>Achats malins et trouvailles insolites | MauvaisesHabitudes.com</title>
+  <meta name="description" content="Les achats malins qui se remboursent tout seuls, et les objets insolites dont personne n'a besoin (mais qu'on veut quand même). Idées cadeaux originales pour Noël et toute l'année.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.mauvaiseshabitudes.com/">
 
-  <!-- Open Graph (partage Facebook / WhatsApp) -->
-  <meta property="og:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
-  <meta property="og:description" content="Un calculateur gratuit qui te montre le vrai coût de tes habitudes : en argent, en temps, et en opportunités perdues.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Achats malins et trouvailles insolites">
+  <meta property="og:description" content="Ce qui fait économiser… et ce qui va te ruiner quand même. Idées cadeaux originales et objets absurdes.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.mauvaiseshabitudes.com/">
   <meta property="og:image" content="https://www.mauvaiseshabitudes.com/preview.png">
   <meta property="og:locale" content="fr_FR">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Combien coûtent vraiment tes mauvaises habitudes ?">
-  <meta name="twitter:description" content="Calcule le coût réel de tes mauvaises habitudes en argent et en temps. Résultat choc garanti.">
-  <meta name="twitter:image" content="https://www.mauvaiseshabitudes.com/preview.png">
 
-  <!-- Google AdSense — remplace ca-pub-XXXXXXXXXXXXXXXX par ton vrai ID -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M2SKGPL32R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M2SKGPL32R');
+  </script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --red: #E24B4A;
-      --red-light: #FCEBEB;
-      --red-dark: #A32D2D;
-      --green: #639922;
-      --green-light: #EAF3DE;
-      --bg: #FAFAF8;
-      --bg2: #F2F1ED;
+      --red: #E24B4A; --red-light: #FCEBEB; --red-dark: #A32D2D;
+      --green: #639922; --green-light: #EAF3DE; --green-dark: #3F6612;
+      --bg: #FAFAF8; --bg2: #F2F1ED; --card: #FFFFFF;
       --border: rgba(0,0,0,0.1);
-      --text: #1a1a18;
-      --text2: #6b6b66;
-      --text3: #999994;
-      --radius: 14px;
-      --radius-sm: 8px;
+      --text: #1a1a18; --text2: #6b6b66; --text3: #999994;
+      --radius: 14px; --radius-sm: 8px;
     }
-
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #161614;
-        --bg2: #1f1f1d;
+        --bg: #161614; --bg2: #1f1f1d; --card: #1c1c1a;
         --border: rgba(255,255,255,0.1);
-        --text: #f0efe8;
-        --text2: #9a9a92;
-        --text3: #666660;
-        --red-light: #3a1212;
-        --green-light: #1a2e08;
+        --text: #f0efe8; --text2: #9a9a92; --text3: #666660;
+        --red-light: #3a1212; --green-light: #1a2e08; --green-dark: #a6d46a;
       }
     }
-
     html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; }
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    /* ===== HEADER ===== */
-    header {
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      gap: 16px;
-    }
+    /* ===== HEADER (identique au reste du site) ===== */
+    header { background: var(--bg); border-bottom: 1px solid var(--border); padding: 14px 1.5rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
     .logo { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--text); text-decoration: none; flex-shrink: 0; }
     .logo span { color: var(--red); }
     .header-nav { display: flex; align-items: center; gap: 6px; }
-    .header-nav a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text2);
-      text-decoration: none;
-      padding: 6px 12px;
-      border-radius: var(--radius-sm);
-      transition: background 0.15s, color 0.15s;
-      white-space: nowrap;
-    }
+    .header-nav a { font-size: 13px; font-weight: 500; color: var(--text2); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); }
     .header-nav a:hover { background: var(--bg2); color: var(--text); }
     .header-nav a.active { color: var(--red); background: rgba(226,75,74,0.08); }
-    .header-nav .nav-cta {
-      background: var(--red);
-      color: #fff;
-      padding: 7px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-    .header-nav .nav-cta:hover { background: var(--red-dark, #c03030); color: #fff; }
     .nav-hamburger { display: none; background: none; border: none; color: var(--text2); font-size: 20px; cursor: pointer; padding: 4px; }
-    @media (max-width: 600px) {
-      .header-nav .nav-link { display: none; }
-      .nav-hamburger { display: block; }
-    }
+    #mobileNav { display: none; position: fixed; top: 57px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--border); z-index: 99; padding: 1rem 1.5rem; flex-direction: column; gap: 4px; }
+    #mobileNav a { display: block; padding: 10px 12px; font-size: 14px; color: var(--text); text-decoration: none; border-radius: 8px; }
+    @media (max-width: 600px) { .header-nav .nav-link { display: none; } .nav-hamburger { display: block; } }
 
-    /* ===== LAYOUT ===== */
-    .page-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 0; max-width: 1280px; margin: 0 auto; }
-    .sidebar { width: 160px; flex-shrink: 0; position: sticky; top: 80px; padding-top: 2rem; display: none; }
-    .sidebar-ad { width: 160px; min-height: 600px; background: var(--bg2); border: 1px dashed var(--border); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; }
-    .sidebar-ad ins { width: 160px; }
-    .container { max-width: 700px; width: 100%; padding: 0 1.25rem 4rem; }
-    @media (min-width: 1080px) { .sidebar { display: block; } .page-wrapper { gap: 24px; } }
-    @media (min-width: 1280px) { .sidebar { width: 200px; } .sidebar-ad { width: 200px; } }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
 
     /* ===== HERO ===== */
-    .hero { text-align: center; padding: 3rem 0 2.5rem; }
-    .hero-badge { display: inline-block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--red); background: var(--red-light); border-radius: 20px; padding: 5px 14px; margin-bottom: 1.25rem; font-weight: 500; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 38px); line-height: 1.25; color: var(--text); margin-bottom: 1rem; }
+    .hero { padding: 3rem 0 1.5rem; text-align: center; }
+    .hero .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--red); background: var(--red-light); padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5.5vw, 3.2rem); line-height: 1.1; margin: 0 auto 12px; max-width: 18ch; }
     .hero h1 em { font-style: normal; color: var(--red); }
-    .hero p { font-size: 15px; color: var(--text2); max-width: 480px; margin: 0 auto; }
+    .hero p { color: var(--text2); font-size: 1.05rem; max-width: 54ch; margin: 0 auto; }
 
-    /* ===== AD SLOT ===== */
-    .ad-slot { background: var(--bg2); border: 1px dashed var(--border); border-radius: var(--radius-sm); padding: 1rem; text-align: center; margin: 1.5rem 0; min-height: 90px; display: flex; align-items: center; justify-content: center; }
-    .ad-slot ins { width: 100%; }
-    /* Masquer le placeholder dashed une fois AdSense chargé */
-    .ad-slot:has(ins[data-ad-status="filled"]) { border: none; padding: 0; background: transparent; }
+    /* ===== RAYONS ===== */
+    .rayons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 760px; margin: 1.8rem auto 0; }
+    .rayon { text-align: left; border: 2px solid var(--border); background: var(--card); border-radius: var(--radius); padding: 16px 18px; cursor: pointer; font: inherit; color: var(--text); transition: border-color .15s, transform .15s; }
+    .rayon:hover { transform: translateY(-2px); }
+    .rayon strong { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+    .rayon span { font-size: .88rem; color: var(--text2); }
+    .rayon.on[data-rayon="malin"] { border-color: var(--green); background: var(--green-light); }
+    .rayon.on[data-rayon="fun"] { border-color: var(--red); background: var(--red-light); }
+    @media (max-width: 560px) { .rayons { grid-template-columns: 1fr; } }
 
-    /* ===== SECTION LABEL ===== */
-    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 1rem; margin-top: 2rem; }
+    /* ===== FILTRES ===== */
+    .filtres { position: sticky; top: 57px; z-index: 5; background: var(--bg); padding: 12px 0 8px; border-bottom: 1px solid var(--border); margin-top: 1.8rem; }
+    .ligne { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .recherche { flex: 1 1 200px; min-width: 0; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 12px; font: inherit; font-size: 14px; }
+    select { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 10px; font: inherit; font-size: 14px; cursor: pointer; }
+    .btn-hasard { border: 0; background: var(--text); color: var(--bg); border-radius: var(--radius-sm); padding: 9px 14px; font: 700 14px 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; }
+    .btn-liste { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 12px; font: 600 14px 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; }
+    .btn-liste.on { background: var(--red); color: #fff; border-color: var(--red); }
+    .chips { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; scrollbar-width: none; }
+    .chips::-webkit-scrollbar { display: none; }
+    .chip { flex: 0 0 auto; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: 20px; padding: 6px 12px; font: 500 13px 'DM Sans', sans-serif; cursor: pointer; }
+    .chip.on { background: var(--text); color: var(--bg); border-color: var(--text); }
 
-    /* ===== HABITS GRID ===== */
-    .habits-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; margin-bottom: 1.5rem; }
-    .habit-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px 12px;
-      cursor: pointer;
-      transition: all 0.15s;
-      user-select: none;
-      position: relative;
-    }
-    .habit-card:hover { border-color: rgba(226,75,74,0.4); transform: translateY(-1px); }
-    .habit-card.selected { border: 2px solid var(--red); background: var(--red-light); }
-    .habit-card.selected::after { content: '✓'; position: absolute; top: 8px; right: 10px; font-size: 11px; color: var(--red); font-weight: 600; }
-    .habit-icon { font-size: 22px; margin-bottom: 6px; }
-    .habit-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
-    .habit-unit { font-size: 11px; color: var(--text3); }
+    /* ===== GRILLE ===== */
+    .compte { color: var(--text2); font-size: .9rem; margin: 16px 0 12px; }
+    .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; padding-bottom: 2.5rem; }
+    .carte { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
+    .carte:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.06); }
+    .visuel { position: relative; aspect-ratio: 4/3; display: grid; place-items: center; font-size: 4.2rem; }
+    .visuel img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+    .visuel .emoji { transition: transform .2s; }
+    .carte:hover .emoji { transform: scale(1.1) rotate(-6deg); }
+    .coeur { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.92); font-size: 1rem; cursor: pointer; display: grid; place-items: center; }
+    .badge { position: absolute; top: 12px; left: 12px; color: #fff; font: 700 11px 'DM Sans', sans-serif; padding: 4px 9px; border-radius: 20px; text-transform: uppercase; letter-spacing: .04em; }
+    .badge.malin { background: var(--green); }
+    .badge.fun { background: var(--red); }
+    .corps { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .corps h3 { font-size: 1.05rem; line-height: 1.25; font-weight: 700; }
+    .corps p { color: var(--text2); font-size: .9rem; flex: 1; }
+    .eco { font-size: .82rem; font-weight: 600; color: var(--green-dark); }
+    .meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 4px; }
+    .prix { font-size: .8rem; font-weight: 600; background: var(--bg2); padding: 4px 9px; border-radius: 6px; white-space: nowrap; }
+    .voir { background: var(--red); color: #fff; text-decoration: none; font-weight: 700; font-size: .88rem; padding: 9px 13px; border-radius: var(--radius-sm); white-space: nowrap; text-align: center; }
+    .voir:hover { background: var(--red-dark); }
+    .carte.malin .voir { background: var(--green); }
+    .carte.malin .voir:hover { background: #4d7a19; }
+    .vide { grid-column: 1 / -1; text-align: center; color: var(--text2); padding: 60px 0; }
 
-    /* ===== CONFIG ===== */
-    .config-box { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.5rem; margin-bottom: 1.5rem; display: none; }
-    .config-box.visible { display: block; }
-    .habit-config { margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
-    .habit-config:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .config-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
-    .config-row { display: flex; align-items: center; gap: 12px; }
-    .config-row label { font-size: 12px; color: var(--text2); min-width: 90px; }
-    .config-row input[type=range] { flex: 1; accent-color: var(--red); cursor: pointer; }
-    .config-row .val { font-size: 13px; font-weight: 600; color: var(--text); min-width: 55px; text-align: right; }
+    /* ===== BANDEAU CALCULATEUR ===== */
+    .bandeau { background: var(--text); color: var(--bg); border-radius: var(--radius); padding: 1.6rem; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .bandeau h2 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 4px; }
+    .bandeau p { opacity: .75; font-size: .95rem; }
+    .bandeau a { background: var(--red); color: #fff; text-decoration: none; font-weight: 700; padding: 12px 18px; border-radius: var(--radius-sm); white-space: nowrap; }
 
-    /* ===== BUTTON ===== */
-    .calc-btn {
-      width: 100%;
-      padding: 16px;
-      background: var(--red);
-      color: #fff;
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      margin-bottom: 2rem;
-      transition: opacity 0.15s, transform 0.1s;
-      letter-spacing: 0.01em;
-    }
-    .calc-btn:hover:not(:disabled) { opacity: 0.92; transform: translateY(-1px); }
-    .calc-btn:active:not(:disabled) { transform: scale(0.99); }
-    .calc-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+    /* ===== MODALE ===== */
+    .fond { position: fixed; inset: 0; background: rgba(20,20,18,.6); display: none; place-items: center; padding: 16px; z-index: 200; }
+    .fond.ouvert { display: grid; }
+    .modale { background: var(--card); border-radius: 20px; max-width: 400px; width: 100%; overflow: hidden; animation: pop .25s ease; }
+    @keyframes pop { from { transform: scale(.92) rotate(-2deg); opacity: 0; } to { transform: none; opacity: 1; } }
+    .modale .visuel { font-size: 5.5rem; }
+    .modale .actions { display: flex; gap: 8px; padding: 0 16px 18px; }
+    .modale .actions button { flex: 1; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 10px; font: 600 14px 'DM Sans', sans-serif; cursor: pointer; }
+    .modale .actions .voir { flex: 1; }
 
-    /* ===== RESULTS ===== */
-    .results { display: none; animation: fadeUp 0.4s ease; }
-    .results.visible { display: block; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-
-    /* Shock box */
-    .shock-box { background: var(--red); border-radius: var(--radius); padding: 2.5rem 2rem; text-align: center; margin-bottom: 1.25rem; }
-    .shock-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.65); margin-bottom: 10px; font-weight: 500; }
-    .shock-amount { font-family: 'Playfair Display', serif; font-size: clamp(44px, 10vw, 64px); color: #fff; line-height: 1; margin-bottom: 8px; }
-    .shock-sub { font-size: 14px; color: rgba(255,255,255,0.75); }
-
-    /* Metrics */
-    .metrics-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
-    .metric-card { background: var(--bg2); border-radius: var(--radius-sm); padding: 1rem; text-align: center; border: 1px solid var(--border); }
-    .metric-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text3); margin-bottom: 6px; }
-    .metric-value { font-size: 20px; font-weight: 600; color: var(--text); }
-
-    /* Invest box */
-    .invest-box { background: var(--green-light); border: 1px solid rgba(99,153,34,0.25); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-bottom: 1.25rem; }
-    .invest-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--green); font-weight: 600; margin-bottom: 6px; }
-    .invest-amount { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--green); margin-bottom: 4px; }
-    .invest-sub { font-size: 13px; color: var(--text2); }
-
-    /* Chart */
-    .chart-section { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); padding: 1.25rem; margin-bottom: 1.25rem; }
-    .chart-legend { display: flex; gap: 16px; font-size: 12px; color: var(--text2); margin-bottom: 1rem; flex-wrap: wrap; }
-    .chart-legend span { display: flex; align-items: center; gap: 5px; }
-    .legend-dot { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
-    .chart-wrap { position: relative; width: 100%; height: 220px; }
-
-    /* Breakdown */
-    .breakdown-box { background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 1.5rem; }
-    .breakdown-item { display: flex; justify-content: space-between; align-items: center; padding: 11px 1.25rem; border-bottom: 1px solid var(--border); font-size: 13px; }
-    .breakdown-item:last-child { border-bottom: none; }
-    .breakdown-name { color: var(--text2); }
-    .breakdown-cost { font-weight: 600; color: var(--text); }
-
-    /* Phrase choc */
-    .phrase-choc { background: var(--bg2); border-left: 3px solid var(--red); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: 14px; color: var(--text); font-style: italic; }
-
-    /* Share / reset */
-    .action-row { display: flex; gap: 10px; margin-bottom: 2rem; }
-    .share-btn { flex: 1; padding: 12px; background: var(--text); color: var(--bg); border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: opacity 0.15s; }
-    .share-btn:hover { opacity: 0.85; }
-    .reset-btn { padding: 12px 20px; background: transparent; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--text2); cursor: pointer; }
-    .reset-btn:hover { background: var(--bg2); }
-
-    /* ===== FOOTER ===== */
-    footer { border-top: 1px solid var(--border); padding: 2rem 1.25rem; text-align: center; max-width: 700px; margin: 0 auto; }
-    footer p { font-size: 12px; color: var(--text3); line-height: 1.8; }
+    footer { border-top: 1px solid var(--border); padding: 2rem 1.25rem; text-align: center; max-width: 760px; margin: 0 auto; }
+    footer p { font-size: 12px; color: var(--text3); line-height: 1.8; margin-bottom: 6px; }
     footer a { color: var(--text3); text-decoration: underline; }
 
-    @media (max-width: 480px) {
-      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
-      .shock-amount { font-size: 42px; }
-      .habits-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    /* ===== BANNIÈRE LEAD MAGNET INLINE ===== */
-    .lm-inline-banner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      background: var(--bg2);
-      border: 1px solid rgba(226,75,74,0.25);
-      border-radius: var(--radius);
-      padding: 14px 18px;
-      margin: 1.5rem 0;
-      cursor: pointer;
-      transition: border-color 0.15s, transform 0.1s;
-    }
-    .lm-inline-banner:hover { border-color: var(--red); transform: translateY(-1px); }
-    .lm-inline-left { flex: 1; }
-    .lm-inline-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--red); background:rgba(226,75,74,0.1); border-radius:10px; padding:2px 8px; margin-bottom:5px; }
-    .lm-inline-title { font-size:13px; color:var(--text); margin-bottom:3px; }
-    .lm-inline-sub { font-size:11px; color:var(--text2); }
-    .lm-inline-cta { flex-shrink:0; background:var(--red); color:#fff; font-size:12px; font-weight:700; padding:9px 14px; border-radius:var(--radius-sm); white-space:nowrap; }
-
-    /* ===== BANDEAU NEWSLETTER FIXE ===== */
-    .newsletter-bar {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      background: var(--bg2);
-      border-top: 1px solid rgba(226,75,74,0.3);
-      padding: 12px 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      z-index: 200;
-      transform: translateY(100%);
-      transition: transform 0.4s ease;
-    }
-    .newsletter-bar.visible { transform: translateY(0); }
-    .newsletter-bar.hidden { transform: translateY(100%); }
-    .nl-text { flex: 1; }
-    .nl-text strong { font-size: 13px; color: var(--text); display:block; margin-bottom:2px; }
-    .nl-text span { font-size: 11px; color: var(--text2); }
-    .nl-form { display: flex; gap: 8px; align-items: center; }
-    .nl-input { padding: 9px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 13px; width: 200px; }
-    .nl-input::placeholder { color: var(--text3); }
-    .nl-input:focus { outline: none; border-color: var(--red); }
-    .nl-btn { padding: 9px 16px; background: var(--red); color: #fff; border: none; border-radius: var(--radius-sm); font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 700; cursor: pointer; white-space: nowrap; }
-    .nl-close { background: none; border: none; color: var(--text3); font-size: 18px; cursor: pointer; padding: 4px; flex-shrink: 0; }
-
-    /* Modal newsletter */
-    .nl-modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:300; align-items:center; justify-content:center; }
-    .nl-modal.open { display:flex; }
-    .nl-modal-box { background:var(--bg2); border:1px solid rgba(226,75,74,0.3); border-radius:20px; padding:2rem; width:90%; max-width:420px; position:relative; }
-    .nl-modal-box::before { content:''; position:absolute; top:0;left:0;right:0; height:3px; background:linear-gradient(90deg,var(--red),#ff8a65); border-radius:20px 20px 0 0; }
-    .nl-modal-close { position:absolute; top:12px; right:14px; background:none; border:none; color:var(--text3); font-size:20px; cursor:pointer; }
-    .nl-modal-icon { font-size:40px; margin-bottom:12px; }
-    .nl-modal-title { font-family:'Playfair Display',serif; font-size:20px; color:var(--text); margin-bottom:8px; line-height:1.3; }
-    .nl-modal-sub { font-size:13px; color:var(--text2); margin-bottom:20px; line-height:1.6; }
-    .nl-modal-form { display:flex; flex-direction:column; gap:10px; }
-    .nl-modal-form input { padding:12px 14px; background:var(--bg); border:1px solid var(--border); border-radius:var(--radius-sm); color:var(--text); font-family:'DM Sans',sans-serif; font-size:14px; }
-    .nl-modal-form input::placeholder { color:var(--text3); }
-    .nl-modal-form input:focus { outline:none; border-color:var(--red); }
-    .nl-modal-submit { padding:13px; background:var(--red); color:#fff; border:none; border-radius:var(--radius-sm); font-family:'DM Sans',sans-serif; font-size:14px; font-weight:700; cursor:pointer; }
-    .nl-success { display:none; text-align:center; padding:1rem 0; }
-    .nl-guarantee-modal { font-size:11px; color:var(--text3); text-align:center; }
-
-    @media (max-width: 600px) {
-      .newsletter-bar { flex-direction:column; align-items:flex-start; padding:14px 1rem; }
-      .nl-form { width:100%; }
-      .nl-input { flex:1; width:auto; }
-      .lm-inline-banner { flex-direction:column; align-items:flex-start; }
-      .lm-inline-cta { align-self:stretch; text-align:center; }
+    @media (max-width: 560px) {
+      .hero { padding: 2rem 0 1rem; }
+      .grille { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .visuel { font-size: 3.2rem; }
+      .corps { padding: 10px 11px 12px; }
+      .corps h3 { font-size: .95rem; }
+      .corps p { font-size: .82rem; }
+      .meta { flex-direction: column; align-items: stretch; }
+      .prix { align-self: flex-start; }
+      .filtres { top: 53px; }
     }
   </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M2SKGPL32R"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-M2SKGPL32R');
-</script>
 </head>
 <body>
 
 <header>
   <a class="logo" href="/">Mauvaises<span>Habitudes</span>.com</a>
   <nav class="header-nav">
-    <a href="/" class="nav-link active">🧮 Calculateur</a>
+    <a href="/" class="nav-link active">🛒 Trouvailles</a>
+    <a href="/calculateur.html" class="nav-link">🧮 Calculateur</a>
     <a href="/ressources.html" class="nav-link">📝 Ressources</a>
     <a href="/blog.html" class="nav-link">📝 Blog</a>
-    <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="nav-link">📋 Checklist</a>
-    <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" class="nav-cta">Gratuit →</a>
   </nav>
-  <button class="nav-hamburger" onclick="toggleMobileNav()">☰</button>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">☰</button>
 </header>
-
-<!-- Menu mobile -->
-<div id="mobileNav" style="display:none;position:fixed;top:57px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);z-index:99;padding:1rem 1.5rem;flex-direction:column;gap:4px;">
-  <a href="/" style="display:block;padding:10px 12px;font-size:14px;color:var(--text);text-decoration:none;border-radius:8px;" onclick="toggleMobileNav()">🧮 Calculateur</a>
-  <a href="/blog.html" style="display:block;padding:10px 12px;font-size:14px;color:var(--text);text-decoration:none;border-radius:8px;" onclick="toggleMobileNav()">📝 Blog</a>
-  <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" style="display:block;padding:10px 12px;font-size:14px;color:var(--text);text-decoration:none;border-radius:8px;" onclick="toggleMobileNav()">📋 Checklist</a>
-  <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites" style="display:block;margin-top:8px;padding:11px 12px;font-size:14px;font-weight:700;color:#fff;background:var(--red);text-decoration:none;border-radius:8px;text-align:center;" onclick="toggleMobileNav()">Checklist gratuite →</a>
+<div id="mobileNav">
+  <a href="/">🛒 Trouvailles</a>
+  <a href="/calculateur.html">🧮 Calculateur</a>
+  <a href="/ressources.html">📝 Ressources</a>
+  <a href="/blog.html">📝 Blog</a>
 </div>
 
-<div class="page-wrapper">
-
-<!-- SIDEBAR GAUCHE — Lead Magnet -->
-<div class="sidebar">
-  <a href="#leadmagnet-form" id="lm-banner" style="display:block;text-decoration:none;position:relative;overflow:hidden;border-radius:16px;background:#161614;border:1px solid rgba(226,75,74,0.25);padding:1.25rem;">
-
-    <!-- Fond déco -->
-    <div style="position:absolute;inset:0;opacity:0.03;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px);pointer-events:none;"></div>
-    <!-- Barre top -->
-    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E24B4A,#ff8a65);border-radius:16px 16px 0 0;"></div>
-
-    <div style="position:relative;z-index:1;">
-      <!-- Badge -->
-      <div style="display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#E24B4A;background:rgba(226,75,74,0.12);border-radius:20px;padding:3px 10px;margin-bottom:12px;">Gratuit</div>
-
-      <!-- Icône -->
-      <div style="font-size:36px;margin-bottom:10px;">📋</div>
-
-      <!-- Titre -->
-      <div style="font-size:14px;font-weight:700;color:#f0efe8;line-height:1.35;margin-bottom:8px;">La Checklist<br><span style="color:#E24B4A;">"Les 30 fuites<br>d'argent invisibles"</span></div>
-
-      <!-- Description -->
-      <div style="font-size:12px;color:#6b6b66;line-height:1.5;margin-bottom:16px;">Découvre les 30 habitudes qui vident ton compte sans que tu t'en rendes compte.</div>
-
-      <!-- Points clés -->
-      <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:16px;">
-        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
-          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>30 fuites identifiées
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
-          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>Solutions concrètes
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:6px;font-size:11px;color:#9a9a92;">
-          <span style="color:#E24B4A;flex-shrink:0;font-weight:700;">✓</span>PDF à imprimer
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div style="background:#E24B4A;color:#fff;text-align:center;padding:10px 8px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:0.02em;">
-        Je veux ma checklist →
-      </div>
-
-      <!-- Social proof -->
-      <div style="text-align:center;font-size:10px;color:#444441;margin-top:8px;">📩 Envoyée par email instantanément</div>
+<section class="hero">
+  <div class="wrap">
+    <span class="kicker">Achats malins &amp; trouvailles</span>
+    <h1>Ce qui te fait <em>économiser</em>… et ce qui va te ruiner quand même.</h1>
+    <p>D'un côté, les achats qui se remboursent tout seuls. De l'autre, les objets parfaitement inutiles qu'on finit toujours par offrir (ou s'offrir). On ne juge pas.</p>
+    <div class="rayons">
+      <button class="rayon" data-rayon="malin"><strong>💚 Les achats malins</strong><span>Ils coûtent un peu, puis ils te font économiser.</span></button>
+      <button class="rayon" data-rayon="fun"><strong>🙈 Les mauvaises habitudes assumées</strong><span>Gadgets absurdes et cadeaux insolites.</span></button>
     </div>
-  </a>
+  </div>
+</section>
 
-  <!-- Formulaire email (affiché au clic ou scroll) -->
-  <div id="leadmagnet-form" style="margin-top:12px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1rem;display:none;">
-    <div style="font-size:12px;font-weight:600;color:var(--text);margin-bottom:8px;">Ton email gratuit :</div>
-    <input type="email" id="lm-email" placeholder="prenom@email.com"
-      style="width:100%;padding:9px 10px;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);font-size:13px;margin-bottom:8px;font-family:'DM Sans',sans-serif;">
-    <button onclick="submitLeadmagnet()" style="width:100%;padding:9px;background:#E24B4A;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;">
-      Envoyer ma checklist →
-    </button>
-    <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:6px;">Pas de spam. Désinscription en 1 clic.</div>
+<div class="filtres">
+  <div class="wrap">
+    <div class="ligne">
+      <input class="recherche" id="recherche" type="search" placeholder="Chercher un objet…" aria-label="Rechercher">
+      <select id="pourQui" aria-label="Pour qui">
+        <option value="">Pour qui ?</option>
+        <option value="papa">Papa</option>
+        <option value="maman">Maman</option>
+        <option value="ado">Ado</option>
+        <option value="geek">Geek</option>
+        <option value="collegue">Collègue</option>
+        <option value="couple">Couple</option>
+        <option value="animaux">Fan d'animaux</option>
+      </select>
+      <select id="budget" aria-label="Budget">
+        <option value="">Budget</option>
+        <option value="1">Moins de 20 €</option>
+        <option value="2">20 à 50 €</option>
+        <option value="3">Plus de 50 €</option>
+      </select>
+      <button class="btn-hasard" id="btnHasard">🎲 Au hasard</button>
+      <button class="btn-liste" id="btnListe">❤️ <span id="nbListe">0</span></button>
+    </div>
+    <div class="chips" id="chips"></div>
   </div>
 </div>
 
-<div class="container">
+<main class="wrap">
+  <div class="compte" id="compte"></div>
+  <div class="grille" id="grille"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-badge">Résultat en 60 secondes</div>
-    <h1>Combien te coûtent vraiment<br>tes <em>mauvaises habitudes</em> ?</h1>
-    <p>En argent, en temps, et en opportunités perdues. Les chiffres vont te surprendre.</p>
+  <section class="bandeau">
+    <div>
+      <h2>Et tes vraies fuites d'argent, tu les connais ?</h2>
+      <p>Café, cigarettes, abonnements oubliés… Calcule en 30 secondes ce que te coûtent tes habitudes sur 10 ans.</p>
+    </div>
+    <a href="/calculateur.html">🧮 Lancer le calculateur</a>
   </section>
+</main>
 
-  <!-- BANNIÈRE LEAD MAGNET -->
-  <div class="lm-inline-banner" onclick="window.open('https://www.checklist.mauvaiseshabitudes.com/30fuites','_blank')" style="cursor:pointer;">
-    <div class="lm-inline-left">
-      <span class="lm-inline-badge">Gratuit</span>
-      <div class="lm-inline-title">📋 <strong>Les 30 fuites d'argent invisibles</strong></div>
-      <div class="lm-inline-sub">Identifie les habitudes qui vident ton compte chaque mois</div>
-    </div>
-    <div class="lm-inline-cta">Recevoir la checklist →</div>
-  </div>
-
-  <!-- ÉTAPE 1 -->
-  <p class="section-label">Étape 1 — Choisis tes habitudes</p>
-  <div class="habits-grid" id="habitsGrid"></div>
-
-  <!-- ÉTAPE 2 — Config -->
-  <div class="config-box" id="configBox">
-    <p class="section-label" style="margin-top:0;">Étape 2 — Ajuste ta consommation</p>
-    <div id="configItems"></div>
-  </div>
-
-  <!-- BOUTON -->
-  <button class="calc-btn" id="calcBtn" onclick="calculate()" disabled>
-    Calculer mon coût total →
-  </button>
-
-  <!-- RÉSULTATS -->
-  <div class="results" id="results">
-
-    <!-- Choc principal -->
-    <div class="shock-box">
-      <div class="shock-label">Tu dépenses chaque année</div>
-      <div class="shock-amount" id="shockYear">0 €</div>
-      <div class="shock-sub" id="shockSub"></div>
-    </div>
-
-    <!-- BANNIÈRE LEAD MAGNET 2 -->
-    <div class="lm-inline-banner" onclick="window.open('https://www.checklist.mauvaiseshabitudes.com/30fuites','_blank')" style="margin:1.5rem 0;cursor:pointer;">
-      <div class="lm-inline-left">
-        <span class="lm-inline-badge">PDF Gratuit</span>
-        <div class="lm-inline-title">📋 <strong>Télécharge la checklist gratuite</strong></div>
-        <div class="lm-inline-sub">Les 30 fuites d'argent invisibles — identifie les tiennes en 30 minutes</div>
-      </div>
-      <div class="lm-inline-cta">Télécharger →</div>
-    </div>
-
-    <!-- Métriques -->
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-label">Par mois</div>
-        <div class="metric-value" id="mMonth">—</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Sur 5 ans</div>
-        <div class="metric-value" id="m5y">—</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Sur 10 ans</div>
-        <div class="metric-value" id="m10y">—</div>
-      </div>
-    </div>
-
-    <!-- Phrase choc -->
-    <div class="phrase-choc" id="phraseChoc"></div>
-
-    <!-- Investissement -->
-    <div class="invest-box">
-      <div class="invest-title">💸 Et si tu avais investi cet argent à 7%/an ?</div>
-      <div class="invest-amount" id="investAmount">—</div>
-      <div class="invest-sub" id="investSub"></div>
-    </div>
-
-    <!-- Graphique -->
-    <div class="chart-section">
-      <div class="chart-legend">
-        <span><span class="legend-dot" style="background:#E24B4A;"></span>Coût dépensé</span>
-        <span><span class="legend-dot" style="background:#639922;"></span>Si investi à 7%</span>
-      </div>
-      <div class="chart-wrap">
-        <canvas id="costChart" role="img" aria-label="Graphique d'évolution du coût cumulé vs investissement sur 10 ans">Évolution du coût sur 10 ans.</canvas>
-      </div>
-    </div>
-
-    <!-- Détail par habitude -->
-    <p class="section-label">Détail par habitude</p>
-    <div class="breakdown-box" id="breakdownList"></div>
-
-    <!-- BANNIÈRE KIT PAYANT -->
-    <div class="lm-inline-banner" onclick="window.open('/kit.html','_blank')" style="margin:1.5rem 0;border-color:rgba(186,117,23,0.3);">
-      <div class="lm-inline-left">
-        <span class="lm-inline-badge" style="color:#BA7517;background:rgba(186,117,23,0.1);">17€ seulement</span>
-        <div class="lm-inline-title">📦 <strong>Kit Stoppe les Fuites</strong></div>
-        <div class="lm-inline-sub">Plan 30 jours + Excel + Scripts · 80 à 240€ récupérés/mois</div>
-      </div>
-      <div class="lm-inline-cta" style="background:#BA7517;">Voir le kit →</div>
-    </div>
-
-    <!-- Card preview générée -->
-    <div id="cardPreviewWrap" style="display:none;margin-bottom:1.5rem;">
-      <p class="section-label" style="margin-top:0;">Ta carte personnalisée</p>
-      <canvas id="resultCard" style="width:100%;border-radius:var(--radius);border:1px solid var(--border);display:block;"></canvas>
-      <div style="display:flex;gap:10px;margin-top:10px;">
-        <button onclick="downloadCard()" style="flex:1;padding:11px;background:var(--text);color:var(--bg);border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:500;cursor:pointer;">⬇️ Télécharger l'image</button>
-        <button onclick="document.getElementById('cardPreviewWrap').style.display='none'" style="padding:11px 16px;background:transparent;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;color:var(--text2);cursor:pointer;">✕</button>
-      </div>
-      <p style="font-size:11px;color:var(--text3);margin-top:8px;text-align:center;">Télécharge et poste cette image sur Instagram, TikTok ou Facebook</p>
-    </div>
-
-    <!-- Actions -->
-    <div class="action-row">
-      <button class="share-btn" onclick="shareResult()">📤 Partager</button>
-      <button class="share-btn" style="background:var(--red);" onclick="generateCard()">🖼️ Créer mon image</button>
-    </div>
-    <div style="text-align:center;margin-bottom:2rem;">
-      <button class="reset-btn" style="width:100%;margin-top:6px;" onclick="resetAll()">Recommencer</button>
-    </div>
-
-    <!-- Carte résultat générée -->
-    <div id="cardPreview" style="display:none;margin-bottom:2rem;">
-      <p class="section-label">Ton image à partager</p>
-      <div id="resultCard" style="background:#161614;border-radius:20px;padding:2rem;position:relative;overflow:hidden;font-family:'DM Sans',sans-serif;">
-        <!-- Barre rouge top -->
-        <div style="position:absolute;top:0;left:0;right:0;height:5px;background:#E24B4A;border-radius:20px 20px 0 0;"></div>
-        <!-- Grille déco -->
-        <div style="position:absolute;inset:0;opacity:0.04;background-image:repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px);pointer-events:none;"></div>
-
-        <div style="position:relative;z-index:1;">
-          <!-- Badge -->
-          <div style="display:inline-block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#E24B4A;background:rgba(226,75,74,0.15);border-radius:20px;padding:4px 12px;margin-bottom:1.25rem;font-weight:600;">Calculateur de mauvaises habitudes</div>
-
-          <!-- Montant choc -->
-          <div style="background:#E24B4A;border-radius:14px;padding:1.5rem;margin-bottom:1rem;text-align:center;">
-            <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.6);margin-bottom:6px;">Je dépense chaque année</div>
-            <div id="cardAmount" style="font-size:52px;font-weight:700;color:#fff;line-height:1;">—</div>
-            <div id="cardSub" style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;"></div>
-          </div>
-
-          <!-- 3 métriques -->
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem;">
-            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
-              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Par mois</div>
-              <div id="cardMonth" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
-            </div>
-            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
-              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Sur 5 ans</div>
-              <div id="card5y" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
-            </div>
-            <div style="background:#1f1f1d;border-radius:10px;padding:12px;text-align:center;">
-              <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:#666660;margin-bottom:4px;">Sur 10 ans</div>
-              <div id="card10y" style="font-size:17px;font-weight:700;color:#f0efe8;">—</div>
-            </div>
-          </div>
-
-          <!-- Invest -->
-          <div style="background:#1a2e08;border:1px solid rgba(99,153,34,0.25);border-radius:10px;padding:12px 16px;margin-bottom:1rem;display:flex;justify-content:space-between;align-items:center;">
-            <div style="font-size:12px;color:#639922;">Si investi à 7%/an pendant 10 ans</div>
-            <div id="cardInvest" style="font-size:18px;font-weight:700;color:#639922;">—</div>
-          </div>
-
-          <!-- Habits list -->
-          <div id="cardHabits" style="margin-bottom:1.25rem;"></div>
-
-          <!-- Footer -->
-          <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #2a2a28;padding-top:12px;">
-            <div style="font-size:11px;color:#444441;">mauvaiseshabitudes.com</div>
-            <div style="font-size:11px;color:#444441;">Calcule le tien gratuitement →</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bouton télécharger -->
-      <button onclick="downloadCard()" style="width:100%;margin-top:12px;padding:13px;background:#E24B4A;color:#fff;border:none;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">
-        📥 Télécharger l'image (PNG)
-      </button>
-      <p style="font-size:11px;color:var(--text3);text-align:center;margin-top:8px;">Parfait pour Instagram, Facebook, WhatsApp</p>
-    </div>
-
-  </div>
-  <!-- /results -->
-
+<div class="fond" id="fond" role="dialog" aria-modal="true">
+  <div class="modale" id="modale"></div>
 </div>
-<!-- /container -->
-
-<!-- SIDEBAR DROITE -->
-<div class="sidebar">
-  <div class="sidebar-ad">
-    <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-      data-ad-slot="XXXXXXXXXX"
-      data-ad-format="vertical"
-      data-full-width-responsive="false"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
-</div>
-
-</div>
-<!-- /page-wrapper -->
 
 <footer>
-  <p>
-    Calculateur créatif à titre informatif — les montants sont des estimations moyennes.<br>
-    Données non collectées. Aucun compte requis.<br>
-    <a href="#">Mentions légales</a> · <a href="#">Contact</a>
-  </p>
+  <p>En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises. Les liens « Voir sur Amazon » sont des liens affiliés : si tu achètes via ces liens, je touche une petite commission, sans surcoût pour toi.</p>
+  <p>Les tranches de prix sont indicatives. Vérifie le prix et la disponibilité sur le site du marchand.</p>
+  <p>© 2025 ActivityWeb — <a href="/calculateur.html">Calculateur</a> · <a href="/blog.html">Blog</a> · <a href="/ressources.html">Ressources</a> · <a href="https://www.checklist.mauvaiseshabitudes.com/30fuites">Checklist gratuite</a> · <a href="/mentions-legales.html">Mentions légales</a></p>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script>
-const HABITS = [
-  { id:'cig',      icon:'🚬', name:'Cigarettes',       unit:'paquets / semaine', defaultVal:7,  min:1,  max:30,  step:1,   unitCost:11.5, timeMins:120 },
-  { id:'cafe',     icon:'☕', name:'Cafés dehors',      unit:'cafés / semaine',   defaultVal:5,  min:1,  max:30,  step:1,   unitCost:3,    timeMins:15 },
-  { id:'alcool',   icon:'🍺', name:'Alcool',            unit:'verres / semaine',  defaultVal:7,  min:1,  max:50,  step:1,   unitCost:4,    timeMins:0 },
-  { id:'jeux',     icon:'🎰', name:'Jeux d\'argent',   unit:'€ / semaine',       defaultVal:20, min:5,  max:200, step:5,   unitCost:1,    timeMins:60,  euroMode:true },
-  { id:'fastfood', icon:'🍔', name:'Fast food',         unit:'repas / semaine',   defaultVal:2,  min:1,  max:14,  step:1,   unitCost:12,   timeMins:40 },
-  { id:'compléments', icon:'💊', name:'Compléments oubliés', unit:'€ / mois',        defaultVal:30, min:5,  max:150, step:5,   unitCost:1,    timeMins:0,   monthlyMode:true },
-  { id:'shopping', icon:'🛒', name:'Achats impulsifs',  unit:'€ / semaine',       defaultVal:30, min:5,  max:300, step:5,   unitCost:1,    timeMins:0,   euroMode:true },
-  { id:'uber',     icon:'🚗', name:'VTC / Uber',        unit:'courses / semaine', defaultVal:3,  min:1,  max:20,  step:1,   unitCost:15,   timeMins:0 },
-  { id:'abos',     icon:'📺', name:'Abonnements oubliés',unit:'€ / mois',         defaultVal:25, min:5,  max:200, step:5,   unitCost:1,    timeMins:0,   monthlyMode:true },
-  { id:'snacks',   icon:'🍟', name:'Snacks / sucreries',unit:'€ / semaine',       defaultVal:15, min:2,  max:100, step:1,   unitCost:1,    timeMins:0,   euroMode:true },
+/* ============ RÉGLAGES ============ */
+const CONFIG = { tag: "cashleak-21", domaine: "www.amazon.fr" };
+
+/* ============ CATÉGORIES (r = rayon) ============ */
+const CATS = {
+  cafe:     {r:"malin", label:"☕ Café & repas",        couleur:"#EAF3DE"},
+  energie:  {r:"malin", label:"💡 Énergie & maison",    couleur:"#E4F0D0"},
+  sdb:      {r:"malin", label:"🚿 Salle de bain",       couleur:"#DDEFD8"},
+  quotidien:{r:"malin", label:"🧰 Quotidien",           couleur:"#E8F2DA"},
+  confort:  {r:"fun",   label:"😴 Confort & flemme",    couleur:"#FFE3D3"},
+  cuisine:  {r:"fun",   label:"🍳 Cuisine absurde",     couleur:"#FFF1C2"},
+  fete:     {r:"fun",   label:"🎉 Fêtes & soirées",     couleur:"#FFD6E0"},
+  geek:     {r:"fun",   label:"🤓 Geek & déco",         couleur:"#D9E8FF"},
+  blague:   {r:"fun",   label:"🤡 Blagues & idioties",  couleur:"#FCEBEB"},
+  animaux:  {r:"fun",   label:"🐾 Pour les animaux",    couleur:"#EADCFF"}
+};
+const BUDGETS = {1:"< 20 €", 2:"20–50 €", 3:"50 € +"};
+
+/* ============ PRODUITS ============
+   n = nom, d = description, eco = phrase « économie » (rayon malin), e = emoji, c = catégorie
+   p = pour qui, b = budget (1/2/3), q = recherche Amazon (lien construit avec le tag)
+   url (optionnel) = lien produit direct, image (optionnel) = URL d'image, top = mis en avant
+*/
+const PRODUITS = [
+  /* ---------- 💚 ACHATS MALINS ---------- */
+  {n:"Moulin à café manuel", e:"☕", c:"cafe", p:["papa","maman","collegue"], b:2, q:"moulin à café manuel", top:true,
+   d:"Du café fraîchement moulu à la maison, meilleur que celui du comptoir.", eco:"Le café à emporter de tous les matins devient une exception."},
+  {n:"Mug isotherme de voyage", e:"🥤", c:"cafe", p:["collegue","maman","papa"], b:1, q:"mug isotherme voyage étanche",
+   d:"Le café maison reste chaud jusqu'au bureau. Le coffee shop perd un client.", eco:"Rentabilisé en quelques cafés non achetés."},
+  {n:"Cafetière à piston", e:"🫖", c:"cafe", p:["couple","collegue"], b:1, q:"cafetière à piston",
+   d:"Simple, sans capsules, sans abonnement, sans électronique qui lâche.", eco:"Fini les capsules à prix d'or."},
+  {n:"Boîtes repas en verre", e:"🍱", c:"cafe", p:["collegue","papa","maman"], b:1, q:"boîtes repas verre lot",
+   d:"Le lunch maison au bureau. Le sandwich à 8 € devient un souvenir.", eco:"Un des plus gros postes de dépense du midi, divisé."},
+  {n:"Machine à pain", e:"🍞", c:"cafe", p:["maman","papa"], b:3, q:"machine à pain",
+   d:"Du pain frais le matin, programmé la veille. La boulangerie, c'est pour le dimanche.", eco:"Coût par pain bien inférieur à la boulangerie."},
+  {n:"Carafe filtrante", e:"💧", c:"cafe", p:["couple","maman"], b:1, q:"carafe filtrante",
+   d:"L'eau du robinet, en meilleur goût. Fini les packs d'eau à porter.", eco:"Adieu les bouteilles en plastique au caddie."},
+  {n:"Yaourtière", e:"🥛", c:"cafe", p:["maman","papa"], b:2, q:"yaourtière",
+   d:"Des yaourts maison avec un litre de lait. Étonnamment facile.", eco:"Le prix du yaourt divisé, et zéro pot à jeter."},
+  {n:"Sachets congélation réutilisables", e:"🧊", c:"cafe", p:["maman","couple"], b:1, q:"sac congélation réutilisable silicone",
+   d:"Pour congeler les restes au lieu de les jeter.", eco:"Moins de gaspillage, moins de sacs jetables."},
+  {n:"Multiprise avec interrupteur", e:"🔌", c:"energie", p:["papa","geek"], b:1, q:"multiprise interrupteur individuel", top:true,
+   d:"Coupe d'un clic tous les appareils en veille, ces petits voleurs silencieux.", eco:"La veille pèse sur la facture d'électricité toute l'année."},
+  {n:"Prise connectée programmable", e:"⏲️", c:"energie", p:["geek","papa"], b:1, q:"prise connectée programmable consommation",
+   d:"Programme le chauffe-eau ou le radiateur d'appoint, et vois ce que chaque appareil consomme.", eco:"Repère enfin l'appareil qui gonfle ta facture."},
+  {n:"Ampoules LED", e:"💡", c:"energie", p:["papa","maman"], b:1, q:"ampoules led e27 lot",
+   d:"Le geste le plus bête et le plus efficace pour l'éclairage.", eco:"Bien moins gourmandes que les vieilles ampoules."},
+  {n:"Étendoir à linge", e:"👕", c:"energie", p:["maman","couple"], b:2, q:"étendoir à linge",
+   d:"L'air sèche gratuitement. Le sèche-linge, lui, envoie la facture.", eco:"Le sèche-linge est un des appareils les plus énergivores."},
+  {n:"Film isolant pour fenêtres", e:"🪟", c:"energie", p:["papa"], b:1, q:"film isolant fenêtre",
+   d:"Une couche de plus sur les vieilles fenêtres, posée en un après-midi.", eco:"Moins de pertes de chaleur cet hiver."},
+  {n:"Pommeau de douche économique", e:"🚿", c:"sdb", p:["papa","maman"], b:1, q:"pommeau de douche économique",
+   d:"Même sensation, beaucoup moins d'eau chaude qui part dans le siphon.", eco:"Économie sur l'eau ET sur l'énergie pour la chauffer."},
+  {n:"Tondeuse à cheveux", e:"💇", c:"sdb", p:["papa","ado"], b:2, q:"tondeuse cheveux", top:true,
+   d:"Le coiffeur à domicile. Les premières coupes seront… une aventure.", eco:"Rentabilisée dès quelques coupes."},
+  {n:"Rasoir de sûreté", e:"🪒", c:"sdb", p:["papa","ado"], b:2, q:"rasoir de sûreté",
+   d:"Un rasoir pour la vie et des lames qui coûtent quelques centimes.", eco:"Fini les recharges de lames hors de prix."},
+  {n:"Piles rechargeables + chargeur", e:"🔋", c:"quotidien", p:["papa","geek"], b:2, q:"piles rechargeables avec chargeur",
+   d:"Pour les télécommandes, manettes et jouets qui avalent des piles.", eco:"Un pack remplace des centaines de piles jetables."},
+  {n:"Gourde isotherme", e:"🧴", c:"quotidien", p:["ado","collegue","maman"], b:1, q:"gourde isotherme inox",
+   d:"Eau fraîche toute la journée. Les petites bouteilles à 2 €, c'est fini.", eco:"Rentabilisée en quelques semaines."},
+  {n:"Kit réparation crevaison vélo", e:"🚲", c:"quotidien", p:["papa","ado"], b:1, q:"kit réparation crevaison vélo",
+   d:"Réparer soi-même au lieu de passer à l'atelier pour une rustine.", eco:"Coûte moins qu'une seule réparation en magasin."},
+  {n:"Tirelire compteur", e:"🐷", c:"quotidien", p:["ado","maman"], b:1, q:"tirelire compteur billet epargne",
+   d:"Elle affiche le total à chaque pièce. Étrangement motivant.", eco:"L'épargne devient un jeu."},
+
+  /* ---------- 🙈 MAUVAISES HABITUDES ASSUMÉES ---------- */
+  {n:"Oreiller autruche", e:"😴", c:"confort", p:["collegue","ado"], b:1, q:"oreiller autruche sieste", top:true,
+   d:"Pour faire la sieste n'importe où, n'importe quand. La dignité est vendue séparément."},
+  {n:"Couverture tortilla géante", e:"🌯", c:"confort", p:["ado","couple"], b:1, q:"couverture tortilla géante", top:true,
+   d:"Deviens un burrito humain. Le guacamole n'est pas fourni."},
+  {n:"Plaid à manches", e:"🛋️", c:"confort", p:["maman","papa"], b:1, q:"plaid à manches",
+   d:"Un plaid avec des manches. L'humanité a enfin atteint son sommet."},
+  {n:"Hamac pour pieds sous le bureau", e:"🦶", c:"confort", p:["collegue","geek"], b:1, q:"hamac pieds bureau",
+   d:"Tes pieds en vacances pendant que tu réponds aux mails. Ton manager n'a pas besoin de savoir."},
+  {n:"Chaussons chauffants USB", e:"🔌", c:"confort", p:["geek","collegue"], b:1, q:"chaussons chauffants usb",
+   d:"Branchés sur l'ordi, tes pieds sont enfin aussi chauds que ton processeur."},
+  {n:"Pyjama combinaison dinosaure", e:"🦖", c:"confort", p:["ado","couple"], b:1, q:"pyjama combinaison dinosaure adulte",
+   d:"Idéal pour les visios caméra éteinte. Ou allumée, on ne juge pas."},
+  {n:"Chaussons requin", e:"🦈", c:"confort", p:["ado"], b:1, q:"chaussons requin",
+   d:"Les Dents de la mer, version salon."},
+  {n:"Oreiller bras câlin", e:"🤗", c:"confort", p:["ado","collegue"], b:1, q:"oreiller bras petit ami",
+   d:"Un bras qui t'enlace toute la nuit et qui ne ronfle jamais."},
+  {n:"Bain de pieds massant", e:"🛁", c:"confort", p:["maman","papa"], b:2, q:"bain de pieds massant",
+   d:"Le spa, mais dans le salon, devant la série, avec les chips."},
+  {n:"Coussin massant shiatsu", e:"💆", c:"confort", p:["papa","maman"], b:2, q:"coussin massant shiatsu chauffant",
+   d:"Un kiné de poche qui ne pose pas de questions sur ta posture."},
+
+  {n:"Coupe-banane", e:"🍌", c:"cuisine", p:["papa","maman","collegue"], b:1, q:"coupe banane", top:true,
+   d:"Découpe une banane en rondelles d'un coup. Révolutionnaire. Inutile. Indispensable."},
+  {n:"Tasse auto-mélangeuse", e:"🌀", c:"cuisine", p:["collegue","geek"], b:1, q:"tasse auto mélangeuse",
+   d:"Appuie sur le bouton, elle touille toute seule. La flemme, niveau expert."},
+  {n:"Chauffe-tasse USB", e:"🔥", c:"cuisine", p:["collegue","geek"], b:1, q:"chauffe tasse usb",
+   d:"Le café reste chaud pendant la 4e réunion qui aurait pu être un mail."},
+  {n:"Raclette à la bougie pour deux", e:"🧀", c:"cuisine", p:["couple"], b:1, q:"raclette bougie 2 personnes", top:true,
+   d:"Le romantisme a une odeur, et c'est celle du fromage fondu."},
+  {n:"Machine à barbe à papa", e:"🍭", c:"cuisine", p:["ado","maman"], b:2, q:"machine barbe à papa",
+   d:"La fête foraine dans la cuisine. Le sucre sur le plafond aussi."},
+  {n:"Fontaine à chocolat", e:"🍫", c:"cuisine", p:["couple","maman"], b:2, q:"fontaine à chocolat",
+   d:"Tremper des fraises dans une cascade de chocolat : la vraie définition du luxe."},
+  {n:"Cuiseur à œufs électrique", e:"🥚", c:"cuisine", p:["papa"], b:1, q:"cuiseur oeufs électrique",
+   d:"Pour ceux qui arrivent à rater même les œufs durs."},
+  {n:"Distributeur de céréales", e:"🥣", c:"cuisine", p:["ado"], b:1, q:"distributeur céréales",
+   d:"Le petit-déj comme à l'hôtel, mais en pyjama dinosaure."},
+  {n:"Moule à glaçons boules", e:"🧊", c:"cuisine", p:["papa","couple"], b:1, q:"moule glaçons boule",
+   d:"Des glaçons ronds. Les carrés, c'est pour les amateurs."},
+  {n:"Couteau à beurre râpe", e:"🧈", c:"cuisine", p:["maman","papa"], b:1, q:"couteau à beurre râpe",
+   d:"Il râpe le beurre sorti du frigo. Fini les tartines déchirées."},
+  {n:"Machine à popcorn rétro", e:"🍿", c:"cuisine", p:["ado","couple"], b:2, q:"machine popcorn rétro",
+   d:"Le cinéma à la maison, avec l'odeur et le bruit qui va avec."},
+  {n:"Four à pizza d'extérieur", e:"🍕", c:"cuisine", p:["papa"], b:3, q:"four à pizza extérieur",
+   d:"Pizza napolitaine en quelques minutes dans le jardin. Ton barbecue est jaloux."},
+
+  {n:"Pull de Noël moche", e:"🎄", c:"fete", p:["papa","maman","collegue","ado"], b:1, q:"pull de noel moche", top:true,
+   d:"Plus il est moche, plus il est réussi. C'est la règle."},
+  {n:"Pull de Noël lumineux", e:"💡", c:"fete", p:["collegue","papa"], b:1, q:"pull de noel led lumineux",
+   d:"Pour être visible depuis l'espace au repas d'entreprise."},
+  {n:"Machine à bulles", e:"🫧", c:"fete", p:["ado","couple"], b:1, q:"machine à bulles",
+   d:"Transforme n'importe quelle soirée en clip des années 90."},
+  {n:"Enceinte de douche", e:"🎤", c:"fete", p:["ado"], b:1, q:"enceinte de douche étanche",
+   d:"Pour tes concerts privés. Les voisins, eux, n'ont rien demandé."},
+
+  {n:"Globe terrestre en lévitation", e:"🌍", c:"geek", p:["geek","papa"], b:2, q:"globe terrestre lévitation", top:true,
+   d:"La Terre flotte sur ton bureau. Les platistes détestent."},
+  {n:"Lampe Lune 3D", e:"🌕", c:"geek", p:["maman","ado","couple"], b:1, q:"lampe lune 3d",
+   d:"La Lune en veilleuse, avec tous ses cratères. Le loup-garou n'est pas inclus."},
+  {n:"Projecteur ciel étoilé", e:"🌌", c:"geek", p:["ado","couple"], b:1, q:"projecteur ciel étoilé galaxie",
+   d:"Une galaxie au plafond de la chambre. Romantique ou hypnotique, au choix."},
+  {n:"Lampe à lave", e:"🫠", c:"geek", p:["geek","ado"], b:1, q:"lampe à lave",
+   d:"Aucune utilité. Beaucoup de bonheur. Hypnotique depuis les années 60."},
+  {n:"Réveil qui s'enfuit", e:"⏰", c:"geek", p:["ado"], b:1, q:"réveil roulant qui s'enfuit",
+   d:"Il roule et se cache. Pour l'éteindre, il faut d'abord l'attraper."},
+  {n:"Mini aspirateur de bureau", e:"🧹", c:"geek", p:["collegue","geek"], b:1, q:"mini aspirateur de bureau",
+   d:"Pour les miettes dans le clavier. Oui, on sait que tu manges devant l'écran."},
+  {n:"Imprimante photo instantanée", e:"📸", c:"geek", p:["ado","maman"], b:2, q:"imprimante photo instantanée smartphone",
+   d:"Tes photos de téléphone en vrai papier. Comme en 1995, mais en mieux."},
+  {n:"Enceinte en lévitation", e:"🔊", c:"geek", p:["geek"], b:3, q:"enceinte lévitation bluetooth",
+   d:"Une enceinte qui flotte dans les airs. Le son est bon, l'effet est meilleur."},
+  {n:"Tapis de souris géant", e:"🖱️", c:"geek", p:["geek","ado"], b:1, q:"tapis de souris xxl",
+   d:"Si grand qu'il pourrait servir de nappe pour le réveillon."},
+  {n:"Potager d'intérieur connecté", e:"🌱", c:"geek", p:["maman","couple"], b:3, q:"potager intérieur connecté",
+   d:"Du basilic frais toute l'année, même pour ceux qui tuent les cactus."},
+
+  {n:"Coussin péteur", e:"💨", c:"blague", p:["papa","ado","collegue"], b:1, q:"coussin péteur",
+   d:"Le classique indémodable, testé et approuvé par tous les tontons."},
+  {n:"Puzzle 1000 pièces tout blanc", e:"⬜", c:"blague", p:["papa","geek"], b:1, q:"puzzle blanc 1000 pièces", top:true,
+   d:"Aucune image. Juste du blanc. Et ta santé mentale qui s'effrite."},
+  {n:"Papier toilette sudoku", e:"🧻", c:"blague", p:["collegue","papa"], b:1, q:"papier toilette sudoku",
+   d:"Enfin une activité intellectuelle aux toilettes."},
+  {n:"Veilleuse de toilettes LED", e:"🚽", c:"blague", p:["papa","ado"], b:1, q:"veilleuse toilette led détecteur",
+   d:"La cuvette s'illumine en couleurs. Ambiance boîte de nuit à 3 h du matin."},
+  {n:"Bouée licorne géante", e:"🦄", c:"blague", p:["ado","couple"], b:2, q:"bouée licorne géante",
+   d:"Pour arriver à la piscine comme une rock star. Ou comme une licorne."},
+  {n:"Parapluie inversé", e:"☂️", c:"blague", p:["maman","collegue"], b:1, q:"parapluie inversé",
+   d:"Il se ferme à l'envers. Personne ne sait pourquoi c'est génial, mais ça l'est."},
+  {n:"Kit pour faire pousser des champignons", e:"🍄", c:"blague", p:["geek","maman"], b:1, q:"kit culture champignons pleurotes",
+   d:"Des pleurotes qui poussent dans une boîte en carton. De la magie, légalement."},
+  {n:"Masque de cheval", e:"🐴", c:"blague", p:["collegue","ado"], b:1, q:"masque de cheval latex",
+   d:"Pour la visio du vendredi. Effet garanti, carrière moins garantie."},
+  {n:"Chaussettes avec un visage", e:"🧦", c:"blague", p:["papa","maman","couple"], b:1, q:"chaussettes personnalisées photo visage",
+   d:"Avec la tête de ton chat. Ou de ta belle-mère. À tes risques et périls."},
+
+  {n:"Hamac pour chat sur radiateur", e:"🐈", c:"animaux", p:["animaux"], b:1, q:"hamac chat radiateur", top:true,
+   d:"Le chat avait déjà la meilleure place de la maison. Maintenant, il a un hamac."},
+  {n:"Sac à dos hublot pour chat", e:"🎒", c:"animaux", p:["animaux"], b:2, q:"sac à dos hublot chat",
+   d:"Ton chat voyage comme un astronaute. Il te juge quand même."},
+  {n:"Caméra lance-friandises", e:"🐶", c:"animaux", p:["animaux","geek"], b:3, q:"caméra distributeur friandises chien",
+   d:"Parle à ton chien et lance-lui des croquettes depuis le bureau."},
+  {n:"Tapis de fouille pour chien", e:"🦴", c:"animaux", p:["animaux"], b:1, q:"tapis de fouille chien",
+   d:"Il cherche ses croquettes, tu gagnes vingt minutes de calme."},
+  {n:"Fontaine à eau pour chat", e:"🚰", c:"animaux", p:["animaux"], b:1, q:"fontaine à eau chat",
+   d:"Parce que l'eau d'un bol, visiblement, c'est bon pour les chiens."}
 ];
 
-let selected = {};
-let vals = {};
-let chartInst = null;
+/* ============ LOGIQUE ============ */
+const $ = s => document.querySelector(s);
+const rayonDe = p => CATS[p.c].r;
+const etat = {rayon:"malin", cat:"", qui:"", budget:"", txt:"", liste:false};
+let favoris = [];
+try { favoris = JSON.parse(localStorage.getItem("mh-liste") || "[]"); } catch(e) { favoris = []; }
+function sauver(){ try { localStorage.setItem("mh-liste", JSON.stringify(favoris)); } catch(e) {} }
+try { const r = new URLSearchParams(location.search).get("rayon"); if (r === "fun" || r === "malin") etat.rayon = r; } catch(e) {}
 
-function fmt(n) {
-  return Math.round(n).toLocaleString('fr-FR') + ' €';
+function lien(p){
+  if (p.url) return p.url;
+  return "https://" + CONFIG.domaine + "/s?k=" + encodeURIComponent(p.q) + (CONFIG.tag ? "&tag=" + encodeURIComponent(CONFIG.tag) : "");
 }
-function fmtH(mins) {
-  if (mins === 0) return null;
-  const h = Math.round(mins / 60);
-  if (h < 24) return h + 'h/an';
-  const d = Math.round(h / 24);
-  return d + ' jours/an';
+function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+function sansAccent(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase(); }
+
+function visuel(p, i){
+  const r = rayonDe(p), fav = favoris.includes(p.n);
+  return `<div class="visuel" style="background:${CATS[p.c].couleur}">
+    ${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.n)}" loading="lazy">` : `<span class="emoji" aria-hidden="true">${p.e}</span>`}
+    ${p.top ? `<span class="badge ${r}">${r === "malin" ? "Rentable" : "Coup de cœur"}</span>` : ""}
+    <button class="coeur" data-fav="${i}" aria-label="Ajouter à ma liste">${fav ? "❤️" : "🤍"}</button>
+  </div>`;
+}
+function bouton(p, i){
+  return `<a class="voir" href="${lien(p)}" target="_blank" rel="nofollow sponsored noopener" data-clic="${i}">Voir sur Amazon →</a>`;
 }
 
-// Init cards
-const grid = document.getElementById('habitsGrid');
-HABITS.forEach(h => {
-  vals[h.id] = h.defaultVal;
-  const card = document.createElement('div');
-  card.className = 'habit-card';
-  card.id = 'card-' + h.id;
-  card.innerHTML = `<div class="habit-icon">${h.icon}</div><div class="habit-name">${h.name}</div><div class="habit-unit">${h.unit}</div>`;
-  card.onclick = () => toggleHabit(h.id);
-  grid.appendChild(card);
+function filtrer(){
+  const t = sansAccent(etat.txt.trim());
+  return PRODUITS.map((p,i)=>({p,i})).filter(({p}) =>
+    (etat.liste || rayonDe(p) === etat.rayon) &&
+    (!etat.cat || p.c === etat.cat) &&
+    (!etat.qui || p.p.includes(etat.qui)) &&
+    (!etat.budget || String(p.b) === etat.budget) &&
+    (!etat.liste || favoris.includes(p.n)) &&
+    (!t || sansAccent(p.n + " " + p.d + " " + (p.eco||"")).includes(t))
+  );
+}
+
+function afficher(){
+  document.querySelectorAll(".rayon").forEach(b => b.classList.toggle("on", !etat.liste && b.dataset.rayon === etat.rayon));
+  const res = filtrer(), s = res.length > 1 ? "s" : "";
+  $("#compte").textContent = etat.liste ? `Ma liste : ${res.length} objet${s}`
+    : etat.rayon === "malin" ? `${res.length} achat${s} qui se rembourse${res.length>1?"nt":""} tout seul${s}`
+    : `${res.length} objet${s} parfaitement inutile${s}`;
+  $("#grille").innerHTML = res.length ? res.map(({p,i}) => `
+    <article class="carte ${rayonDe(p)}">
+      ${visuel(p,i)}
+      <div class="corps">
+        <h3>${esc(p.n)}</h3>
+        <p>${esc(p.d)}</p>
+        ${p.eco ? `<span class="eco">💰 ${esc(p.eco)}</span>` : ""}
+        <div class="meta"><span class="prix">${BUDGETS[p.b]}</span>${bouton(p,i)}</div>
+      </div>
+    </article>`).join("")
+    : `<div class="vide">${etat.liste ? "Ta liste est vide. Clique sur 🤍 pour y ajouter des objets." : "Rien trouvé avec ces filtres."}</div>`;
+  $("#nbListe").textContent = favoris.length;
+  $("#btnListe").classList.toggle("on", etat.liste);
+}
+
+function chips(){
+  const cats = Object.entries(CATS).filter(([,v]) => v.r === etat.rayon);
+  $("#chips").innerHTML = [["","Tout"], ...cats.map(([k,v])=>[k,v.label])].map(([k,l]) =>
+    `<button class="chip ${etat.cat===k?"on":""}" data-cat="${k}">${l}</button>`).join("");
+}
+
+function choisirRayon(r){ etat.rayon = r; etat.cat = ""; etat.liste = false; chips(); afficher(); }
+
+function basculerFav(i){
+  const n = PRODUITS[i].n;
+  favoris = favoris.includes(n) ? favoris.filter(x=>x!==n) : [...favoris, n];
+  sauver(); afficher();
+  if ($("#fond").classList.contains("ouvert")) hasard(i);
+}
+
+function hasard(force){
+  const pool = PRODUITS.map((p,i)=>i).filter(i => rayonDe(PRODUITS[i]) === etat.rayon);
+  const i = (typeof force === "number") ? force : pool[Math.floor(Math.random()*pool.length)];
+  const p = PRODUITS[i];
+  $("#modale").innerHTML = `${visuel(p,i)}
+    <div class="corps"><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p>${p.eco ? `<span class="eco">💰 ${esc(p.eco)}</span>` : ""}<span class="prix" style="align-self:flex-start">${BUDGETS[p.b]}</span></div>
+    <div class="actions"><button id="encore">🎲 Un autre</button>${bouton(p,i)}</div>`;
+  $("#fond").classList.add("ouvert");
+  $("#encore").onclick = () => hasard();
+}
+
+/* Événements */
+document.querySelectorAll(".rayon").forEach(b => b.addEventListener("click", () => { choisirRayon(b.dataset.rayon); $(".filtres").scrollIntoView({behavior:"smooth"}); }));
+$("#chips").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if(!b) return; etat.cat = b.dataset.cat; chips(); afficher(); });
+$("#recherche").addEventListener("input", e => { etat.txt = e.target.value; afficher(); });
+$("#pourQui").addEventListener("change", e => { etat.qui = e.target.value; afficher(); });
+$("#budget").addEventListener("change", e => { etat.budget = e.target.value; afficher(); });
+$("#btnListe").addEventListener("click", () => { etat.liste = !etat.liste; afficher(); });
+$("#btnHasard").addEventListener("click", () => hasard());
+document.addEventListener("click", e => {
+  const f = e.target.closest("[data-fav]"); if (f) { basculerFav(+f.dataset.fav); return; }
+  const c = e.target.closest("[data-clic]");
+  if (c && typeof gtag === "function") { const p = PRODUITS[+c.dataset.clic]; gtag("event", "clic_affilie", {produit: p.n, rayon: rayonDe(p)}); }
 });
+$("#fond").addEventListener("click", e => { if (e.target.id === "fond") $("#fond").classList.remove("ouvert"); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("#fond").classList.remove("ouvert"); });
+$("#hamburger").addEventListener("click", () => { const m = $("#mobileNav"); m.style.display = m.style.display === "flex" ? "none" : "flex"; });
 
-function toggleHabit(id) {
-  if (selected[id]) {
-    delete selected[id];
-    document.getElementById('card-' + id).classList.remove('selected');
-  } else {
-    selected[id] = true;
-    document.getElementById('card-' + id).classList.add('selected');
-  }
-  renderConfig();
-}
-
-function renderConfig() {
-  const ids = Object.keys(selected);
-  const box = document.getElementById('configBox');
-  const ci = document.getElementById('configItems');
-  const btn = document.getElementById('calcBtn');
-  if (!ids.length) { box.classList.remove('visible'); btn.disabled = true; return; }
-  box.classList.add('visible');
-  btn.disabled = false;
-  ci.innerHTML = '';
-  ids.forEach(id => {
-    const h = HABITS.find(x => x.id === id);
-    const div = document.createElement('div');
-    div.className = 'habit-config';
-    div.innerHTML = `
-      <div class="config-name">${h.icon} ${h.name}</div>
-      <div class="config-row">
-        <label style="font-size:12px;color:var(--text2);min-width:90px;">${h.unit}</label>
-        <input type="range" min="${h.min}" max="${h.max}" step="${h.step}" value="${vals[id]}"
-          id="slider-${id}" oninput="updateVal('${id}',this.value)">
-        <span class="val" id="valdisp-${id}">${vals[id]}</span>
-      </div>`;
-    ci.appendChild(div);
-  });
-}
-
-function updateVal(id, v) {
-  vals[id] = parseFloat(v);
-  document.getElementById('valdisp-' + id).textContent = v;
-}
-
-function getCostYear(h) {
-  const v = vals[h.id];
-  if (h.monthlyMode) return v * 12;
-  if (h.timeMode) return 0;
-  if (h.euroMode) return v * 52;
-  return v * 52 * h.unitCost;
-}
-
-function getTimeYear(h) {
-  const v = vals[h.id];
-  if (h.timeMode) return v * 60 * 365;
-  if (h.monthlyMode || h.euroMode) return 0;
-  return v * 52 * h.timeMins;
-}
-
-function compound(monthly, years, rate) {
-  let t = 0;
-  const r = rate / 12;
-  for (let i = 0; i < years * 12; i++) t = (t + monthly) * (1 + r);
-  return t;
-}
-
-function getPhraseChoc(totalYear, totalTimeH) {
-  const phrases = [
-    `Avec ${fmt(totalYear)}/an, tu pourrais t'offrir un voyage à Bali chaque année.`,
-    `${fmt(totalYear)} par an, c'est ${fmt(Math.round(totalYear / 12))} de loyer offert chaque mois.`,
-    `En 10 ans, tu auras dépensé ${fmt(totalYear * 10)} en mauvaises habitudes. De quoi acheter une voiture neuve.`,
-    `${fmt(totalYear)} par an, c'est ${Math.round(totalYear / 365)}€ gaspillés chaque jour.`,
-  ];
-  if (totalTimeH > 200) return `Tu perds ${fmtH(totalTimeH * 60)} à cause de ces habitudes — du temps que tu ne récupéreras jamais.`;
-  return phrases[Math.floor(Math.random() * phrases.length)];
-}
-
-function calculate() {
-  const ids = Object.keys(selected);
-  if (!ids.length) return;
-
-  let totalYear = 0, totalTimeMins = 0;
-  const breakdown = [];
-
-  ids.forEach(id => {
-    const h = HABITS.find(x => x.id === id);
-    const cy = getCostYear(h);
-    const ty = getTimeYear(h);
-    totalYear += cy;
-    totalTimeMins += ty;
-    breakdown.push({ label: h.icon + ' ' + h.name, cost: cy, time: ty });
-  });
-
-  const totalMonth = totalYear / 12;
-  const invest10 = compound(totalMonth, 10, 0.07);
-  const totalTimeH = Math.round(totalTimeMins / 60);
-
-  document.getElementById('shockYear').textContent = fmt(totalYear);
-  document.getElementById('shockSub').textContent = totalTimeMins > 0
-    ? `+ ${fmtH(totalTimeMins)} de ta vie perdues en plus`
-    : `soit ${fmt(totalMonth)} par mois`;
-
-  document.getElementById('mMonth').textContent = fmt(totalMonth);
-  document.getElementById('m5y').textContent = fmt(totalYear * 5);
-  document.getElementById('m10y').textContent = fmt(totalYear * 10);
-
-  document.getElementById('phraseChoc').textContent = getPhraseChoc(totalYear, totalTimeH);
-
-  document.getElementById('investAmount').textContent = fmt(invest10);
-  document.getElementById('investSub').textContent =
-    `En plaçant ${fmt(totalMonth)}/mois pendant 10 ans à 7%/an (ETF monde), tu obtiendrais ${fmt(invest10)} — au lieu de ${fmt(totalYear * 10)} dépensés en habitudes.`;
-
-  // Breakdown
-  const bl = document.getElementById('breakdownList');
-  bl.innerHTML = breakdown
-    .filter(b => b.cost > 0 || b.time > 0)
-    .sort((a, b) => b.cost - a.cost)
-    .map(b => {
-      const timeStr = b.time > 0 ? ` · ${fmtH(b.time)}` : '';
-      const costStr = b.cost > 0 ? fmt(b.cost) + '/an' : fmtH(b.time);
-      return `<div class="breakdown-item"><span class="breakdown-name">${b.label}</span><span class="breakdown-cost">${costStr}${b.cost > 0 ? timeStr : ''}</span></div>`;
-    }).join('');
-
-  // Graphique
-  const labels = Array.from({length:11}, (_,i) => i === 0 ? 'Maintenant' : 'An ' + i);
-  const cumCost = labels.map((_, i) => Math.round(totalYear * i));
-  const cumInvest = labels.map((_, i) => i === 0 ? 0 : Math.round(compound(totalMonth, i, 0.07)));
-
-  if (chartInst) chartInst.destroy();
-  chartInst = new Chart(document.getElementById('costChart'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        {
-          label: 'Coût dépensé',
-          data: cumCost,
-          borderColor: '#E24B4A',
-          backgroundColor: 'rgba(226,75,74,0.07)',
-          tension: 0.35,
-          fill: true,
-          pointRadius: 3,
-          pointBackgroundColor: '#E24B4A',
-        },
-        {
-          label: 'Si investi à 7%',
-          data: cumInvest,
-          borderColor: '#639922',
-          backgroundColor: 'rgba(99,153,34,0.07)',
-          tension: 0.35,
-          fill: true,
-          pointRadius: 3,
-          pointBackgroundColor: '#639922',
-          borderDash: [5, 4],
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
-      scales: {
-        y: {
-          ticks: {
-            callback: v => {
-              if (v >= 1000) return Math.round(v/1000) + 'k €';
-              return v + ' €';
-            },
-            font: { size: 11 },
-            color: '#999994',
-          },
-          grid: { color: 'rgba(128,128,128,0.08)' },
-          border: { display: false }
-        },
-        x: {
-          ticks: { font: { size: 11 }, color: '#999994', autoSkip: false, maxRotation: 0 },
-          grid: { display: false },
-          border: { display: false }
-        }
-      }
-    }
-  });
-
-  // Afficher
-  const resultsEl = document.getElementById('results');
-  resultsEl.classList.add('visible');
-  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-}
-
-function shareResult() {
-  const year = document.getElementById('shockYear').textContent;
-  const text = "Mes mauvaises habitudes me coûtent " + year + " par an 😱 J'ai calculé ça sur ce site gratuit : https://www.mauvaiseshabitudes.com";
-  const url = 'https://www.mauvaiseshabitudes.com';
-  if (navigator.share) {
-    navigator.share({ title: 'Mon coût réel', text: text, url: url })
-      .catch(function() {
-        copyToClipboard(text);
-      });
-  } else {
-    copyToClipboard(text);
-  }
-}
-function copyToClipboard(text) {
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text)
-      .then(function() { showShareModal(text); })
-      .catch(function() { showShareModal(text); });
-  } else {
-    showShareModal(text);
-  }
-}
-function showShareModal(text) {
-  const modal = document.getElementById('shareModal');
-  if (modal) {
-    modal.style.display = 'flex';
-  } else {
-    alert('Copie ce texte :\n\n' + text);
-  }
-}
-
-function resetAll() {
-  selected = {};
-  document.querySelectorAll('.habit-card').forEach(c => c.classList.remove('selected'));
-  document.getElementById('configBox').classList.remove('visible');
-  document.getElementById('calcBtn').disabled = true;
-  document.getElementById('results').classList.remove('visible');
-  document.getElementById('cardPreview').style.display = 'none';
-  if (chartInst) { chartInst.destroy(); chartInst = null; }
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Lead magnet
-document.addEventListener('DOMContentLoaded', () => {
-  const banner = document.getElementById('lm-banner');
-  if (banner) {
-    banner.addEventListener('click', (e) => {
-      e.preventDefault();
-      const form = document.getElementById('leadmagnet-form');
-      form.style.display = form.style.display === 'none' ? 'block' : 'none';
-      if (form.style.display === 'block') {
-        form.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    });
-  }
-});
-
-function submitLeadmagnet() {
-  const email = document.getElementById('lm-email').value.trim();
-  if (!email || !email.includes('@')) {
-    alert("Merci d'entrer un email valide.");
-    return;
-  }
-  const systemeUrl = 'https://www.checklist.mauvaiseshabitudes.com/30fuites';
-  window.open(systemeUrl + '?email=' + encodeURIComponent(email), '_blank');
-  document.getElementById('leadmagnet-form').innerHTML = `
-    <div style="text-align:center;padding:1rem;">
-      <div style="font-size:28px;margin-bottom:8px;">🎉</div>
-      <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;">C'est parti !</div>
-      <div style="font-size:12px;color:var(--text2);">Vérifie ta boîte email dans quelques secondes.</div>
-    </div>`;
-}
-
-function generateCard() {
-  // Remplir la carte HTML avec les vraies données
-  document.getElementById('cardAmount').textContent  = document.getElementById('shockYear').textContent;
-  document.getElementById('cardSub').textContent     = document.getElementById('shockSub').textContent;
-  document.getElementById('cardMonth').textContent   = document.getElementById('mMonth').textContent;
-  document.getElementById('card5y').textContent      = document.getElementById('m5y').textContent;
-  document.getElementById('card10y').textContent     = document.getElementById('m10y').textContent;
-  document.getElementById('cardInvest').textContent  = document.getElementById('investAmount').textContent;
-
-  // Habitudes sélectionnées
-  const ids = Object.keys(selected);
-  const breakdown = ids.map(id => {
-    const h = HABITS.find(x => x.id === id);
-    return { label: h.icon + ' ' + h.name, cost: getCostYear(h) };
-  }).filter(b => b.cost > 0).sort((a,b) => b.cost - a.cost).slice(0, 4);
-
-  document.getElementById('cardHabits').innerHTML = breakdown.map(b => `
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #2a2a28;font-size:13px;">
-      <span style="color:#9a9a92;">${b.label}</span>
-      <span style="color:#E24B4A;font-weight:700;">${fmt(b.cost)}/an</span>
-    </div>`).join('');
-
-  // Afficher la section
-  document.getElementById('cardPreview').style.display = 'block';
-  setTimeout(() => document.getElementById('cardPreview').scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-}
-
-function downloadCard() {
-  const btn = event.target;
-  btn.textContent = '⏳ Génération en cours...';
-  btn.disabled = true;
-
-  html2canvas(document.getElementById('resultCard'), {
-    scale: 2,
-    useCORS: true,
-    backgroundColor: '#161614',
-    logging: false
-  }).then(canvas => {
-    const link = document.createElement('a');
-    link.download = 'mon-cout-mauvaises-habitudes.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-    btn.textContent = '✅ Image téléchargée !';
-    btn.disabled = false;
-    setTimeout(() => { btn.textContent = '📥 Télécharger l\'image (PNG)'; }, 3000);
-  }).catch(() => {
-    btn.textContent = '📥 Télécharger l\'image (PNG)';
-    btn.disabled = false;
-    alert("Erreur lors de la génération. Essaie de faire une capture d'écran.");
-  });
-}
+chips(); afficher();
 </script>
-
-
-
-<script>
-</script>
-
-
-<!-- MODAL PARTAGE -->
-<div id="shareModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:999;align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:var(--bg2);border-radius:16px;padding:1.5rem;max-width:420px;width:100%;border:1px solid var(--border);">
-    <div style="font-size:16px;font-weight:700;color:var(--text);margin-bottom:12px;">📤 Partage ton résultat</div>
-    <div style="display:flex;flex-direction:column;gap:8px;">
-      <a id="shareWA" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px;background:#25D366;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;">💬 Partager sur WhatsApp</a>
-      <a id="shareFB" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px;background:#1877F2;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;">📘 Partager sur Facebook</a>
-      <a id="shareTW" href="#" target="_blank" style="display:flex;align-items:center;gap:10px;padding:12px;background:#000;color:#fff;border-radius:10px;text-decoration:none;font-weight:600;font-size:14px;">🐦 Partager sur X/Twitter</a>
-      <button onclick="const t=document.getElementById('shareTxt').value;navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>alert('✅ Copié !')).catch(()=>alert(t))" style="display:flex;align-items:center;gap:10px;padding:12px;background:var(--bg3);color:var(--text);border:1px solid var(--border);border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;font-family:inherit;">📋 Copier le texte</button>
-      <textarea id="shareTxt" readonly style="width:100%;padding:10px;background:var(--bg3);border:1px solid var(--border);border-radius:8px;color:var(--text2);font-size:12px;resize:none;height:60px;font-family:inherit;"></textarea>
-    </div>
-    <button onclick="document.getElementById('shareModal').style.display='none'" style="margin-top:12px;width:100%;padding:10px;background:none;border:1px solid var(--border);border-radius:8px;color:var(--text2);cursor:pointer;font-family:inherit;">Fermer</button>
-  </div>
-</div>
 </body>
 </html>
