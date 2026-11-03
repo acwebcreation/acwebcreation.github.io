@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>Achats malins et trouvailles insolites | MauvaisesHabitudes.com</title>
-  <meta name="description" content="Les achats malins qui se remboursent tout seuls, et les objets insolites dont personne n'a besoin (mais qu'on veut quand même). Idées cadeaux originales pour Noël et toute l'année.">
+  <meta name="description" content="Les achats malins qui se remboursent tout seuls, et les objets insolites dont personne n'a besoin (mais qu'on veut quand même). Idées cadeaux originales pour Noël, anniversaires et toutes les occasions.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.mauvaiseshabitudes.com/">
 
@@ -70,27 +70,50 @@
     .wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
 
     /* ===== HERO ===== */
-    .hero { padding: 2rem 0 0; text-align: center; }
-    .hero .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--red); background: var(--red-light); padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 4.5vw, 2.6rem); line-height: 1.12; margin: 0 auto 10px; max-width: 22ch; }
+    .hero { padding: 1.6rem 0 0; }
+    .hero-texte { text-align: center; margin-bottom: 1.2rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3.6vw, 2.2rem); line-height: 1.15; margin: 0 auto 6px; max-width: 30ch; }
     .hero h1 em { font-style: normal; color: var(--red); }
-    .hero p { color: var(--text2); font-size: 1.05rem; max-width: 54ch; margin: 0 auto; }
+    .hero p { color: var(--text2); font-size: 1rem; max-width: 60ch; margin: 0 auto; }
 
-    /* ===== RAYONS ===== */
-    .onglets { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin-bottom: 10px; }
+    /* ===== GUIDES (vignettes du haut) ===== */
+    .guides { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+    .guide { position: relative; aspect-ratio: 5/4; border-radius: var(--radius); overflow: hidden; border: 0; cursor: pointer; padding: 0; background: #2a2a28; color: #fff; text-align: center; transition: transform .15s; }
+    .guide:hover { transform: translateY(-3px); }
+    .guide img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #fff; font-size: 12px; color: transparent; }
+    .guide .g-emoji { position: absolute; inset: 0; display: grid; place-items: center; font-size: 3.4rem; padding-bottom: 28%; }
+    .guide::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.78) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.05) 100%); }
+    .guide span.g-titre { position: absolute; left: 10px; right: 10px; bottom: 12px; z-index: 1; font-weight: 700; font-size: 15px; line-height: 1.2; text-shadow: 0 1px 4px rgba(0,0,0,.5); }
+    .guide.on { outline: 3px solid var(--red); outline-offset: 2px; }
+    @media (max-width: 1000px) { .guides { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 560px) {
+      .guides { display: flex; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 4px; scroll-snap-type: x mandatory; }
+      .guides::-webkit-scrollbar { display: none; }
+      .guide { flex: 0 0 150px; scroll-snap-align: start; }
+      .guide span.g-titre { font-size: 13.5px; }
+      .guide .g-emoji { font-size: 2.4rem; padding-bottom: 40%; }
+    }
+
+    /* ===== BARRE DE TRI + RAYONS ===== */
+    .filtres { position: sticky; top: 57px; z-index: 5; background: var(--bg); padding: 12px 0 8px; border-bottom: 1px solid var(--border); margin-top: 1.4rem; }
+    .barre { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .onglets { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
     .onglets::-webkit-scrollbar { display: none; }
-    .onglet { flex: 0 0 auto; border: 2px solid var(--border); background: var(--card); color: var(--text); border-radius: 999px; padding: 8px 16px; font: 700 14px 'DM Sans', sans-serif; cursor: pointer; }
+    .onglet { flex: 0 0 auto; border: 2px solid var(--border); background: var(--card); color: var(--text); border-radius: 999px; padding: 7px 15px; font: 700 14px 'DM Sans', sans-serif; cursor: pointer; }
     .onglet:hover { border-color: var(--text3); }
     .onglet.on { background: var(--text); color: var(--bg); border-color: var(--text); }
     .onglet.on[data-rayon="malin"] { background: var(--green); border-color: var(--green); color: #fff; }
     .onglet.on[data-rayon="fun"] { background: var(--red); border-color: var(--red); color: #fff; }
+    .tris { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: none; }
+    .tris::-webkit-scrollbar { display: none; }
+    .tri { flex: 0 0 auto; border: 0; background: none; color: var(--text2); font: 600 14px 'DM Sans', sans-serif; padding: 7px 10px; border-radius: var(--radius-sm); cursor: pointer; }
+    .tri:hover { color: var(--text); background: var(--bg2); }
+    .tri.on { color: #fff; background: var(--text); }
 
-    /* ===== FILTRES ===== */
-    .filtres { position: sticky; top: 57px; z-index: 5; background: var(--bg); padding: 12px 0 8px; border-bottom: 1px solid var(--border); margin-top: 1.2rem; }
     .ligne { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     .recherche { flex: 1 1 200px; min-width: 0; border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 12px; font: inherit; font-size: 14px; }
-    select { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 10px; font: inherit; font-size: 14px; cursor: pointer; }
-    .btn-hasard { border: 0; background: var(--text); color: var(--bg); border-radius: var(--radius-sm); padding: 9px 14px; font: 700 14px 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; }
+    select { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 10px; font: inherit; font-size: 14px; cursor: pointer; max-width: 100%; }
+    select.actif { border-color: var(--red); color: var(--red); font-weight: 600; }
     .btn-liste { border: 1px solid var(--border); background: var(--card); color: var(--text); border-radius: var(--radius-sm); padding: 9px 12px; font: 600 14px 'DM Sans', sans-serif; cursor: pointer; white-space: nowrap; }
     .btn-liste.on { background: var(--red); color: #fff; border-color: var(--red); }
     .chips { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; scrollbar-width: none; }
@@ -99,18 +122,24 @@
     .chip.on { background: var(--text); color: var(--bg); border-color: var(--text); }
 
     /* ===== GRILLE ===== */
-    .compte { color: var(--text2); font-size: .9rem; margin: 16px 0 12px; }
+    .entete-grille { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin: 16px 0 12px; }
+    .compte { color: var(--text2); font-size: .9rem; }
+    .compte strong { color: var(--text); font-size: 1.05rem; }
+    .reset { border: 0; background: none; color: var(--red); font: 600 13px 'DM Sans', sans-serif; cursor: pointer; text-decoration: underline; }
     .grille { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; padding-bottom: 2.5rem; }
     .carte { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .15s, box-shadow .15s; }
     .carte:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.06); }
     .visuel { position: relative; aspect-ratio: 4/3; display: grid; place-items: center; font-size: 4.2rem; background: var(--bg2); }
-    .visuel img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+    .visuel.photo { background: #fff; }
+    .visuel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 10px; background: #fff; font-size: 12px; color: transparent; }
+    .visuel.photo .emoji { visibility: hidden; }
     .visuel .emoji { transition: transform .2s; }
     .carte:hover .emoji { transform: scale(1.1) rotate(-6deg); }
-    .coeur { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255,255,255,.92); font-size: 1rem; cursor: pointer; display: grid; place-items: center; }
+    .coeur { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid rgba(0,0,0,.06); background: rgba(255,255,255,.92); font-size: 1rem; cursor: pointer; display: grid; place-items: center; }
     .badge { position: absolute; top: 12px; left: 12px; color: #fff; font: 700 11px 'DM Sans', sans-serif; padding: 4px 9px; border-radius: 20px; text-transform: uppercase; letter-spacing: .04em; }
     .badge.malin { background: var(--green); }
     .badge.fun { background: var(--red); }
+    .badge.luxe { background: #1a1a18; }
     .corps { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
     .corps h3 { font-size: 1.05rem; line-height: 1.25; font-weight: 700; }
     .corps p { color: var(--text2); font-size: .9rem; flex: 1; }
@@ -144,16 +173,19 @@
     footer a { color: var(--text3); text-decoration: underline; }
 
     @media (max-width: 560px) {
-      .hero { padding: 1.4rem 0 0; }
-      .hero p { font-size: .95rem; }
+      .hero { padding: 1.2rem 0 0; }
+      .hero p { font-size: .92rem; }
       .grille { grid-template-columns: 1fr 1fr; gap: 10px; }
       .visuel { font-size: 3.2rem; }
+      .visuel img { padding: 6px; }
       .corps { padding: 10px 11px 12px; }
       .corps h3 { font-size: .95rem; }
       .corps p { font-size: .82rem; }
       .meta { flex-direction: column; align-items: stretch; }
       .prix { align-self: flex-start; }
       .filtres { position: static; }
+      .ligne select { flex: 1 1 calc(50% - 4px); min-width: 0; }
+      .recherche { flex-basis: 100%; }
     }
   </style>
 </head>
@@ -178,45 +210,46 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Ce qui te fait <em>économiser</em>… et ce qui va te ruiner quand même.</h1>
-    <p>Des achats qui se remboursent tout seuls, et des objets parfaitement inutiles qu'on finit toujours par offrir. On ne juge pas.</p>
+    <div class="hero-texte">
+      <h1>Ce qui te fait <em>économiser</em>… et ce qui va te ruiner quand même.</h1>
+      <p>Des achats qui se remboursent tout seuls, et des objets parfaitement inutiles qu'on finit toujours par offrir.</p>
+    </div>
+    <div class="guides" id="guides"></div>
   </div>
 </section>
 
 <div class="filtres">
   <div class="wrap">
-    <div class="onglets" role="tablist">
-      <button class="onglet" data-rayon="">✨ Tout</button>
-      <button class="onglet" data-rayon="malin">💚 Achats malins</button>
-      <button class="onglet" data-rayon="fun">🙈 Insolites</button>
+    <div class="barre">
+      <div class="onglets">
+        <button class="onglet" data-rayon="">✨ Tout</button>
+        <button class="onglet" data-rayon="malin">💚 Achats malins</button>
+        <button class="onglet" data-rayon="fun">🙈 Insolites</button>
+      </div>
+      <div class="tris">
+        <button class="tri" data-tri="pop">Populaires</button>
+        <button class="tri" data-tri="new">Nouveautés</button>
+        <button class="tri" data-tri="asc">Prix ↑</button>
+        <button class="tri" data-tri="desc">Prix ↓</button>
+        <button class="tri" data-tri="hasard">🎲 Au hasard</button>
+      </div>
     </div>
     <div class="ligne">
       <input class="recherche" id="recherche" type="search" placeholder="Chercher un objet…" aria-label="Rechercher">
-      <select id="pourQui" aria-label="Pour qui">
-        <option value="">Pour qui ?</option>
-        <option value="papa">Papa</option>
-        <option value="maman">Maman</option>
-        <option value="ado">Ado</option>
-        <option value="geek">Geek</option>
-        <option value="collegue">Collègue</option>
-        <option value="couple">Couple</option>
-        <option value="animaux">Fan d'animaux</option>
-      </select>
-      <select id="budget" aria-label="Budget">
-        <option value="">Budget</option>
-        <option value="1">Moins de 20 €</option>
-        <option value="2">20 à 50 €</option>
-        <option value="3">Plus de 50 €</option>
-      </select>
-      <button class="btn-hasard" id="btnHasard">🎲 Au hasard</button>
-      <button class="btn-liste" id="btnListe">❤️ <span id="nbListe">0</span></button>
+      <select id="pourQui" aria-label="Pour qui"></select>
+      <select id="occasion" aria-label="Occasion"></select>
+      <select id="budget" aria-label="Budget"></select>
+      <button class="btn-liste" id="btnListe" aria-label="Ma liste">❤️ <span id="nbListe">0</span></button>
     </div>
     <div class="chips" id="chips"></div>
   </div>
 </div>
 
 <main class="wrap">
-  <div class="compte" id="compte"></div>
+  <div class="entete-grille">
+    <div class="compte" id="compte"></div>
+    <button class="reset" id="reset" hidden>Effacer les filtres</button>
+  </div>
   <div class="grille" id="grille"></div>
 
   <section class="bandeau">
@@ -242,53 +275,71 @@
 /* ============ RÉGLAGES ============ */
 const CONFIG = { tag: "mauvaiseshabi-21", domaine: "www.amazon.fr" };
 
+/* ============ LISTES DES FILTRES ============ */
+const POUR_QUI = {
+  papa:"Papa", maman:"Maman", homme:"Homme", femme:"Femme", couple:"Couple", ado:"Ado", enfant:"Enfant",
+  grandsparents:"Grands-parents", collegue:"Collègue", geek:"Geek", gamer:"Gamer", cuisinier:"Fan de cuisine",
+  jardinier:"Jardinier", voyageur:"Voyageur", sportif:"Sportif", animaux:"Fan d'animaux"
+};
+const OCCASIONS = {
+  noel:"🎄 Noël", anniversaire:"🎂 Anniversaire", secret:"🎁 Secret Santa (< 20 €)", stvalentin:"❤️ Saint-Valentin",
+  peres:"👨 Fête des pères", meres:"👩 Fête des mères", cremaillere:"🏠 Crémaillère", soi:"😎 Se faire plaisir"
+};
+const BUDGETS = {1:"< 20 €", 2:"20–50 €", 3:"50–150 €", 4:"150–500 €", 5:"500 € +"};
+const BUDGETS_LONG = {1:"Moins de 20 €", 2:"20 à 50 €", 3:"50 à 150 €", 4:"150 à 500 €", 5:"Folies : plus de 500 €"};
+
 /* ============ CATÉGORIES (r = rayon) ============ */
 const CATS = {
-  cafe:     {r:"malin", label:"☕ Café & repas",        couleur:"#EAF3DE"},
-  energie:  {r:"malin", label:"💡 Énergie & maison",    couleur:"#E4F0D0"},
-  sdb:      {r:"malin", label:"🚿 Salle de bain",       couleur:"#DDEFD8"},
-  quotidien:{r:"malin", label:"🧰 Quotidien",           couleur:"#E8F2DA"},
-  confort:  {r:"fun",   label:"😴 Confort & flemme",    couleur:"#FFE3D3"},
-  cuisine:  {r:"fun",   label:"🍳 Cuisine absurde",     couleur:"#FFF1C2"},
-  fete:     {r:"fun",   label:"🎉 Fêtes & soirées",     couleur:"#FFD6E0"},
-  geek:     {r:"fun",   label:"🤓 Geek & déco",         couleur:"#D9E8FF"},
-  blague:   {r:"fun",   label:"🤡 Blagues & idioties",  couleur:"#FCEBEB"},
-  animaux:  {r:"fun",   label:"🐾 Pour les animaux",    couleur:"#EADCFF"}
+  cafe:     {r:"malin", label:"☕ Café & repas"},
+  energie:  {r:"malin", label:"💡 Énergie & maison"},
+  sdb:      {r:"malin", label:"🚿 Salle de bain"},
+  quotidien:{r:"malin", label:"🧰 Quotidien"},
+  confort:  {r:"fun",   label:"😴 Confort & flemme"},
+  cuisine:  {r:"fun",   label:"🍳 Cuisine absurde"},
+  fete:     {r:"fun",   label:"🎉 Fêtes & soirées"},
+  geek:     {r:"fun",   label:"🤓 Geek & déco"},
+  blague:   {r:"fun",   label:"🤡 Blagues & idioties"},
+  animaux:  {r:"fun",   label:"🐾 Pour les animaux"},
+  folies:   {r:"fun",   label:"💎 Folies hors de prix"}
 };
-const BUDGETS = {1:"< 20 €", 2:"20–50 €", 3:"50 € +"};
 
 /* ============ PRODUITS ============
-   n = nom, d = description, eco = phrase « économie » (rayon malin), e = emoji, c = catégorie
-   p = pour qui, b = budget (1/2/3), q = recherche Amazon (lien construit avec le tag)
-   url (optionnel) = lien produit direct, image (optionnel) = URL d'image, top = mis en avant
+   n = nom, d = description, eco = phrase « économie » (achats malins), e = emoji, c = catégorie
+   p = pour qui, b = budget (1 à 5), q = recherche Amazon (utilisée si pas d'url)
+   url = lien affilié direct, image = URL de la photo, top = coup de cœur, o = occasions en plus
+   (Noël et anniversaire sont ajoutés partout ; fête des pères/mères, Saint-Valentin, Secret Santa,
+    crémaillère et « se faire plaisir » sont déduits automatiquement — voir la fonction occasions())
+   Les nouveaux produits s'ajoutent À LA FIN de la liste : ils apparaissent en premier dans « Nouveautés ».
 */
 const PRODUITS = [
   /* ---------- 💚 ACHATS MALINS ---------- */
-  {n:"Moulin à café manuel", e:"☕", c:"cafe", p:["papa","maman","collegue"], b:2, q:"moulin à café manuel", top:true,
+  {n:"Moulin à café manuel", e:"☕", c:"cafe", p:["papa","maman","collegue","cuisinier"], b:2, q:"moulin à café manuel", top:true,
+   url:"https://link.amazon/B06Ffz9U7", image:"https://m.media-amazon.com/images/I/61eKPKWnJOL._AC_SL1500_.jpg",
    d:"Du café fraîchement moulu à la maison, meilleur que celui du comptoir.", eco:"Le café à emporter de tous les matins devient une exception."},
-  {n:"Mug isotherme de voyage", e:"🥤", c:"cafe", p:["collegue","maman","papa"], b:1, q:"mug isotherme voyage étanche",
+  {n:"Mug isotherme de voyage", e:"🥤", c:"cafe", p:["collegue","maman","papa","voyageur"], b:1, q:"mug isotherme voyage étanche",
    d:"Le café maison reste chaud jusqu'au bureau. Le coffee shop perd un client.", eco:"Rentabilisé en quelques cafés non achetés."},
   {n:"Cafetière à piston", e:"🫖", c:"cafe", p:["couple","collegue"], b:1, q:"cafetière à piston",
    d:"Simple, sans capsules, sans abonnement, sans électronique qui lâche.", eco:"Fini les capsules à prix d'or."},
-  {n:"Boîtes repas en verre", e:"🍱", c:"cafe", p:["collegue","papa","maman"], b:1, q:"boîtes repas verre lot",
+  {n:"Boîtes repas en verre", e:"🍱", c:"cafe", p:["collegue","papa","maman","cuisinier"], b:1, q:"boîtes repas verre lot",
    d:"Le lunch maison au bureau. Le sandwich à 8 € devient un souvenir.", eco:"Un des plus gros postes de dépense du midi, divisé."},
-  {n:"Machine à pain", e:"🍞", c:"cafe", p:["maman","papa"], b:3, q:"machine à pain",
+  {n:"Machine à pain", e:"🍞", c:"cafe", p:["maman","papa","cuisinier","grandsparents"], b:3, q:"machine à pain",
    d:"Du pain frais le matin, programmé la veille. La boulangerie, c'est pour le dimanche.", eco:"Coût par pain bien inférieur à la boulangerie."},
   {n:"Carafe filtrante", e:"💧", c:"cafe", p:["couple","maman"], b:1, q:"carafe filtrante",
    d:"L'eau du robinet, en meilleur goût. Fini les packs d'eau à porter.", eco:"Adieu les bouteilles en plastique au caddie."},
-  {n:"Yaourtière", e:"🥛", c:"cafe", p:["maman","papa"], b:2, q:"yaourtière",
+  {n:"Yaourtière", e:"🥛", c:"cafe", p:["maman","papa","cuisinier"], b:2, q:"yaourtière",
    d:"Des yaourts maison avec un litre de lait. Étonnamment facile.", eco:"Le prix du yaourt divisé, et zéro pot à jeter."},
-  {n:"Sachets congélation réutilisables", e:"🧊", c:"cafe", p:["maman","couple"], b:1, q:"sac congélation réutilisable silicone",
+  {n:"Sachets congélation réutilisables", e:"🧊", c:"cafe", p:["maman","couple","cuisinier"], b:1, q:"sac congélation réutilisable silicone",
    d:"Pour congeler les restes au lieu de les jeter.", eco:"Moins de gaspillage, moins de sacs jetables."},
-  {n:"Multiprise avec interrupteur", e:"🔌", c:"energie", p:["papa","geek"], b:1, q:"multiprise interrupteur individuel", top:true,
+  {n:"Multiprise avec interrupteur", e:"🔌", c:"energie", p:["papa","geek","gamer"], b:1, q:"multiprise interrupteur individuel", top:true,
+   url:"https://link.amazon/B08nr2Lvq", image:"https://m.media-amazon.com/images/I/715Zvwk8uoL._AC_SL1500_.jpg",
    d:"Coupe d'un clic tous les appareils en veille, ces petits voleurs silencieux.", eco:"La veille pèse sur la facture d'électricité toute l'année."},
   {n:"Prise connectée programmable", e:"⏲️", c:"energie", p:["geek","papa"], b:1, q:"prise connectée programmable consommation",
    d:"Programme le chauffe-eau ou le radiateur d'appoint, et vois ce que chaque appareil consomme.", eco:"Repère enfin l'appareil qui gonfle ta facture."},
-  {n:"Ampoules LED", e:"💡", c:"energie", p:["papa","maman"], b:1, q:"ampoules led e27 lot",
+  {n:"Ampoules LED", e:"💡", c:"energie", p:["papa","maman","grandsparents"], b:1, q:"ampoules led e27 lot",
    d:"Le geste le plus bête et le plus efficace pour l'éclairage.", eco:"Bien moins gourmandes que les vieilles ampoules."},
   {n:"Étendoir à linge", e:"👕", c:"energie", p:["maman","couple"], b:2, q:"étendoir à linge",
    d:"L'air sèche gratuitement. Le sèche-linge, lui, envoie la facture.", eco:"Le sèche-linge est un des appareils les plus énergivores."},
-  {n:"Film isolant pour fenêtres", e:"🪟", c:"energie", p:["papa"], b:1, q:"film isolant fenêtre",
+  {n:"Film isolant pour fenêtres", e:"🪟", c:"energie", p:["papa","grandsparents"], b:1, q:"film isolant fenêtre",
    d:"Une couche de plus sur les vieilles fenêtres, posée en un après-midi.", eco:"Moins de pertes de chaleur cet hiver."},
   {n:"Pommeau de douche économique", e:"🚿", c:"sdb", p:["papa","maman"], b:1, q:"pommeau de douche économique",
    d:"Même sensation, beaucoup moins d'eau chaude qui part dans le siphon.", eco:"Économie sur l'eau ET sur l'énergie pour la chauffer."},
@@ -296,93 +347,98 @@ const PRODUITS = [
    d:"Le coiffeur à domicile. Les premières coupes seront… une aventure.", eco:"Rentabilisée dès quelques coupes."},
   {n:"Rasoir de sûreté", e:"🪒", c:"sdb", p:["papa","ado"], b:2, q:"rasoir de sûreté",
    d:"Un rasoir pour la vie et des lames qui coûtent quelques centimes.", eco:"Fini les recharges de lames hors de prix."},
-  {n:"Piles rechargeables + chargeur", e:"🔋", c:"quotidien", p:["papa","geek"], b:2, q:"piles rechargeables avec chargeur",
+  {n:"Piles rechargeables + chargeur", e:"🔋", c:"quotidien", p:["papa","geek","gamer"], b:2, q:"piles rechargeables avec chargeur",
    d:"Pour les télécommandes, manettes et jouets qui avalent des piles.", eco:"Un pack remplace des centaines de piles jetables."},
-  {n:"Gourde isotherme", e:"🧴", c:"quotidien", p:["ado","collegue","maman"], b:1, q:"gourde isotherme inox",
+  {n:"Gourde isotherme", e:"🧴", c:"quotidien", p:["ado","collegue","maman","voyageur","sportif"], b:1, q:"gourde isotherme inox",
    d:"Eau fraîche toute la journée. Les petites bouteilles à 2 €, c'est fini.", eco:"Rentabilisée en quelques semaines."},
-  {n:"Kit réparation crevaison vélo", e:"🚲", c:"quotidien", p:["papa","ado"], b:1, q:"kit réparation crevaison vélo",
+  {n:"Kit réparation crevaison vélo", e:"🚲", c:"quotidien", p:["papa","ado","sportif"], b:1, q:"kit réparation crevaison vélo",
    d:"Réparer soi-même au lieu de passer à l'atelier pour une rustine.", eco:"Coûte moins qu'une seule réparation en magasin."},
-  {n:"Tirelire compteur", e:"🐷", c:"quotidien", p:["ado","maman"], b:1, q:"tirelire compteur billet epargne",
+  {n:"Tirelire compteur", e:"🐷", c:"quotidien", p:["ado","enfant","maman"], b:1, q:"tirelire compteur billet epargne",
    d:"Elle affiche le total à chaque pièce. Étrangement motivant.", eco:"L'épargne devient un jeu."},
 
-  /* ---------- 🙈 MAUVAISES HABITUDES ASSUMÉES ---------- */
-  {n:"Oreiller autruche", e:"😴", c:"confort", p:["collegue","ado"], b:1, q:"oreiller autruche sieste", top:true,
+  /* ---------- 🙈 INSOLITES ---------- */
+  {n:"Oreiller autruche", e:"😴", c:"confort", p:["collegue","ado","voyageur"], b:1, q:"oreiller autruche sieste", top:true,
+   url:"https://link.amazon/B0gsjgFnl", image:"https://m.media-amazon.com/images/I/61uskpJfVlL._AC_SX679_.jpg",
    d:"Pour faire la sieste n'importe où, n'importe quand. La dignité est vendue séparément."},
-  {n:"Couverture tortilla géante", e:"🌯", c:"confort", p:["ado","couple"], b:1, q:"couverture tortilla géante", top:true,
+  {n:"Couverture tortilla géante", e:"🌯", c:"confort", p:["ado","couple","enfant"], b:1, q:"couverture tortilla géante", top:true,
+   url:"https://link.amazon/B0gthWMxF", image:"https://m.media-amazon.com/images/I/81n53JplUaL._AC_SL1500_.jpg",
    d:"Deviens un burrito humain. Le guacamole n'est pas fourni."},
-  {n:"Plaid à manches", e:"🛋️", c:"confort", p:["maman","papa"], b:1, q:"plaid à manches",
+  {n:"Plaid à manches", e:"🛋️", c:"confort", p:["maman","papa","grandsparents"], b:1, q:"plaid à manches",
    d:"Un plaid avec des manches. L'humanité a enfin atteint son sommet."},
   {n:"Hamac pour pieds sous le bureau", e:"🦶", c:"confort", p:["collegue","geek"], b:1, q:"hamac pieds bureau",
    d:"Tes pieds en vacances pendant que tu réponds aux mails. Ton manager n'a pas besoin de savoir."},
-  {n:"Chaussons chauffants USB", e:"🔌", c:"confort", p:["geek","collegue"], b:1, q:"chaussons chauffants usb",
+  {n:"Chaussons chauffants USB", e:"🔌", c:"confort", p:["geek","collegue","gamer"], b:1, q:"chaussons chauffants usb",
    d:"Branchés sur l'ordi, tes pieds sont enfin aussi chauds que ton processeur."},
   {n:"Pyjama combinaison dinosaure", e:"🦖", c:"confort", p:["ado","couple"], b:1, q:"pyjama combinaison dinosaure adulte",
    d:"Idéal pour les visios caméra éteinte. Ou allumée, on ne juge pas."},
-  {n:"Chaussons requin", e:"🦈", c:"confort", p:["ado"], b:1, q:"chaussons requin",
+  {n:"Chaussons requin", e:"🦈", c:"confort", p:["ado","enfant"], b:1, q:"chaussons requin",
    d:"Les Dents de la mer, version salon."},
   {n:"Oreiller bras câlin", e:"🤗", c:"confort", p:["ado","collegue"], b:1, q:"oreiller bras petit ami",
    d:"Un bras qui t'enlace toute la nuit et qui ne ronfle jamais."},
-  {n:"Bain de pieds massant", e:"🛁", c:"confort", p:["maman","papa"], b:2, q:"bain de pieds massant",
+  {n:"Bain de pieds massant", e:"🛁", c:"confort", p:["maman","papa","grandsparents"], b:2, q:"bain de pieds massant",
    d:"Le spa, mais dans le salon, devant la série, avec les chips."},
-  {n:"Coussin massant shiatsu", e:"💆", c:"confort", p:["papa","maman"], b:2, q:"coussin massant shiatsu chauffant",
+  {n:"Coussin massant shiatsu", e:"💆", c:"confort", p:["papa","maman","grandsparents"], b:2, q:"coussin massant shiatsu chauffant",
    d:"Un kiné de poche qui ne pose pas de questions sur ta posture."},
 
-  {n:"Coupe-banane", e:"🍌", c:"cuisine", p:["papa","maman","collegue"], b:1, q:"coupe banane", top:true,
+  {n:"Coupe-banane", e:"🍌", c:"cuisine", p:["papa","maman","collegue","cuisinier"], b:1, q:"coupe banane", top:true,
+   url:"https://link.amazon/B0iphsxuM", image:"https://m.media-amazon.com/images/I/71Xw8yDLnxL._AC_SL1500_.jpg",
    d:"Découpe une banane en rondelles d'un coup. Révolutionnaire. Inutile. Indispensable."},
   {n:"Tasse auto-mélangeuse", e:"🌀", c:"cuisine", p:["collegue","geek"], b:1, q:"tasse auto mélangeuse",
    d:"Appuie sur le bouton, elle touille toute seule. La flemme, niveau expert."},
-  {n:"Chauffe-tasse USB", e:"🔥", c:"cuisine", p:["collegue","geek"], b:1, q:"chauffe tasse usb",
+  {n:"Chauffe-tasse USB", e:"🔥", c:"cuisine", p:["collegue","geek","gamer"], b:1, q:"chauffe tasse usb",
    d:"Le café reste chaud pendant la 4e réunion qui aurait pu être un mail."},
   {n:"Raclette à la bougie pour deux", e:"🧀", c:"cuisine", p:["couple"], b:1, q:"raclette bougie 2 personnes", top:true,
    d:"Le romantisme a une odeur, et c'est celle du fromage fondu."},
-  {n:"Machine à barbe à papa", e:"🍭", c:"cuisine", p:["ado","maman"], b:2, q:"machine barbe à papa",
+  {n:"Machine à barbe à papa", e:"🍭", c:"cuisine", p:["ado","enfant","maman"], b:2, q:"machine barbe à papa",
    d:"La fête foraine dans la cuisine. Le sucre sur le plafond aussi."},
-  {n:"Fontaine à chocolat", e:"🍫", c:"cuisine", p:["couple","maman"], b:2, q:"fontaine à chocolat",
+  {n:"Fontaine à chocolat", e:"🍫", c:"cuisine", p:["couple","maman","enfant"], b:2, q:"fontaine à chocolat",
    d:"Tremper des fraises dans une cascade de chocolat : la vraie définition du luxe."},
-  {n:"Cuiseur à œufs électrique", e:"🥚", c:"cuisine", p:["papa"], b:1, q:"cuiseur oeufs électrique",
+  {n:"Cuiseur à œufs électrique", e:"🥚", c:"cuisine", p:["papa","cuisinier"], b:1, q:"cuiseur oeufs électrique",
    d:"Pour ceux qui arrivent à rater même les œufs durs."},
-  {n:"Distributeur de céréales", e:"🥣", c:"cuisine", p:["ado"], b:1, q:"distributeur céréales",
+  {n:"Distributeur de céréales", e:"🥣", c:"cuisine", p:["ado","enfant"], b:1, q:"distributeur céréales",
    d:"Le petit-déj comme à l'hôtel, mais en pyjama dinosaure."},
   {n:"Moule à glaçons boules", e:"🧊", c:"cuisine", p:["papa","couple"], b:1, q:"moule glaçons boule",
    d:"Des glaçons ronds. Les carrés, c'est pour les amateurs."},
-  {n:"Couteau à beurre râpe", e:"🧈", c:"cuisine", p:["maman","papa"], b:1, q:"couteau à beurre râpe",
+  {n:"Couteau à beurre râpe", e:"🧈", c:"cuisine", p:["maman","papa","cuisinier"], b:1, q:"couteau à beurre râpe",
    d:"Il râpe le beurre sorti du frigo. Fini les tartines déchirées."},
-  {n:"Machine à popcorn rétro", e:"🍿", c:"cuisine", p:["ado","couple"], b:2, q:"machine popcorn rétro",
+  {n:"Machine à popcorn rétro", e:"🍿", c:"cuisine", p:["ado","couple","enfant"], b:2, q:"machine popcorn rétro",
    d:"Le cinéma à la maison, avec l'odeur et le bruit qui va avec."},
-  {n:"Four à pizza d'extérieur", e:"🍕", c:"cuisine", p:["papa"], b:3, q:"four à pizza extérieur",
+  {n:"Four à pizza d'extérieur", e:"🍕", c:"cuisine", p:["papa","cuisinier"], b:4, q:"four à pizza extérieur",
    d:"Pizza napolitaine en quelques minutes dans le jardin. Ton barbecue est jaloux."},
 
   {n:"Pull de Noël moche", e:"🎄", c:"fete", p:["papa","maman","collegue","ado"], b:1, q:"pull de noel moche", top:true,
    d:"Plus il est moche, plus il est réussi. C'est la règle."},
   {n:"Pull de Noël lumineux", e:"💡", c:"fete", p:["collegue","papa"], b:1, q:"pull de noel led lumineux",
    d:"Pour être visible depuis l'espace au repas d'entreprise."},
-  {n:"Machine à bulles", e:"🫧", c:"fete", p:["ado","couple"], b:1, q:"machine à bulles",
+  {n:"Machine à bulles", e:"🫧", c:"fete", p:["ado","couple","enfant"], b:1, q:"machine à bulles",
    d:"Transforme n'importe quelle soirée en clip des années 90."},
   {n:"Enceinte de douche", e:"🎤", c:"fete", p:["ado"], b:1, q:"enceinte de douche étanche",
    d:"Pour tes concerts privés. Les voisins, eux, n'ont rien demandé."},
 
-  {n:"Globe terrestre en lévitation", e:"🌍", c:"geek", p:["geek","papa"], b:2, q:"globe terrestre lévitation", top:true,
+  {n:"Globe terrestre en lévitation", e:"🌍", c:"geek", p:["geek","papa"], b:3, q:"globe terrestre lévitation", top:true,
    d:"La Terre flotte sur ton bureau. Les platistes détestent."},
-  {n:"Lampe Lune 3D", e:"🌕", c:"geek", p:["maman","ado","couple"], b:1, q:"lampe lune 3d",
+  {n:"Lampe Lune 3D", e:"🌕", c:"geek", p:["maman","ado","couple","enfant"], b:1, q:"lampe lune 3d",
    d:"La Lune en veilleuse, avec tous ses cratères. Le loup-garou n'est pas inclus."},
-  {n:"Projecteur ciel étoilé", e:"🌌", c:"geek", p:["ado","couple"], b:1, q:"projecteur ciel étoilé galaxie",
+  {n:"Projecteur ciel étoilé", e:"🌌", c:"geek", p:["ado","couple","enfant"], b:1, q:"projecteur ciel étoilé galaxie",
    d:"Une galaxie au plafond de la chambre. Romantique ou hypnotique, au choix."},
   {n:"Lampe à lave", e:"🫠", c:"geek", p:["geek","ado"], b:1, q:"lampe à lave",
    d:"Aucune utilité. Beaucoup de bonheur. Hypnotique depuis les années 60."},
   {n:"Réveil qui s'enfuit", e:"⏰", c:"geek", p:["ado"], b:1, q:"réveil roulant qui s'enfuit",
    d:"Il roule et se cache. Pour l'éteindre, il faut d'abord l'attraper."},
-  {n:"Mini aspirateur de bureau", e:"🧹", c:"geek", p:["collegue","geek"], b:1, q:"mini aspirateur de bureau",
+  {n:"Mini aspirateur de bureau", e:"🧹", c:"geek", p:["collegue","geek","gamer"], b:1, q:"mini aspirateur de bureau",
    d:"Pour les miettes dans le clavier. Oui, on sait que tu manges devant l'écran."},
-  {n:"Imprimante photo instantanée", e:"📸", c:"geek", p:["ado","maman"], b:2, q:"imprimante photo instantanée smartphone",
+  {n:"Imprimante photo instantanée", e:"📸", c:"geek", p:["ado","maman","voyageur"], b:3, q:"imprimante photo instantanée smartphone",
    d:"Tes photos de téléphone en vrai papier. Comme en 1995, mais en mieux."},
-  {n:"Enceinte en lévitation", e:"🔊", c:"geek", p:["geek"], b:3, q:"enceinte lévitation bluetooth",
+  {n:"Enceinte en lévitation", e:"🔊", c:"geek", p:["geek","gamer"], b:3, q:"enceinte lévitation bluetooth", top:true,
+   url:"https://link.amazon/B09t8n7kq", image:"https://m.media-amazon.com/images/I/61jARSstTKS._AC_SL1500_.jpg",
    d:"Une enceinte qui flotte dans les airs. Le son est bon, l'effet est meilleur."},
-  {n:"Tapis de souris géant", e:"🖱️", c:"geek", p:["geek","ado"], b:1, q:"tapis de souris xxl",
+  {n:"Tapis de souris géant", e:"🖱️", c:"geek", p:["geek","ado","gamer"], b:1, q:"tapis de souris xxl",
    d:"Si grand qu'il pourrait servir de nappe pour le réveillon."},
-  {n:"Potager d'intérieur connecté", e:"🌱", c:"geek", p:["maman","couple"], b:3, q:"potager intérieur connecté",
+  {n:"Potager d'intérieur connecté", e:"🌱", c:"geek", p:["maman","couple","jardinier","cuisinier"], b:3, q:"potager intérieur connecté",
+   url:"https://link.amazon/B08slkWPn", image:"https://m.media-amazon.com/images/I/81G-CaCHfoL._AC_SL1500_.jpg",
    d:"Du basilic frais toute l'année, même pour ceux qui tuent les cactus."},
 
-  {n:"Coussin péteur", e:"💨", c:"blague", p:["papa","ado","collegue"], b:1, q:"coussin péteur",
+  {n:"Coussin péteur", e:"💨", c:"blague", p:["papa","ado","collegue","enfant"], b:1, q:"coussin péteur",
    d:"Le classique indémodable, testé et approuvé par tous les tontons."},
   {n:"Puzzle 1000 pièces tout blanc", e:"⬜", c:"blague", p:["papa","geek"], b:1, q:"puzzle blanc 1000 pièces", top:true,
    d:"Aucune image. Juste du blanc. Et ta santé mentale qui s'effrite."},
@@ -390,15 +446,15 @@ const PRODUITS = [
    d:"Enfin une activité intellectuelle aux toilettes."},
   {n:"Veilleuse de toilettes LED", e:"🚽", c:"blague", p:["papa","ado"], b:1, q:"veilleuse toilette led détecteur",
    d:"La cuvette s'illumine en couleurs. Ambiance boîte de nuit à 3 h du matin."},
-  {n:"Bouée licorne géante", e:"🦄", c:"blague", p:["ado","couple"], b:2, q:"bouée licorne géante",
+  {n:"Bouée licorne géante", e:"🦄", c:"blague", p:["ado","couple","enfant"], b:2, q:"bouée licorne géante",
    d:"Pour arriver à la piscine comme une rock star. Ou comme une licorne."},
   {n:"Parapluie inversé", e:"☂️", c:"blague", p:["maman","collegue"], b:1, q:"parapluie inversé",
    d:"Il se ferme à l'envers. Personne ne sait pourquoi c'est génial, mais ça l'est."},
-  {n:"Kit pour faire pousser des champignons", e:"🍄", c:"blague", p:["geek","maman"], b:1, q:"kit culture champignons pleurotes",
+  {n:"Kit pour faire pousser des champignons", e:"🍄", c:"blague", p:["geek","maman","jardinier","cuisinier"], b:1, q:"kit culture champignons pleurotes",
    d:"Des pleurotes qui poussent dans une boîte en carton. De la magie, légalement."},
   {n:"Masque de cheval", e:"🐴", c:"blague", p:["collegue","ado"], b:1, q:"masque de cheval latex",
    d:"Pour la visio du vendredi. Effet garanti, carrière moins garantie."},
-  {n:"Chaussettes avec un visage", e:"🧦", c:"blague", p:["papa","maman","couple"], b:1, q:"chaussettes personnalisées photo visage",
+  {n:"Chaussettes avec un visage", e:"🧦", c:"blague", p:["papa","maman","couple","grandsparents"], b:1, q:"chaussettes personnalisées photo visage",
    d:"Avec la tête de ton chat. Ou de ta belle-mère. À tes risques et périls."},
 
   {n:"Hamac pour chat sur radiateur", e:"🐈", c:"animaux", p:["animaux"], b:1, q:"hamac chat radiateur", top:true,
@@ -410,17 +466,101 @@ const PRODUITS = [
   {n:"Tapis de fouille pour chien", e:"🦴", c:"animaux", p:["animaux"], b:1, q:"tapis de fouille chien",
    d:"Il cherche ses croquettes, tu gagnes vingt minutes de calme."},
   {n:"Fontaine à eau pour chat", e:"🚰", c:"animaux", p:["animaux"], b:1, q:"fontaine à eau chat",
-   d:"Parce que l'eau d'un bol, visiblement, c'est bon pour les chiens."}
+   d:"Parce que l'eau d'un bol, visiblement, c'est bon pour les chiens."},
+
+  /* ---------- NOUVEAUTÉS (ajoutées le 3 novembre) ---------- */
+  {n:"Kit d'arrosage goutte-à-goutte", e:"🪴", c:"quotidien", p:["jardinier","grandsparents"], b:1, q:"kit arrosage goutte à goutte automatique",
+   d:"Les plantes boivent même pendant les vacances. Fini de payer le voisin en chocolats.", eco:"Moins d'eau gaspillée, moins de plantes à racheter."},
+  {n:"Bouillotte", e:"♨️", c:"energie", p:["maman","grandsparents","couple"], b:1, q:"bouillotte",
+   d:"La technologie de chauffage la plus fiable depuis des siècles.", eco:"Un degré de moins au thermostat, ça se sent sur la facture."},
+  {n:"Gourde filtrante", e:"🏞️", c:"quotidien", p:["voyageur","sportif"], b:2, q:"gourde filtrante randonnée",
+   d:"Bois l'eau du ruisseau (ou du robinet douteux de l'hôtel) sans arrière-pensée.", eco:"Plus besoin d'acheter de l'eau en voyage."},
+  {n:"Plaid chauffant électrique", e:"🧣", c:"energie", p:["maman","grandsparents","couple"], b:2, q:"plaid chauffant électrique",
+   d:"Il chauffe la personne, pas toute la pièce.", eco:"Consomme une fraction d'un radiateur."},
+  {n:"Gants de jardinage à griffes", e:"🧤", c:"blague", p:["jardinier","grandsparents"], b:1, q:"gants de jardinage griffes",
+   d:"Creuser la terre comme Wolverine. Les taupes n'ont qu'à bien se tenir."},
+  {n:"Kit bonsaï à faire pousser", e:"🌳", c:"geek", p:["jardinier","ado","collegue"], b:1, q:"kit bonsai à faire pousser",
+   d:"Du zen, de la patience, et quelques années d'attente pour un arbre de 20 cm."},
+  {n:"Console rétro portable", e:"🎮", c:"geek", p:["gamer","ado","papa"], b:2, q:"console rétro portable",
+   d:"Les jeux de ton enfance dans la poche. Adieu, productivité."},
+  {n:"Clavier rétro façon machine à écrire", e:"⌨️", c:"geek", p:["geek","gamer"], b:3, q:"clavier mécanique rétro machine à écrire",
+   d:"Le clic-clac d'une machine à écrire de 1950, branché en USB."},
+  {n:"Lampe nuage d'orage", e:"🌩️", c:"geek", p:["ado","couple","enfant"], b:3, q:"lampe nuage orage",
+   d:"Un nuage qui gronde au-dessus du lit. Apaisant ou terrifiant, selon l'humeur."},
+  {n:"Mug objectif photo", e:"📷", c:"cuisine", p:["geek","voyageur"], b:1, q:"mug objectif appareil photo",
+   d:"On dirait un objectif hors de prix. Rempli de café, il est bien plus utile."},
+  {n:"Mug magique thermoréactif", e:"☕", c:"cuisine", p:["collegue","couple"], b:1, q:"mug magique thermoréactif",
+   d:"Le dessin apparaît quand le café est chaud. Le petit plaisir du lundi matin."},
+  {n:"Distributeur de bonbons rétro", e:"🍬", c:"cuisine", p:["enfant","ado","collegue"], b:2, q:"distributeur bonbons gumball",
+   d:"Le distributeur de la fête foraine, pour ton bureau. Idéal pour se faire des amis."},
+  {n:"Pouf poire géant", e:"🫘", c:"confort", p:["ado","gamer","couple"], b:3, q:"pouf poire géant",
+   d:"Tu t'assois dedans à 18 h, tu en ressors au printemps."},
+  {n:"Fauteuil suspendu", e:"🪺", c:"confort", p:["maman","ado"], b:2, q:"fauteuil suspendu hamac chaise",
+   d:"Un hamac version salon. Les vacances, sans quitter la maison."},
+  {n:"Kit kart pour hoverboard", e:"🏎️", c:"geek", p:["ado","enfant"], b:3, q:"kit kart hoverboard",
+   d:"Transforme un hoverboard en kart. Le trottoir devient un circuit."},
+
+  /* ---------- 💎 FOLIES HORS DE PRIX ---------- */
+  {n:"Lit pour chien taille humaine", e:"🛏️", c:"folies", p:["ado","couple"], b:4, q:"lit pour chien taille humaine", top:true,
+   d:"Un panier géant pour faire la sieste comme un golden retriever. Sans le jugement."},
+  {n:"Spa gonflable", e:"🫧", c:"folies", p:["couple","papa","maman"], b:4, q:"spa gonflable",
+   d:"Les bulles dans le jardin, sans faire venir une grue."},
+  {n:"Borne d'arcade", e:"🕹️", c:"folies", p:["gamer","papa","geek"], b:5, q:"borne d'arcade",
+   d:"La salle de jeux de ton adolescence, dans ton salon. Les pièces de 1 franc ne sont plus nécessaires."},
+  {n:"Fauteuil de massage", e:"💺", c:"folies", p:["papa","maman","grandsparents"], b:5, q:"fauteuil de massage zéro gravité",
+   d:"Le kiné, l'ostéo et la sieste réunis dans un seul fauteuil. Aussi cher qu'un petit voyage."},
+  {n:"Cockpit simulateur de course", e:"🏁", c:"folies", p:["gamer","papa"], b:5, q:"cockpit simulateur course",
+   d:"Pour piloter une F1 depuis le salon. Ta vraie voiture, elle, reste une citadine."},
+  {n:"Télescope motorisé", e:"🔭", c:"folies", p:["geek","papa","enfant"], b:5, q:"télescope motorisé goto",
+   d:"Il trouve les planètes tout seul. Toi, tu n'as plus qu'à dire « waouh »."},
+  {n:"Tente bulle transparente", e:"⛺", c:"folies", p:["couple","voyageur"], b:5, q:"tente bulle transparente",
+   d:"Dormir sous les étoiles, au chaud. Les voisins aussi auront une belle vue."},
+  {n:"Sauna infrarouge", e:"🧖", c:"folies", p:["couple","maman","papa"], b:5, q:"sauna infrarouge",
+   d:"La Finlande dans le garage. Les bouleaux ne sont pas inclus."}
+];
+
+/* ============ GUIDES (vignettes du haut) ============ */
+const GUIDES = [
+  {id:"absurdes", titre:n => `${n} objets complètement absurdes`, filtre:p => rayonDe(p) === "fun" && p.c !== "folies" && p.b <= 2, cover:"Oreiller autruche", emoji:"🤪"},
+  {id:"noel",     titre:n => `${n} cadeaux de Noël qui font rire`, filtre:p => rayonDe(p) === "fun" && p.b <= 3, cover:"Couverture tortilla géante", emoji:"🎄"},
+  {id:"malins",   titre:n => `${n} achats qui se remboursent tout seuls`, filtre:p => rayonDe(p) === "malin", cover:"Moulin à café manuel", emoji:"💚"},
+  {id:"moins20",  titre:n => `${n} cadeaux à moins de 20 €`, filtre:p => p.b === 1, cover:"Coupe-banane", emoji:"🎁"},
+  {id:"geek",     titre:n => `${n} trouvailles pour geeks et gamers`, filtre:p => qui(p).includes("geek") || qui(p).includes("gamer"), cover:"Enceinte en lévitation", emoji:"🤓"},
+  {id:"folies",   titre:n => `${n} folies hors de prix`, filtre:p => p.b >= 4, cover:"", emoji:"💎"}
 ];
 
 /* ============ LOGIQUE ============ */
 const $ = s => document.querySelector(s);
 const rayonDe = p => CATS[p.c].r;
-const etat = {rayon:"", cat:"", qui:"", budget:"", txt:"", liste:false};
+function qui(p){
+  const s = new Set(p.p);
+  if (s.has("papa")) s.add("homme");
+  if (s.has("maman")) s.add("femme");
+  if (p.c === "animaux") s.add("animaux");
+  return [...s];
+}
+function occasions(p){
+  const s = new Set(["noel","anniversaire", ...(p.o || [])]);
+  if (p.p.includes("papa")) s.add("peres");
+  if (p.p.includes("maman")) s.add("meres");
+  if (p.p.includes("couple")) s.add("stvalentin");
+  if (p.b === 1 && rayonDe(p) === "fun") s.add("secret");
+  if (["cafe","energie","cuisine","quotidien"].includes(p.c)) s.add("cremaillere");
+  if (rayonDe(p) === "malin" || p.c === "folies" || p.c === "confort") s.add("soi");
+  return [...s];
+}
+
+const etat = {rayon:"", guide:"", cat:"", qui:"", occ:"", budget:"", txt:"", liste:false, tri:"pop"};
 let favoris = [];
 try { favoris = JSON.parse(localStorage.getItem("mh-liste") || "[]"); } catch(e) { favoris = []; }
 function sauver(){ try { localStorage.setItem("mh-liste", JSON.stringify(favoris)); } catch(e) {} }
-try { const r = new URLSearchParams(location.search).get("rayon"); if (r === "fun" || r === "malin") etat.rayon = r; } catch(e) {}
+try {
+  const u = new URLSearchParams(location.search);
+  if (["fun","malin"].includes(u.get("rayon"))) etat.rayon = u.get("rayon");
+  if (GUIDES.some(g => g.id === u.get("guide"))) etat.guide = u.get("guide");
+  if (OCCASIONS[u.get("occasion")]) etat.occ = u.get("occasion");
+  if (POUR_QUI[u.get("pour")]) etat.qui = u.get("pour");
+} catch(e) {}
 
 function lien(p){
   if (p.url) return p.url;
@@ -428,12 +568,29 @@ function lien(p){
 }
 function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 function sansAccent(s){ return s.normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase(); }
+const parNom = n => PRODUITS.find(p => p.n === n);
+
+function remplirSelects(){
+  $("#pourQui").innerHTML = `<option value="">Pour qui ?</option>` + Object.entries(POUR_QUI).map(([k,v]) => `<option value="${k}">${v}</option>`).join("");
+  $("#occasion").innerHTML = `<option value="">Pour quoi ?</option>` + Object.entries(OCCASIONS).map(([k,v]) => `<option value="${k}">${v}</option>`).join("");
+  $("#budget").innerHTML = `<option value="">Budget</option>` + Object.entries(BUDGETS_LONG).map(([k,v]) => `<option value="${k}">${v}</option>`).join("");
+}
+
+function guides(){
+  $("#guides").innerHTML = GUIDES.map(g => {
+    const n = PRODUITS.filter(g.filtre).length, c = g.cover && parNom(g.cover);
+    const fond = `<span class="g-emoji" aria-hidden="true">${g.emoji}</span>` + (c && c.image ? `<img src="${esc(c.image)}" alt="" loading="lazy" onerror="this.remove()">` : "");
+    return `<button class="guide ${etat.guide===g.id?"on":""}" data-guide="${g.id}">${fond}<span class="g-titre">${esc(g.titre(n))}</span></button>`;
+  }).join("");
+}
 
 function visuel(p, i){
   const r = rayonDe(p), fav = favoris.includes(p.n);
-  return `<div class="visuel">
-    ${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.n)}" loading="lazy">` : `<span class="emoji" aria-hidden="true">${p.e}</span>`}
-    ${p.top ? `<span class="badge ${r}">${r === "malin" ? "Rentable" : "Coup de cœur"}</span>` : ""}
+  const badge = p.c === "folies" ? `<span class="badge luxe">Folie</span>` : p.top ? `<span class="badge ${r}">${r === "malin" ? "Rentable" : "Coup de cœur"}</span>` : "";
+  return `<div class="visuel ${p.image ? "photo" : ""}">
+    <span class="emoji" aria-hidden="true">${p.e}</span>
+    ${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.n)}" loading="lazy" onerror="this.parentNode.classList.remove('photo');this.remove()">` : ""}
+    ${badge}
     <button class="coeur" data-fav="${i}" aria-label="Ajouter à ma liste">${fav ? "❤️" : "🤍"}</button>
   </div>`;
 }
@@ -442,32 +599,47 @@ function bouton(p, i){
 }
 
 function filtrer(){
-  const t = sansAccent(etat.txt.trim());
-  const res = PRODUITS.map((p,i)=>({p,i})).filter(({p}) =>
+  const t = sansAccent(etat.txt.trim()), g = GUIDES.find(x => x.id === etat.guide);
+  let res = PRODUITS.map((p,i)=>({p,i})).filter(({p}) =>
     (etat.liste || !etat.rayon || rayonDe(p) === etat.rayon) &&
+    (!g || g.filtre(p)) &&
     (!etat.cat || p.c === etat.cat) &&
-    (!etat.qui || p.p.includes(etat.qui)) &&
+    (!etat.qui || qui(p).includes(etat.qui)) &&
+    (!etat.occ || occasions(p).includes(etat.occ)) &&
     (!etat.budget || String(p.b) === etat.budget) &&
     (!etat.liste || favoris.includes(p.n)) &&
     (!t || sansAccent(p.n + " " + p.d + " " + (p.eco||"")).includes(t))
   );
-  if (etat.rayon || etat.liste || etat.cat) return res;
-  /* Vue « Tout » : coups de cœur d'abord, insolites et achats malins en alternance */
-  const tri = arr => arr.filter(x => x.p.top).concat(arr.filter(x => !x.p.top));
+  if (etat.tri === "new") return res.slice().reverse();
+  if (etat.tri === "asc") return res.slice().sort((a,b) => a.p.b - b.p.b);
+  if (etat.tri === "desc") return res.slice().sort((a,b) => b.p.b - a.p.b);
+  /* Populaires : coups de cœur avec photo, puis coups de cœur, puis photos ; insolites et achats malins en alternance */
+  const score = x => (x.p.top ? 2 : 0) + (x.p.image ? 1 : 0);
+  const tri = arr => arr.slice().sort((a,b) => score(b) - score(a));
   const fun = tri(res.filter(x => rayonDe(x.p) === "fun")), malin = tri(res.filter(x => rayonDe(x.p) === "malin"));
   const mix = [];
   while (fun.length || malin.length) { if (fun.length) mix.push(fun.shift()); if (malin.length) mix.push(malin.shift()); }
   return mix;
 }
 
+function filtresActifs(){ return !!(etat.guide || etat.cat || etat.qui || etat.occ || etat.budget || etat.txt.trim() || etat.liste); }
+
 function afficher(){
   document.querySelectorAll(".onglet").forEach(b => b.classList.toggle("on", !etat.liste && b.dataset.rayon === etat.rayon));
-  const res = filtrer(), s = res.length > 1 ? "s" : "";
-  $("#compte").textContent = etat.liste ? `Ma liste : ${res.length} objet${s}`
-    : !etat.rayon ? `${res.length} trouvaille${s}, utiles ou pas du tout`
-    : etat.rayon === "malin" ? `${res.length} achat${s} qui se rembourse${res.length>1?"nt":""} tout seul${s}`
-    : `${res.length} objet${s} parfaitement inutile${s}`;
-  $("#grille").innerHTML = res.length ? res.map(({p,i}) => `
+  document.querySelectorAll(".tri").forEach(b => b.classList.toggle("on", b.dataset.tri === etat.tri));
+  document.querySelectorAll(".guide").forEach(b => b.classList.toggle("on", b.dataset.guide === etat.guide));
+  $("#pourQui").value = etat.qui; $("#occasion").value = etat.occ; $("#budget").value = etat.budget;
+  ["#pourQui","#occasion","#budget"].forEach(s => $(s).classList.toggle("actif", !!$(s).value));
+
+  const res = filtrer(), n = res.length, s = n > 1 ? "s" : "", g = GUIDES.find(x => x.id === etat.guide);
+  $("#compte").innerHTML = etat.liste ? `<strong>Ma liste</strong> · ${n} objet${s}`
+    : g ? `<strong>${esc(g.titre(n))}</strong>`
+    : !etat.rayon ? `${n} trouvaille${s}, utiles ou pas du tout`
+    : etat.rayon === "malin" ? `${n} achat${s} qui se rembourse${n>1?"nt":""} tout seul${s}`
+    : `${n} objet${s} parfaitement inutile${s}`;
+  $("#reset").hidden = !filtresActifs();
+
+  $("#grille").innerHTML = n ? res.map(({p,i}) => `
     <article class="carte ${rayonDe(p)}">
       ${visuel(p,i)}
       <div class="corps">
@@ -477,7 +649,7 @@ function afficher(){
         <div class="meta"><span class="prix">${BUDGETS[p.b]}</span>${bouton(p,i)}</div>
       </div>
     </article>`).join("")
-    : `<div class="vide">${etat.liste ? "Ta liste est vide. Clique sur 🤍 pour y ajouter des objets." : "Rien trouvé avec ces filtres."}</div>`;
+    : `<div class="vide">${etat.liste ? "Ta liste est vide. Clique sur 🤍 pour y ajouter des objets." : "Rien trouvé avec ces filtres. Essaie d'en retirer un."}</div>`;
   $("#nbListe").textContent = favoris.length;
   $("#btnListe").classList.toggle("on", etat.liste);
 }
@@ -488,10 +660,17 @@ function chips(){
     `<button class="chip ${etat.cat===k?"on":""}" data-cat="${k}">${l}</button>`).join("");
 }
 
-function choisirRayon(r){
-  etat.rayon = r; etat.cat = ""; etat.liste = false; chips(); afficher();
-  try { history.replaceState(null, "", r ? "?rayon=" + r : location.pathname); } catch(e) {}
+function majUrl(){
+  try {
+    const u = new URLSearchParams();
+    if (etat.guide) u.set("guide", etat.guide); else if (etat.rayon) u.set("rayon", etat.rayon);
+    if (etat.occ) u.set("occasion", etat.occ);
+    if (etat.qui) u.set("pour", etat.qui);
+    const q = u.toString();
+    history.replaceState(null, "", q ? "?" + q : location.pathname);
+  } catch(e) {}
 }
+function rafraichir(){ chips(); afficher(); majUrl(); }
 
 function basculerFav(i){
   const n = PRODUITS[i].n;
@@ -501,8 +680,8 @@ function basculerFav(i){
 }
 
 function hasard(force){
-  const pool = PRODUITS.map((p,i)=>i).filter(i => !etat.rayon || rayonDe(PRODUITS[i]) === etat.rayon);
-  const i = (typeof force === "number") ? force : pool[Math.floor(Math.random()*pool.length)];
+  const pool = filtrer().map(x => x.i), base = pool.length ? pool : PRODUITS.map((p,i)=>i);
+  const i = (typeof force === "number") ? force : base[Math.floor(Math.random()*base.length)];
   const p = PRODUITS[i];
   $("#modale").innerHTML = `${visuel(p,i)}
     <div class="corps"><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p>${p.eco ? `<span class="eco">💰 ${esc(p.eco)}</span>` : ""}<span class="prix" style="align-self:flex-start">${BUDGETS[p.b]}</span></div>
@@ -512,13 +691,24 @@ function hasard(force){
 }
 
 /* Événements */
-document.querySelectorAll(".onglet").forEach(b => b.addEventListener("click", () => choisirRayon(b.dataset.rayon)));
+$("#guides").addEventListener("click", e => {
+  const b = e.target.closest("[data-guide]"); if (!b) return;
+  const id = b.dataset.guide;
+  etat.guide = etat.guide === id ? "" : id; etat.rayon = ""; etat.cat = ""; etat.liste = false;
+  rafraichir(); $(".filtres").scrollIntoView({behavior:"smooth"});
+});
+document.querySelectorAll(".onglet").forEach(b => b.addEventListener("click", () => { etat.rayon = b.dataset.rayon; etat.guide = ""; etat.cat = ""; etat.liste = false; rafraichir(); }));
+document.querySelectorAll(".tri").forEach(b => b.addEventListener("click", () => { if (b.dataset.tri === "hasard") { hasard(); return; } etat.tri = b.dataset.tri; afficher(); }));
 $("#chips").addEventListener("click", e => { const b = e.target.closest("[data-cat]"); if(!b) return; etat.cat = b.dataset.cat; chips(); afficher(); });
 $("#recherche").addEventListener("input", e => { etat.txt = e.target.value; afficher(); });
-$("#pourQui").addEventListener("change", e => { etat.qui = e.target.value; afficher(); });
+$("#pourQui").addEventListener("change", e => { etat.qui = e.target.value; afficher(); majUrl(); });
+$("#occasion").addEventListener("change", e => { etat.occ = e.target.value; afficher(); majUrl(); });
 $("#budget").addEventListener("change", e => { etat.budget = e.target.value; afficher(); });
 $("#btnListe").addEventListener("click", () => { etat.liste = !etat.liste; afficher(); });
-$("#btnHasard").addEventListener("click", () => hasard());
+$("#reset").addEventListener("click", () => {
+  Object.assign(etat, {guide:"", cat:"", qui:"", occ:"", budget:"", txt:"", liste:false});
+  $("#recherche").value = ""; rafraichir();
+});
 document.addEventListener("click", e => {
   const f = e.target.closest("[data-fav]"); if (f) { basculerFav(+f.dataset.fav); return; }
   const c = e.target.closest("[data-clic]");
@@ -528,7 +718,7 @@ $("#fond").addEventListener("click", e => { if (e.target.id === "fond") $("#fond
 document.addEventListener("keydown", e => { if (e.key === "Escape") $("#fond").classList.remove("ouvert"); });
 $("#hamburger").addEventListener("click", () => { const m = $("#mobileNav"); m.style.display = m.style.display === "flex" ? "none" : "flex"; });
 
-chips(); afficher();
+remplirSelects(); guides(); chips(); afficher();
 </script>
 </body>
 </html>
